@@ -3,3 +3,7 @@
 cache/
 local/
 .doit.db*
+cache/
+output/
+.DS_Store
+_site/
