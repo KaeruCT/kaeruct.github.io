@@ -1,5 +1,0 @@
-*.pyc
-*.pyo
-cache/
-local/
-.doit.db*
