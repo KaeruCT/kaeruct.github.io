@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Pejibaye Blog (youtube)</title><link>http://kaeruct.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://kaeruct.github.io/categories/youtube.xml"></atom:link><language>en</language><lastBuildDate>Wed, 11 May 2016 23:10:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How to use the Youtube JS API to play music in the background</title><link>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;The Youtube JavaScript API allows you to embed YouTube videos and
+interact with them programatically. To use it, first you need to embed this
+script into your page:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;script src="http://www.youtube.com/player_api"&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you just want the audio, you can hide the element that contains the video:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;div id="player" style="position: absolute; top: -9999px; left: -9999px;"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here we use absolute positioning with negative coordinates
+because using &lt;code&gt;display: none;&lt;/code&gt; will prevent the &lt;code&gt;onReady&lt;/code&gt; handler
+from the Youtube player from triggering on Firefox. I ran across this problem
+when making &lt;a href="http://kaeru.neritic.net/projects/short-experiments/walk"&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, here's &lt;a href="http://kaeruct.github.io/examples/yt-js-api"&gt;a full example&lt;/a&gt; that will wait for the video to
+load and automatically play it:&lt;/p&gt;
+&lt;script src="https://gist.github.com/KaeruCT/dcfae82a15af514ea95e.js"&gt;&lt;/script&gt;&lt;/div&gt;</description><category>javascript</category><category>tutorials</category><category>youtube</category><guid>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</guid><pubDate>Fri, 23 May 2014 18:29:55 GMT</pubDate></item></channel></rss>

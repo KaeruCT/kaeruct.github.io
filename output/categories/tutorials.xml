@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pejibaye Blog (tutorials)</title><link>http://kaeruct.github.io/</link><description></description><atom:link rel="self" href="http://kaeruct.github.io/categories/tutorials.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 11 May 2016 23:37:13 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Generating partner.jar for Salesforce API Integration</title><link>http://kaeruct.github.io/posts/generating-partnerjar-for-salesforce-api-integration.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I ran into a small issue recently when setting up a Java project to use the
+Salesforce APIs.&lt;/p&gt;
+&lt;p&gt;Basically, you need to download a WSDL file from Salesforce, then use a tool made
+by them to generate a jar that you then include in your Java program.&lt;/p&gt;
+&lt;p&gt;They instruct you to &lt;a href="http://mvnrepository.com/artifact/com.force.api/force-wsc/"&gt;download &lt;code&gt;force-wsc.jar&lt;/code&gt;&lt;/a&gt; and then run it, but when
+you run it you realize they didn't pack the dependencies within the jar!&lt;/p&gt;
+&lt;p&gt;To solve this problem, you need to download the following jars:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mvnrepository.com/artifact/rhino/js/1.7R2"&gt;js-1.7R2.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://mvnrepository.com/artifact/org.antlr/ST4/4.0.7"&gt;ST-4.0.7.jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And then run &lt;code&gt;force-wsc.jar&lt;/code&gt;, including the dependencies in the classpath:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ java -classpath force-wsc-32.1.1.jar:js-1.7R2.jar:ST-4.0.7.jar &lt;span class="se"&gt;\&lt;/span&gt;
+  com.sforce.ws.tools.wsdlc partner.wsdl partner-32.1.1.jar
+&lt;/pre&gt;
+
+
+&lt;p&gt;Please note these were the versions that worked for me. If your &lt;code&gt;force-wsc.jar&lt;/code&gt; is
+a different version, check if you need to include other version of its dependencies.&lt;/p&gt;&lt;/div&gt;</description><category>java</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/generating-partnerjar-for-salesforce-api-integration.html</guid><pubDate>Wed, 12 Nov 2014 02:12:38 GMT</pubDate></item><item><title>How to use the Youtube JS API to play music in the background</title><link>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;The Youtube JavaScript API allows you to embed YouTube videos and
+interact with them programatically. To use it, first you need to embed this
+script into your page:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;script src="http://www.youtube.com/player_api"&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you just want the audio, you can hide the element that contains the video:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;div id="player" style="position: absolute; top: -9999px; left: -9999px;"&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here we use absolute positioning with negative coordinates
+because using &lt;code&gt;display: none;&lt;/code&gt; will prevent the &lt;code&gt;onReady&lt;/code&gt; handler
+from the Youtube player from triggering on Firefox. I ran across this problem
+when making &lt;a href="http://kaeru.neritic.net/projects/short-experiments/walk"&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, here's &lt;a href="http://kaeruct.github.io/examples/yt-js-api"&gt;a full example&lt;/a&gt; that will wait for the video to
+load and automatically play it:&lt;/p&gt;
+&lt;script src="https://gist.github.com/KaeruCT/dcfae82a15af514ea95e.js"&gt;&lt;/script&gt;&lt;/div&gt;</description><category>javascript</category><category>tutorials</category><category>youtube</category><guid>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</guid><pubDate>Fri, 23 May 2014 18:29:55 GMT</pubDate></item></channel></rss>

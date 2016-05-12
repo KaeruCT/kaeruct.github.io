@@ -1,0 +1,4 @@
+Sitemap: http://kaeruct.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: kaeruct.github.io

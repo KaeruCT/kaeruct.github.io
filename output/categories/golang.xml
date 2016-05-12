@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Pejibaye Blog (golang)</title><link>http://kaeruct.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://kaeruct.github.io/categories/golang.xml"></atom:link><language>en</language><lastBuildDate>Wed, 11 May 2016 23:10:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Go Learn</title><link>http://kaeruct.github.io/posts/go-learn.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Today I decided to try out &lt;a href="http://golang.org/"&gt;Go&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;What is Go?&lt;/h3&gt;
+&lt;p&gt;Go is a programming language designed and developed at Google.
+It was designed by really smart people: Robert Griesemer,
+Rob Pike, and Ken Thompson.&lt;/p&gt;
+&lt;p&gt;Syntax-wise, it looks a lot like C, except the ending semicolons
+are optional, and parentheses for &lt;code&gt;if&lt;/code&gt;, &lt;code&gt;for&lt;/code&gt;, etc are not required.&lt;/p&gt;
+&lt;p&gt;Here's a gist showing some syntax:
+&lt;script src="https://gist.github.com/KaeruCT/6488745.js"&gt;&lt;/script&gt;
+It's a fibonacci calculator made using a closure, caching previously calculated numbers.&lt;/p&gt;
+&lt;h3&gt;Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Statically typed (but types can be inferred).&lt;/li&gt;
+&lt;li&gt;Concurrency baked in (goroutines, channels).&lt;/li&gt;
+&lt;li&gt;Garbage collection.&lt;/li&gt;
+&lt;li&gt;Fast compile times.&lt;/li&gt;
+&lt;li&gt;No classes (you attach functions to structs instead).&lt;/li&gt;
+&lt;li&gt;No inheritance (Go makes heavy use of interfaces).&lt;/li&gt;
+&lt;li&gt;No overloading.&lt;/li&gt;
+&lt;li&gt;No pointer arithmetic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Coding in Go&lt;/h3&gt;
+&lt;p&gt;To learn Go, I first did a quick read of
+&lt;a href="http://learnxinyminutes.com/docs/go/"&gt;Learn X in Y Minutes&lt;/a&gt; to get
+a grip of the syntax.&lt;/p&gt;
+&lt;p&gt;Then, I went over to their official website and took the &lt;a href="http://tour.golang.org/"&gt;tour&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Afterwards, I wanted to get a working application. Go includes an
+http server in their official packages, so I decided to make a
+web application.&lt;/p&gt;
+&lt;p&gt;After a little searching, I found they had a &lt;a href="http://golang.org/doc/articles/wiki/"&gt;tutorial&lt;/a&gt;
+aimed at web applications, so I decided to use exactly that.
+Go documentation rocks!&lt;/p&gt;
+&lt;p&gt;I followed the tutorial along and was able to get a wiki type of website
+up and running in about 20 minutes. After that, I decided I wanted
+to add markdown support to it, and a few more features, like creating
+new pages and deleting pages.&lt;/p&gt;
+&lt;p&gt;One thing I really liked about Go is that it comes with a lot of useful packages
+so you can start working right away. For example, I thought I would have
+to write some sort of templating system, but Go already comes with one.
+And it's context aware! So you don't have to worry about escaping things!&lt;/p&gt;
+&lt;h3&gt;Packages&lt;/h3&gt;
+&lt;p&gt;Go's packaging system allows you to get packages from VCS repositories.
+For example, to add markdown support to my wiki, I added
+&lt;a href="https://github.com/knieriem/markdown"&gt;knieriem's markdown package&lt;/a&gt; as a git
+submodule in my project.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://kaeruct.github.io/galleries/learning-go/"&gt;
+    &lt;img width="540px" class="thumbnail" src="http://kaeruct.github.io/galleries/learning-go/learning-go1.png"&gt;
+    &lt;center&gt;A screenshot of my development process. Click to see the gallery.&lt;/center&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As usual, my project is on &lt;a href="https://github.com/KaeruCT/go-learn"&gt;Github&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>golang</category><category>programming-projects</category><guid>http://kaeruct.github.io/posts/go-learn.html</guid><pubDate>Sun, 08 Sep 2013 22:33:11 GMT</pubDate></item></channel></rss>

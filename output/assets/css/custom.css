@@ -1,0 +1,81 @@
+.postlist time {
+  margin-right: .5em;
+}
+
+@media (min-width: 56em) {
+  .container {
+      max-width: 46rem;
+  }
+}
+
+.metadata .dateline {
+  float: left;
+}
+
+.metadata .dateline .post-date {
+  margin: 0;
+}
+
+.metadata .dateline a:hover {
+  color: #9a9a9a;
+}
+
+.metadata .commentline {
+  float: right;
+}
+
+.metadata .byline.author {
+  display: none;
+}
+
+.entry-content {
+  clear: both;
+}
+.tagindex .postlist, .tags {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+.tagindex .postlist {
+  margin-bottom: 2em;
+}
+.tagindex li, .tags li {
+  font-size: .8em;
+  list-style-type: none;
+  float: left;
+  margin-right: .5em;
+  margin-top: .2em;
+  border: #ccc 1px solid;
+  padding: .25em;
+}
+.pager {
+  margin-top: 1em;
+  padding: 0;
+  clear: both;
+  text-align: right;
+}
+.pager .previous, .pager .next {
+  list-style-type: none;
+  margin-right: 1em;
+  display: inline;
+}
+
+.sidebar {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+.masthead-title {
+  font-size: 1.7em;
+}
+
+.logo {
+  height: 86px;
+  display: inline;
+  vertical-align: middle;
+  margin: 0;
+}
+
+#footer {
+  clear: both;
+}

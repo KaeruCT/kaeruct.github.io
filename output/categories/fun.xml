@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Pejibaye Blog (fun)</title><link>http://kaeruct.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://kaeruct.github.io/categories/fun.xml"></atom:link><language>en</language><lastBuildDate>Wed, 11 May 2016 23:10:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rainbow Tunnel</title><link>http://kaeruct.github.io/posts/rainbow-tunnel.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Today I had some more time to code something fun, so I decided to make a tunnel
+of sorts.&lt;/p&gt;
+&lt;p&gt;The trick is really simple, first you just draw rings around the center of the page,
+and tweak their position a bit depending on the position of the mouse.&lt;/p&gt;
+&lt;p&gt;To achieve the rainbow effect, you just have to make it so each ring has its hue value
+a little higher than the ring before it, and increase all of the rings' hues each frame.&lt;/p&gt;
+&lt;p&gt;I did it a little different than that, I have a base hue, which I increase every frame,
+and then when each ring gets drawn, it uses the base hue plus a small increment
+(which you can control with the mouse wheel).&lt;/p&gt;
+&lt;p&gt;I guess this is a bit trippy? &lt;a href="http://kaeruct.github.io/projects/tunnel"&gt;See it full-screen here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://kaeruct.github.io/projects/tunnel"&gt;&lt;iframe src="http://kaeruct.github.io/projects/tunnel"&gt;&lt;/iframe&gt;&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>fun</category><category>javascript</category><category>programming-projects</category><guid>http://kaeruct.github.io/posts/rainbow-tunnel.html</guid><pubDate>Thu, 07 Mar 2013 20:44:50 GMT</pubDate></item><item><title>Messing Around With Trig</title><link>http://kaeruct.github.io/posts/messing-around-with-trig.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Yesterday after work I had some time to waste, so I decided to do some
+silly things in javascript with a canvas and some trigonometric magic.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://kaeruct.github.io/galleries/rainbow"&gt;Here are some screenshots of what they look like&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Move your mouse around to change some variables, and click to toggle clearing of
+the canvas. You can achieve some trippy effects!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://kaeruct.github.io/projects/lel"&gt;colorful sine wave&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://kaeruct.github.io/projects/flower"&gt;colorful flower&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are all on my github, in case you wanna &lt;a href="https://github.com/KaeruCT/short-experiments"&gt;take a look&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>fun</category><category>javascript</category><category>programming-projects</category><guid>http://kaeruct.github.io/posts/messing-around-with-trig.html</guid><pubDate>Tue, 05 Mar 2013 19:49:47 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Pejibaye Blog (ruby)</title><link>http://kaeruct.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://kaeruct.github.io/categories/ruby.xml"></atom:link><language>en</language><lastBuildDate>Wed, 11 May 2016 23:10:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Trying out Ruby on Rails</title><link>http://kaeruct.github.io/posts/trying-out-ruby-on-rails.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I've heard a lot of stuff about RoR for a while, so I decided to finally
+try it out and see what all the fuss is about.&lt;/p&gt;
+&lt;p&gt;What is Ruby on Rails? A web framework that runs on the Ruby programming language.&lt;/p&gt;
+&lt;p&gt;First impressions: too much magic going on. It seems like a good thing for quick
+development, but I prefer knowing exactly what is going on in case anything
+goes wrong so the problem can be fixed easily. For this reason, I probably will not use RoR
+on any on my projects until I understand more about it.&lt;/p&gt;
+&lt;p&gt;Things I liked about RoR: the ActiveRecord ORM, and the built-in REST support.
+I also liked that it is very easy to deploy once you know what you're doing.&lt;/p&gt;
+&lt;p&gt;Thinks I dislike so far: using SCSS and Coffeescript by default.
+These could add to the cognitive load of beginner, and they have to wrap their
+head around how RoR first has to process these files into what the browser
+can understand (CSS y JavaScript, respectively).&lt;/p&gt;
+&lt;p&gt;I've never been a big fan of Coffeescript. I think it's annoying to debug
+and I would rather write plain JavaScript, but that's just my opinion. However, I do think
+it has a nice syntax.&lt;/p&gt;
+&lt;p&gt;I had heard of SCSS, but I had never used it. It's very enjoyable to use, since you
+can nest CSS definitions, and it has some neat features that make it a lot easier
+to maintain stylesheets, such as variables and functions.&lt;/p&gt;
+&lt;p&gt;When learning a new framework, I try to follow the official tutorial,
+but tweaking the steps a bit in order to create a different application.&lt;/p&gt;
+&lt;p&gt;To learn RoR, I decided to make a small contacts application, where you can add contacts to a list
+and edit/delete them. &lt;a href="https://github.com/KaeruCT/learning-rails-contacts-app"&gt;It's on a repo at Github&lt;/a&gt;,
+in case you wanna take a look.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://kaeruct.github.io/galleries/learning-rails/"&gt;
+    &lt;img width="540px" class="thumbnail" src="http://kaeruct.github.io/galleries/learning-rails/screenshot.png"&gt;
+    &lt;center&gt;A screenshot of my development process. Click to see the gallery.&lt;/center&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now I'm also learning Django (a python web framework), and everything seems a lot less magical,
+so I will probably use it instead of RoR.
+Both of them seem to solve the same problem (CRUD apps).&lt;/p&gt;&lt;/div&gt;</description><category>programming-projects</category><category>ruby</category><guid>http://kaeruct.github.io/posts/trying-out-ruby-on-rails.html</guid><pubDate>Sun, 30 Jun 2013 06:21:53 GMT</pubDate></item></channel></rss>
