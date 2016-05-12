@@ -532,14 +532,14 @@ REDIRECTIONS = []
 # to `nikola deploy`.  If no arguments are specified, a preset
 # named `default` will be executed.  You can use as many presets
 # in a `nikola deploy` command as you like.
-DEPLOY_COMMANDS = [
-    "git checkout master",
-    "rsync -rPv --delete-after --exclude .git --exclude .gitignore --exclude cache/ --exclude .doit.db.db output/ .",
-    "git add -A",
-    "git commit -a -m 'Updating blog content'",
-    "git push",
-    "git checkout deploy",
-]
+#DEPLOY_COMMANDS = [
+#    "git checkout master",
+#    "rsync -rPv --delete-after --exclude .git --exclude .gitignore --exclude cache/ --exclude .doit.db.db output/ .",
+#    "git add -A",
+#    "git commit -a -m 'Updating blog content'",
+#    "git push",
+#    "git checkout deploy",
+#]
 
 # github_deploy configuration
 # For more details, read the manual:
