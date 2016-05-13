@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://kaeruct.github.io/categories/fun.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2016-05-13T02:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/golang.xml</loc>
@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/javascript.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2016-05-13T02:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/linux.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/programming-projects.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2016-05-13T02:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/ramblings.xml</loc>
@@ -75,10 +75,10 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/rss.xml</loc>
-  <lastmod>2016-05-11T23:37:00Z</lastmod>
+  <lastmod>2016-05-13T02:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/sitemap.xml</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-13T02:47:00Z</lastmod>
  </sitemap>
 </sitemapindex>
