@@ -60,7 +60,7 @@
   display: inline;
 }
 
-.sidebar {
+#sidebar {
   border-radius: 0;
   -webkit-border-radius: 0;
 }
