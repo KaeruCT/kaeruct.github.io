@@ -22,4 +22,4 @@ and then when each ring gets drawn, it uses the base hue plus a small increment
 
 I guess this is a bit trippy? [See it full-screen here](/projects/tunnel).
 
-<a href="/projects/tunnel"><iframe src="/projects/tunnel"></a>
+<a href="/projects/tunnel"><iframe src="https://kaeruct.github.io/projects/tunnel/"></a>
