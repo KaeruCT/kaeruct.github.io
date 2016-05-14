@@ -14,8 +14,16 @@
   <lastmod>2016-05-12T01:23:00Z</lastmod>
  </url>
  <url>
+  <loc>http://kaeruct.github.io/2016/index.html</loc>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://kaeruct.github.io/archive.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://kaeruct.github.io/categories/email.html</loc>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/categories/fun.html</loc>
@@ -27,7 +35,7 @@
  </url>
  <url>
   <loc>http://kaeruct.github.io/categories/index.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:40:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/categories/java.html</loc>
@@ -39,7 +47,7 @@
  </url>
  <url>
   <loc>http://kaeruct.github.io/categories/linux.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/categories/math.html</loc>
@@ -59,7 +67,7 @@
  </url>
  <url>
   <loc>http://kaeruct.github.io/categories/tutorials.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/categories/youtube.html</loc>
@@ -75,7 +83,7 @@
  </url>
  <url>
   <loc>http://kaeruct.github.io/galleries/index.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:58:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/galleries/kaeruftpload/index.html</loc>
@@ -94,8 +102,16 @@
   <lastmod>2016-05-12T01:23:00Z</lastmod>
  </url>
  <url>
+  <loc>http://kaeruct.github.io/galleries/screenshots/index.html</loc>
+  <lastmod>2016-05-14T16:58:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://kaeruct.github.io/index-1.html</loc>
   <lastmod>2016-05-12T01:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://kaeruct.github.io/index-10.html</loc>
+  <lastmod>2016-05-14T16:40:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/index-2.html</loc>
@@ -127,11 +143,11 @@
  </url>
  <url>
   <loc>http://kaeruct.github.io/index-9.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:40:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/index.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/listings/index.html</loc>
@@ -139,7 +155,7 @@
  </url>
  <url>
   <loc>http://kaeruct.github.io/posts/generating-partnerjar-for-salesforce-api-integration.html</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2016-05-14T16:40:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/posts/go-learn.html</loc>
@@ -172,6 +188,10 @@
  <url>
   <loc>http://kaeruct.github.io/posts/rainbow-tunnel.html</loc>
   <lastmod>2016-05-13T02:47:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</loc>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://kaeruct.github.io/posts/trying-out-ruby-on-rails.html</loc>

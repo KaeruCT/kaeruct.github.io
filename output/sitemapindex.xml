@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>http://kaeruct.github.io/categories/email.xml</loc>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://kaeruct.github.io/categories/fun.xml</loc>
   <lastmod>2016-05-13T02:47:00Z</lastmod>
  </sitemap>
@@ -23,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/linux.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/math.xml</loc>
@@ -43,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tutorials.xml</loc>
-  <lastmod>2016-05-11T23:37:00Z</lastmod>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/youtube.xml</loc>
@@ -74,11 +78,15 @@
   <lastmod>2016-05-12T01:23:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://kaeruct.github.io/galleries/screenshots/rss.xml</loc>
+  <lastmod>2016-05-14T16:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://kaeruct.github.io/rss.xml</loc>
-  <lastmod>2016-05-13T02:47:00Z</lastmod>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/sitemap.xml</loc>
-  <lastmod>2016-05-13T02:47:00Z</lastmod>
+  <lastmod>2016-05-14T16:59:00Z</lastmod>
  </sitemap>
 </sitemapindex>

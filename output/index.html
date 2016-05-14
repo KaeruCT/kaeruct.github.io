@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://kaeruct.github.io/index.html">
-<link rel="next" href="index-9.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/generating-partnerjar-for-salesforce-api-integration.html" type="text/html">
+<link rel="next" href="index-10.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/setting-up-sendmail-to-redirect-emails.html" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -47,38 +47,117 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/generating-partnerjar-for-salesforce-api-integration.html" class="u-url">Generating partner.jar for Salesforce API Integration</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/setting-up-sendmail-to-redirect-emails.html" class="u-url">Setting up sendmail to redirect emails</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Andres Villarreal</span></p>
-            <p class="dateline"><a href="posts/generating-partnerjar-for-salesforce-api-integration.html" rel="bookmark"><time class="post-date published dt-published" datetime="2014-11-12T02:12:38+00:00" title="Nov 12, 2014 02:12 AM">Nov 12, 2014 02:12 AM</time></a></p>
+            <p class="dateline"><a href="posts/setting-up-sendmail-to-redirect-emails.html" rel="bookmark"><time class="post-date published dt-published" datetime="2016-05-14T10:33:44-06:00" title="May 14, 2016 10:33 AM">May 14, 2016 10:33 AM</time></a></p>
                 <p class="commentline">
         
-    <a href="posts/generating-partnerjar-for-salesforce-api-integration.html#disqus_thread" data-disqus-identifier="cache/posts/generating-partnerjar-for-salesforce-api-integration.html">Comments</a>
+    <a href="posts/setting-up-sendmail-to-redirect-emails.html#disqus_thread" data-disqus-identifier="cache/posts/setting-up-sendmail-to-redirect-emails.html">Comments</a>
 
 
         </p>
 </div>
     </header><div class="e-content entry-content">
     <div>
-<p>I ran into a small issue recently when setting up a Java project to use the
-Salesforce APIs.</p>
-<p>Basically, you need to download a WSDL file from Salesforce, then use a tool made
-by them to generate a jar that you then include in your Java program.</p>
-<p>They instruct you to <a href="http://mvnrepository.com/artifact/com.force.api/force-wsc/">download <code>force-wsc.jar</code></a> and then run it, but when
-you run it you realize they didn't pack the dependencies within the jar!</p>
-<p>To solve this problem, you need to download the following jars:</p>
+<p><small>
+  Disclaimer: the instructions below are for Ubuntu, but they should work for most distros,
+  the biggest difference is that the configuration files might be located elsewhere.
+</small></p>
+<p>If you're like me, you have a main email address and other email addresses set up in other domains.</p>
+<p>I dislike having to check all my email addresses individually, so I set up my mail servers to redirect
+all the email to my main address automatically.</p>
+<p>Sendmail has an aliases feature that makes this very simple to set up.</p>
+<p>Let's say you want to redirect emails this way:</p>
 <ul>
-<li><a href="http://mvnrepository.com/artifact/rhino/js/1.7R2">js-1.7R2.jar</a></li>
-<li><a href="http://mvnrepository.com/artifact/org.antlr/ST4/4.0.7">ST-4.0.7.jar</a></li>
+<li>
+<code>webmaster@yourdomain.com</code> -&gt; <code>example@gmail.com, someoneelse@gmail.com</code>
+</li>
+<li>
+<code>help@yourdomain.com</code> -&gt; <code>helper@gmail.com</code>
+</li>
+<li>
+<code>support@yourdomain.com</code> -&gt; <code>helper@gmail.com</code>
+</li>
 </ul>
-<p>And then run <code>force-wsc.jar</code>, including the dependencies in the classpath:</p>
-<pre class="code literal-block"><span></span>$ java -classpath force-wsc-32.1.1.jar:js-1.7R2.jar:ST-4.0.7.jar <span class="se">\</span>
-  com.sforce.ws.tools.wsdlc partner.wsdl partner-32.1.1.jar
+<p>Follow these steps as root:</p>
+<ol>
+<li>
+<p>Change the <code>/etc/mail/aliases</code> file to look like this:</p>
+<pre class="code literal-block"><span></span> webmaster: example@gmail.com, someoneelse@gmail.com
+ help: helper@gmail.com
+ support: help
 </pre>
 
 
-<p>Please note these were the versions that worked for me. If your <code>force-wsc.jar</code> is
-a different version, check if you need to include other version of its dependencies.</p>
+<p>As you can see, each line in the file matches an origin email to a destination email.
+ Each line can reference previous entries as well.</p>
+</li>
+<li>
+<p>After changing the file, run:</p>
+<pre class="code literal-block"><span></span> $ newaliases
+</pre>
+
+
+</li>
+<li>
+<p>Make sure port 25 is open on your machine, so sendmail is able to listen for incoming email:</p>
+<pre class="code literal-block"><span></span> $ iptables -A INPUT -p tcp --dport 25 -j ACCEPT
+</pre>
+
+
+<p>Also make sure to save the iptables rules so they will be restored when the service restarts.
+ This varies by distro, so it's better to google something like <code>iptables save &lt;your distro&gt;</code>.</p>
+</li>
+<li>
+<p>Change <code>/etc/mail/sendmail.mc</code> so sendmail receives email from the outside world.</p>
+<p>Change this line:</p>
+<pre class="code literal-block"><span></span> DAEMON_OPTIONS(`Family=inet,  Name=MTA-v4, Port=smtp, Addr=127.0.0.1')dnl
+</pre>
+
+
+<p>to</p>
+<pre class="code literal-block"><span></span> DAEMON_OPTIONS(`Family=inet,  Name=MTA-v4, Port=smtp')dnl
+</pre>
+
+
+<p>We're not done modifying this file yet.
+ Now we need to verify that the domain in the configuration matches your server's domain. If not, change it:</p>
+<pre class="code literal-block"><span></span> MASQUERADE_AS(`yourdomain.com')dnl
+</pre>
+
+
+</li>
+<li>
+<p>After saving the file, you need to regenerate <code>sendmail.cf</code>:</p>
+<pre class="code literal-block"><span></span> m4 /etc/mail/sendmail.mc &gt; /etc/mail/sendmail.cf
+</pre>
+
+
+</li>
+<li>
+<p>Add your domain to <code>/etc/mail/local-host-names</code>. This file has a domain per line.
+    If your domain is not there, add it on a new line.</p>
+</li>
+<li>
+<p>Restart sendmail:</p>
+<pre class="code literal-block"><span></span> $ /etc/init.d/sendmail restart
+</pre>
+
+
+</li>
+</ol>
+<p>Depending on the configuration of your email client or web UI, the emails might end up stuck in a spam folder,
+so make sure to check there.</p>
+<p>If you use Gmail, you can make a filter to avoid sending your redirected emails to spam.
+To do so:</p>
+<ol>
+<li>Do a search for <code>from:yourdomain.com</code>.</li>
+<li>Click on "Create a filter with this search".</li>
+<li>Check the "Never send it to Spam" box.</li>
+<li>Click on "Create filter".</li>
+</ol>
+<p><img alt="Preventing email from being sent to Spam" src="galleries/screenshots/nospamfilter.png"></p>
 </div>
     </div>
     </article>
@@ -86,7 +165,7 @@ a different version, check if you need to include other version of its dependenc
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-9.html" rel="next">Older posts</a>
+                <a href="index-10.html" rel="next">Older posts</a>
             </li>
         </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2016 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
