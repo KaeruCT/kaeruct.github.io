@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Pejibaye Blog (linux)</title><link>http://kaeruct.github.io/</link><description></description><atom:link type="application/rss+xml" href="http://kaeruct.github.io/categories/linux.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 14 May 2016 16:59:49 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Setting up sendmail to redirect emails</title><link>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;small&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Pejibaye Blog (email)</title><link>http://kaeruct.github.io/</link><description></description><atom:link type="application/rss+xml" href="http://kaeruct.github.io/categories/email.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 14 May 2016 16:59:49 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Setting up sendmail to redirect emails</title><link>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;small&gt;
   Disclaimer: the instructions below are for Ubuntu, but they should work for most distros,
   the biggest difference is that the configuration files might be located elsewhere.
 &lt;/small&gt;&lt;/p&gt;
@@ -90,24 +90,4 @@ To do so:&lt;/p&gt;
 &lt;li&gt;Check the "Never send it to Spam" box.&lt;/li&gt;
 &lt;li&gt;Click on "Create filter".&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt="Preventing email from being sent to Spam" src="http://kaeruct.github.io/galleries/screenshots/nospamfilter.png"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>email</category><category>linux</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</guid><pubDate>Sat, 14 May 2016 16:33:44 GMT</pubDate></item><item><title>Just switched to Ubuntu</title><link>http://kaeruct.github.io/posts/just-switched-to-ubuntu.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I decided to replace the Arch Linux installation on my desktop (my main computer)
-with Ubuntu. Too bad I don't get to feel 1337 for using Arch anymore.&lt;/p&gt;
-&lt;p&gt;So far, so good, except I had a few issues when setting up Eclipse,
-but I always seem to get issues when installing Eclipse, no matter what platform...&lt;/p&gt;
-&lt;p&gt;One of the main reasons why I decided to do this is because whenever I updated
-Arch, something would break. I really like the bleeding edge idea behind Arch, but
-I'd prefer to have some stability in the operating system I need to use every day.
-I also don't have as much time as I had before to get everything working after
-an update. This is the same reason why I started using Ubuntu instead on Arch
-on new installations.&lt;/p&gt;
-&lt;p&gt;Not to say Ubuntu is perfect, either. I spent some time tweaking it so I could have
-the same setup I had in Arch. I don't hate Unity, but I don't really enjoy using
-it either, so the first thing I did was install XFCE. Afterwards, I installed
-all the development stuff I need for work. It's really easy to get
-a LAMP server ready in Ubuntu by using &lt;a href="https://help.ubuntu.com/community/Tasksel"&gt;tasksel&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;One thing I love about Linux is how you can just copy your whole /home/user
-directory and dump it on another installation, and most programs will pick up
-the correct settings. This made it really quick to get all my stuff up and running
-exactly how I had it set up before. Actually, I have a
-&lt;a href="https://github.com/KaeruCT/kaeru-linux-configs"&gt;git repo&lt;/a&gt; just for that.&lt;/p&gt;
-&lt;p&gt;Now... back to programming.&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><category>ramblings</category><guid>http://kaeruct.github.io/posts/just-switched-to-ubuntu.html</guid><pubDate>Tue, 28 May 2013 23:25:16 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;img alt="Preventing email from being sent to Spam" src="http://kaeruct.github.io/galleries/screenshots/nospamfilter.png"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>email</category><category>linux</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</guid><pubDate>Sat, 14 May 2016 16:33:44 GMT</pubDate></item></channel></rss>

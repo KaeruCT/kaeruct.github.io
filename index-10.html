@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="description" content="Fun and code">
 <meta name="viewport" content="width=device-width">
-<title>Pejibaye Blog (old posts, page 9) | Pejibaye Blog</title>
+<title>Pejibaye Blog (old posts, page 10) | Pejibaye Blog</title>
 <link href="assets/css/all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="http://kaeruct.github.io/index-9.html">
-<link rel="prev" href="index-10.html" type="text/html">
-<link rel="next" href="index-8.html" type="text/html">
+<link rel="canonical" href="http://kaeruct.github.io/index-10.html">
+<link rel="prev" href="index.html" type="text/html">
+<link rel="next" href="index-9.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -48,32 +48,38 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html" class="u-url">How to use the Youtube JS API to play music in the background</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/generating-partnerjar-for-salesforce-api-integration.html" class="u-url">Generating partner.jar for Salesforce API Integration</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Andres Villarreal</span></p>
-            <p class="dateline"><a href="posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html" rel="bookmark"><time class="post-date published dt-published" datetime="2014-05-23T18:29:55+00:00" title="May 23, 2014 06:29 PM">May 23, 2014 06:29 PM</time></a></p>
+            <p class="dateline"><a href="posts/generating-partnerjar-for-salesforce-api-integration.html" rel="bookmark"><time class="post-date published dt-published" datetime="2014-11-12T02:12:38+00:00" title="Nov 12, 2014 02:12 AM">Nov 12, 2014 02:12 AM</time></a></p>
                 <p class="commentline">
         
-    <a href="posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html#disqus_thread" data-disqus-identifier="cache/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html">Comments</a>
+    <a href="posts/generating-partnerjar-for-salesforce-api-integration.html#disqus_thread" data-disqus-identifier="cache/posts/generating-partnerjar-for-salesforce-api-integration.html">Comments</a>
 
 
         </p>
 </div>
     </header><div class="e-content entry-content">
     <div>
-<p>The Youtube JavaScript API allows you to embed YouTube videos and
-interact with them programatically. To use it, first you need to embed this
-script into your page:</p>
-<p><code>&lt;script src="http://www.youtube.com/player_api"&gt;&lt;/script&gt;</code>.</p>
-<p>If you just want the audio, you can hide the element that contains the video:</p>
-<p><code>&lt;div id="player" style="position: absolute; top: -9999px; left: -9999px;"&gt;&lt;/div&gt;</code></p>
-<p>Here we use absolute positioning with negative coordinates
-because using <code>display: none;</code> will prevent the <code>onReady</code> handler
-from the Youtube player from triggering on Firefox. I ran across this problem
-when making <a href="http://kaeru.neritic.net/projects/short-experiments/walk">this</a>.</p>
-<p>Finally, here's <a href="examples/yt-js-api">a full example</a> that will wait for the video to
-load and automatically play it:</p>
-<script src="https://gist.github.com/KaeruCT/dcfae82a15af514ea95e.js"></script>
+<p>I ran into a small issue recently when setting up a Java project to use the
+Salesforce APIs.</p>
+<p>Basically, you need to download a WSDL file from Salesforce, then use a tool made
+by them to generate a jar that you then include in your Java program.</p>
+<p>They instruct you to <a href="http://mvnrepository.com/artifact/com.force.api/force-wsc/">download <code>force-wsc.jar</code></a> and then run it, but when
+you run it you realize they didn't pack the dependencies within the jar!</p>
+<p>To solve this problem, you need to download the following jars:</p>
+<ul>
+<li><a href="http://mvnrepository.com/artifact/rhino/js/1.7R2">js-1.7R2.jar</a></li>
+<li><a href="http://mvnrepository.com/artifact/org.antlr/ST4/4.0.7">ST-4.0.7.jar</a></li>
+</ul>
+<p>And then run <code>force-wsc.jar</code>, including the dependencies in the classpath:</p>
+<pre class="code literal-block"><span></span>$ java -classpath force-wsc-32.1.1.jar:js-1.7R2.jar:ST-4.0.7.jar <span class="se">\</span>
+  com.sforce.ws.tools.wsdlc partner.wsdl partner-32.1.1.jar
+</pre>
+
+
+<p>Please note these were the versions that worked for me. If your <code>force-wsc.jar</code> is
+a different version, check if you need to include other version of its dependencies.</p>
 </div>
     </div>
     </article>
@@ -81,10 +87,10 @@ load and automatically play it:</p>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="index-10.html" rel="prev">Newer posts</a>
+                <a href="index.html" rel="prev">Newer posts</a>
             </li>
             <li class="next">
-                <a href="index-8.html" rel="next">Older posts</a>
+                <a href="index-9.html" rel="next">Older posts</a>
             </li>
         </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2016 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
