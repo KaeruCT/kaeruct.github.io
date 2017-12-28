@@ -2,27 +2,16 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="Fun and code">
 <meta name="viewport" content="width=device-width">
-<title>Setting up sendmail to redirect emails | Pejibaye Blog</title>
-<link href="../assets/css/all.css" rel="stylesheet" type="text/css">
+<title>Pejibaye Blog (old posts, page 11) | Pejibaye Blog</title>
+<link href="assets/css/all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Andres Villarreal">
-<link rel="prev" href="generating-partnerjar-for-salesforce-api-integration.html" title="Generating partner.jar for Salesforce API Integration" type="text/html">
-<link rel="next" href="migrating-old-style-javascript-code-to-es6.html" title="Migrating old-style JavaScript code to ES6" type="text/html">
-<meta property="og:site_name" content="Pejibaye Blog">
-<meta property="og:title" content="Setting up sendmail to redirect emails">
-<meta property="og:url" content="http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html">
-<meta property="og:description" content="Disclaimer: the instructions below are for Ubuntu, but they should work for most distros,
-  the biggest difference is that the configuration files might be located elsewhere.
-
-If you're like me, you h">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-05-14T10:33:44-06:00">
-<meta property="article:tag" content="email">
-<meta property="article:tag" content="linux">
-<meta property="article:tag" content="tutorials">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="http://kaeruct.github.io/index-11.html">
+<link rel="prev" href="index.html" type="text/html">
+<link rel="next" href="index-10.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -30,10 +19,10 @@ If you're like me, you h">
             styles, `#sidebar-checkbox` for behavior. -->
     <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
         
-    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../stories/about.html">About</a>
-        <a class="sidebar-nav-item" href="../archive.html">Archive</a>
-        <a class="sidebar-nav-item" href="../categories/index.html">Tags</a>
-        <a class="sidebar-nav-item" href="../rss.xml">RSS feed</a>
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="stories/about.html">About</a>
+        <a class="sidebar-nav-item" href="archive.html">Archive</a>
+        <a class="sidebar-nav-item" href="categories/index.html">Tags</a>
+        <a class="sidebar-nav-item" href="rss.xml">RSS feed</a>
     
     
     </nav>
@@ -47,7 +36,7 @@ If you're like me, you h">
           
     <h3 id="brand" class="masthead-title">
       <a href="http://kaeruct.github.io/" title="Pejibaye Blog" rel="home">
-        <img src="../pejibaye.jpg" class="logo" alt="">
+        <img src="pejibaye.jpg" class="logo" alt="">
         Pejibaye Blog
       </a>
     </h3>
@@ -57,21 +46,20 @@ If you're like me, you h">
 
       <div class="container content" id="content">
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Setting up sendmail to redirect emails</a></h1>
 
+<div class="posts">
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/setting-up-sendmail-to-redirect-emails.html" class="u-url">Setting up sendmail to redirect emails</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Andres Villarreal</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="post-date published dt-published" datetime="2016-05-14T10:33:44-06:00" itemprop="datePublished" title="May 14, 2016 10:33 AM">May 14, 2016 10:33 AM</time></a></p>
+            <p class="dateline"><a href="posts/setting-up-sendmail-to-redirect-emails.html" rel="bookmark"><time class="post-date published dt-published" datetime="2016-05-14T10:33:44-06:00" title="May 14, 2016 10:33 AM">May 14, 2016 10:33 AM</time></a></p>
                 <p class="commentline">
         
-    <a href="setting-up-sendmail-to-redirect-emails.html#disqus_thread" data-disqus-identifier="cache/posts/setting-up-sendmail-to-redirect-emails.html">Comments</a>
+    <a href="posts/setting-up-sendmail-to-redirect-emails.html#disqus_thread" data-disqus-identifier="cache/posts/setting-up-sendmail-to-redirect-emails.html">Comments</a>
 
 
         </p>
 </div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
+    </header><div class="e-content entry-content">
     <div>
 <p><small>
   Disclaimer: the instructions below are for Ubuntu, but they should work for most distros,
@@ -170,44 +158,20 @@ To do so:</p>
 <li>Check the "Never send it to Spam" box.</li>
 <li>Click on "Create filter".</li>
 </ol>
-<p><img alt="Preventing email from being sent to Spam" src="../galleries/screenshots/nospamfilter.png"></p>
+<p><img alt="Preventing email from being sent to Spam" src="galleries/screenshots/nospamfilter.png"></p>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../categories/email.html" rel="tag">email</a></li>
-            <li><a class="tag p-category" href="../categories/linux.html" rel="tag">linux</a></li>
-            <li><a class="tag p-category" href="../categories/tutorials.html" rel="tag">tutorials</a></li>
-        </ul>
-<ul class="pager hidden-print">
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="generating-partnerjar-for-salesforce-api-integration.html" rel="prev" title="Generating partner.jar for Salesforce API Integration">Previous post</a>
+                <a href="index.html" rel="prev">Newer posts</a>
             </li>
             <li class="next">
-                <a href="migrating-old-style-javascript-code-to-es6.html" rel="next" title="Migrating old-style JavaScript code to ES6">Next post</a>
+                <a href="index-10.html" rel="next">Older posts</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
-        
-        
-        <div id="disqus_thread"></div>
-        <script>
-        var disqus_shortname ="pejibayeblog",
-            disqus_url="http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html",
-        disqus_title="Setting up sendmail to redirect emails",
-        disqus_identifier="cache/posts/setting-up-sendmail-to-redirect-emails.html",
-        disqus_config = function () {
-            this.language = "en";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.async = true;
-            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
-    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-        </section></article><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2017 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
+        </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2017 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
         </footer>
 </div>

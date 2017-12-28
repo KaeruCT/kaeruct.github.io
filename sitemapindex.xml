@@ -10,83 +10,95 @@
   <lastmod>2016-05-14T16:59:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://kaeruct.github.io/categories/es6.xml</loc>
+  <lastmod>2017-12-28T22:52:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://kaeruct.github.io/categories/fun.xml</loc>
-  <lastmod>2016-05-13T02:47:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/golang.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/java.xml</loc>
-  <lastmod>2016-05-11T23:37:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/javascript.xml</loc>
-  <lastmod>2016-05-13T02:47:00Z</lastmod>
+  <lastmod>2017-12-28T22:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/linux.xml</loc>
-  <lastmod>2016-05-14T16:59:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/math.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/programming-projects.xml</loc>
-  <lastmod>2016-05-13T02:47:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/ramblings.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://kaeruct.github.io/categories/refactoring.xml</loc>
+  <lastmod>2017-12-28T22:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/ruby.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tutorials.xml</loc>
-  <lastmod>2016-05-14T16:59:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://kaeruct.github.io/categories/webpack.xml</loc>
+  <lastmod>2017-12-28T22:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/youtube.xml</loc>
-  <lastmod>2016-05-11T23:10:00Z</lastmod>
+  <lastmod>2017-12-28T21:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/glxy-android/rss.xml</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2017-12-28T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/kaeruftpload/rss.xml</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2017-12-28T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/learning-go/rss.xml</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2017-12-28T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/learning-rails/rss.xml</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2017-12-28T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/rainbow/rss.xml</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2017-12-28T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/rss.xml</loc>
-  <lastmod>2016-05-12T01:23:00Z</lastmod>
+  <lastmod>2017-12-28T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/screenshots/rss.xml</loc>
-  <lastmod>2016-05-14T16:58:00Z</lastmod>
+  <lastmod>2017-12-28T22:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/rss.xml</loc>
-  <lastmod>2016-05-14T16:59:00Z</lastmod>
+  <lastmod>2017-12-28T22:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/sitemap.xml</loc>
-  <lastmod>2016-05-14T16:59:00Z</lastmod>
+  <lastmod>2017-12-28T22:52:00Z</lastmod>
  </sitemap>
 </sitemapindex>
