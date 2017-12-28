@@ -84,8 +84,8 @@ I ran all the "safe" transformations, verified them, and then ran some of the "u
 <p>Finally, I ran the build and our mocha tests to make sure they still passed.
 The tests broke in a few places because of things like variables being shadowed because of the changes from <code>var</code> to <code>let</code> or <code>const</code>.</p>
 <p>However, with the help of the <a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a> eslint rule, I was able to find all those cases quickly and get them fixed. ESLint was also very helpful in making sure I was not breaking any code with the refactoring I had to do.</p>
-<p>In the end, it was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.
-The lines of code initially went down because of the ES6 syntax sugar, but they went back up with the introduction of prettier and its opinionated formatting -- especially regarding line length.</p>
+<p>The lines of code initially went down because of the ES6 syntax sugar, but they went back up with the introduction of prettier and its opinionated formatting -- especially regarding line length.</p>
+<p>In the end, the migration was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.</p>
 </div>
     </div>
     </article>
