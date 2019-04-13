@@ -6,8 +6,8 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>http://kaeruct.github.io/categories/cat_posts.xml</loc>
-  <lastmod>2019-04-13T07:16:00Z</lastmod>
+  <loc>http://kaeruct.github.io/categories/canvas.xml</loc>
+  <lastmod>2019-04-13T23:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/email.xml</loc>
@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/fun.xml</loc>
-  <lastmod>2019-04-13T07:09:00Z</lastmod>
+  <lastmod>2019-04-13T22:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/golang.xml</loc>
@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/html.xml</loc>
-  <lastmod>2019-04-13T08:05:00Z</lastmod>
+  <lastmod>2019-04-13T22:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/java.xml</loc>
@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/javascript.xml</loc>
-  <lastmod>2019-04-13T07:09:00Z</lastmod>
+  <lastmod>2019-04-13T23:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/linux.xml</loc>
@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/programming-projects.xml</loc>
-  <lastmod>2019-04-13T07:09:00Z</lastmod>
+  <lastmod>2019-04-13T23:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/ramblings.xml</loc>
@@ -63,7 +63,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tutorials.xml</loc>
-  <lastmod>2019-04-13T08:05:00Z</lastmod>
+  <lastmod>2019-04-13T23:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/webpack.xml</loc>
@@ -106,11 +106,15 @@
   <lastmod>2019-04-13T07:16:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://kaeruct.github.io/galleries/screenshots/starry/rss.xml</loc>
+  <lastmod>2019-04-13T23:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://kaeruct.github.io/rss.xml</loc>
-  <lastmod>2019-04-13T08:05:00Z</lastmod>
+  <lastmod>2019-04-13T23:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/sitemap.xml</loc>
-  <lastmod>2019-04-13T08:05:00Z</lastmod>
+  <lastmod>2019-04-13T23:31:00Z</lastmod>
  </sitemap>
 </sitemapindex>

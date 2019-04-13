@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://kaeruct.github.io/index.html">
-<link rel="next" href="index-12.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html" type="text/html">
+<link rel="next" href="index-14.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/how-to-create-a-starry-sky-using-html5-canvas-pt2.html" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -47,50 +47,140 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html" class="u-url">How to show preview images when sharing links of your website</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/how-to-create-a-starry-sky-using-html5-canvas-pt2.html" class="u-url">How to create a starry sky using HTML5 canvas - Part 2</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Andres Villarreal</span></p>
-            <p class="dateline"><a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-13T01:08:24-06:00" title="Apr 13, 2019 01:08 AM">Apr 13, 2019 01:08 AM</time></a></p>
+            <p class="dateline"><a href="posts/how-to-create-a-starry-sky-using-html5-canvas-pt2.html" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-13T16:31:13-06:00" title="Apr 13, 2019 04:31 PM">Apr 13, 2019 04:31 PM</time></a></p>
                 <p class="commentline">
         
-    <a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html#disqus_thread" data-disqus-identifier="cache/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html">Comments</a>
+    <a href="posts/how-to-create-a-starry-sky-using-html5-canvas-pt2.html#disqus_thread" data-disqus-identifier="cache/posts/how-to-create-a-starry-sky-using-html5-canvas-pt2.html">Comments</a>
 
 
         </p>
 </div>
     </header><div class="e-content entry-content">
     <div>
-<p>When you share a link on social media or mesagging apps, sometimes the app shows a nice preview thumbnail with a description? You can click on it and it will take you to the linked website. I wanted to have this functionality for a website I was working on, so I did some research on how to get it working.</p>
-<p>Short answer: use the <code>og:image</code> meta tag.</p>
-<p>Longer answer: read on.</p>
-<p>You have to use <a href="https://ogp.me/">Open Graph</a> meta tags.
-There's a bunch of meta tags to use, but the ones you need for previews are the following:</p>
-<pre class="code literal-block"><span></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"twitter:card"</span> <span class="na">content</span><span class="o">=</span><span class="s">"summary"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:title"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Thumbnail example"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:description"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Only for Nic Cage fans"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:image"</span> <span class="na">content</span><span class="o">=</span><span class="s">"https://www.placecage.com/c/460/300"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:url"</span> <span class="na">content</span><span class="o">=</span><span class="s">"https://kaeruct.github.io/"</span><span class="p">&gt;</span>
+<blockquote>
+<p>This is part of a series! Please make sure you have read <a href="posts/how-to-create-a-starry-sky-using-html5-canvas-pt1.html">Part 1</a> first!</p>
+<p><strong>IMPORTANT</strong> -- you can try out the result of this tutorial by visiting this <a href="https://codesandbox.io/s/z68y1012yl?fontsize=14">CodeSandbox</a>.
+However, I encourage you to read the blog post and try to follow along to understand how and why it works.</p>
+</blockquote>
+<p>Last time we left off with a very nice starry sky, but it's a bit dead. We need to add some animation to it!
+The way animation is done on HTML5 canvas is by drawing something else every frame.</p>
+<p>For our case, we can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame() function</code></a> to call our <code>render()</code> function.</p>
+<p>First, we will add a <code>counter</code> variable. We will increment this every time we draw.
+This is useful because we will have a number that will change with every render.</p>
+<pre class="code literal-block"><span></span><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre>
 
 
-<p>When a website with the previous tags is shared on social media, you will get a nice preview card with thumbnail, title, and description.</p>
-<p>Important points:</p>
+<p>Then, we will update our <code>render()</code> function so it uses <code>requestAnimationFrame()</code>. We will also make it increment the counter.</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">;</span>
+    <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="s2">"rgb(255, 255, 255)"</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>For now, this will look exactly the same as before, because we always render the same thing. But let's begin to change that now.</p>
+<p>We'll make a small change to make the stars look like they're flickering.</p>
+<p>First, let's add a function to generate an opacity value. This value will go from 0 to 1 and will determine the opacity of our star.</p>
+<p>The use of <code>Math.sin()</code> in the function below is just to make sure we get a value that changes smoothly.</p>
+<pre class="code literal-block"><span></span><span class="kr">const</span> <span class="nx">minStarOpacity</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">maxStarOpacity</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">opacityIncrement</span> <span class="o">=</span>
+    <span class="p">(</span><span class="nx">maxStarOpacity</span> <span class="o">-</span> <span class="nx">minStarOpacity</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">factor</span><span class="p">));</span>
+  <span class="kr">const</span> <span class="nx">opacity</span> <span class="o">=</span> <span class="nx">minStarOpacity</span> <span class="o">+</span> <span class="nx">opacityIncrement</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">opacity</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>Then, we will use this function when rendering our stars.
+Also notice how we change the color from <code>rgb(255, 255, 255)</code> to <code>rgba(255, 255, 255, opacity)</code>.</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">factor</span> <span class="o">=</span> <span class="nx">counter</span> <span class="o">*</span> <span class="nx">i</span><span class="p">;</span> <span class="c1">// factor will be a different number for every star</span>
+    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">opacity</span> <span class="o">=</span> <span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">);</span>
+    <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="sb">`rgba(255, 255, 255, </span><span class="si">${</span><span class="nx">opacity</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+
+
+<p><img alt="Animated Starry Sky" src="galleries/screenshots/starry/flicker.gif"></p>
+<p>Now the sky is looking really nice and animated. But it's still missing a nice big <code>moon</code>. Let's add it next.</p>
+<p>We will create a function to render our moon, and call it from <code>render()</code>.</p>
+<pre class="code literal-block"><span></span><span class="kr">const</span> <span class="nx">moon</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">color</span><span class="o">:</span> <span class="s2">"#fea"</span><span class="p">,</span>
+  <span class="nx">x</span><span class="o">:</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="nx">y</span><span class="o">:</span> <span class="nx">width</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="nx">r</span><span class="o">:</span> <span class="mi">40</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">renderMoon</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">blur</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
+  <span class="c1">// render a smaller circle above the moon to give it that well-known moon-shape</span>
+  <span class="nx">fillCircle</span><span class="p">(</span>
+    <span class="nx">ctx</span><span class="p">,</span>
+    <span class="nx">moon</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nx">moon</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span>
+    <span class="nx">backgroundColor</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>And our updated <code>render()</code> function:</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">factor</span> <span class="o">=</span> <span class="nx">counter</span> <span class="o">*</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">opacity</span> <span class="o">=</span> <span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">);</span>
+    <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="sb">`rgba(255, 255, 255, </span><span class="si">${</span><span class="nx">opacity</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">renderMoon</span><span class="p">(</span><span class="nx">ctx</span><span class="p">);</span>
+
+  <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>That leaves us with the finished product:
+<img alt="Animated Starry Sky with Moon" src="galleries/screenshots/starry/moon.gif"></p>
+<p>Thanks for following this tutorial to the end! Remember you can look at a working example in the <a href="https://codesandbox.io/s/z68y1012yl?fontsize=14">CodeSandbox</a>.</p>
+<p>Have fun experimenting and tweaking the values used to render the stars and the moon.
+Some ideas you may want to try to learn more and improve your skills:</p>
 <ul>
-<li>you <em>NEED</em> to include the <code>twitter:card</code> meta tag for Twitter to display the preview. Otherwise it won't work. If you don't care about Twitter you can remove it.</li>
-<li>Some apps/websites will not include your preview thumbnail if it's not served via HTTPS. So make sure the image URLs always start with <code>https://</code>!</li>
-<li>The <code>og:url</code> value should point to the canonical URL of the page, not to the root of your website.</li>
+<li>Make the stars more colorful.</li>
+<li>Make the moon move across the sky.</li>
+<li>Add shooting stars.</li>
+<li>Add a gradient background instead of a solid color.</li>
+<li>Add multiple moons.</li>
 </ul>
-<p>Below you can see some examples:</p>
-<h3>Twitter</h3>
-<p><img alt="Twitter" src="galleries/screenshots/og/twitter.png"></p>
-<h3>Slack</h3>
-<p><img alt="Slack" src="galleries/screenshots/og/slack.png"></p>
-<h3>Telegram</h3>
-<p><img alt="Telegram" src="galleries/screenshots/og/telegram.png"></p>
-<h3>WhatsApp</h3>
-<p><img alt="WhatsApp" src="galleries/screenshots/og/whatsapp.png"></p>
-<h3>Discord</h3>
-<p><img alt="Discord" src="galleries/screenshots/og/discord.png"></p>
+<p>Don't hesitate to contact me at <a href="http://twitter.com/KaeruCT">@KaeruCT</a> if you have any questions, suggestions, or improvements for this tutorial!</p>
 </div>
     </div>
     </article>
@@ -98,7 +188,7 @@ There's a bunch of meta tags to use, but the ones you need for previews are the 
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-12.html" rel="next">Older posts</a>
+                <a href="index-14.html" rel="next">Older posts</a>
             </li>
         </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2019 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             

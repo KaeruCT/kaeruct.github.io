@@ -30,7 +30,7 @@ When a website with the previous tags is shared on social media, you will get a 
 
 Important points:
 
-  * you *NEED* to include the `twitter:card` meta tag for Twitter to display the preview. Otherwise it won't work. If you don't care about Twitter you can remove it.
+  * You **NEED** to include the `twitter:card` meta tag for Twitter to display the preview. Otherwise it won't work. If you don't care about Twitter you can remove it.
   * Some apps/websites will not include your preview thumbnail if it's not served via HTTPS. So make sure the image URLs always start with `https://`!
   * The `og:url` value should point to the canonical URL of the page, not to the root of your website.
 

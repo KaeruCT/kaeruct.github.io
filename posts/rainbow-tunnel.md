@@ -2,7 +2,7 @@
 .. title: Rainbow Tunnel
 .. slug: rainbow-tunnel
 .. date: 2013/03/07 14:44:50
-.. tags: programming-projects, fun, javascript
+.. tags: programming-projects, fun, javascript, canvas
 .. link:
 .. description:
 -->
