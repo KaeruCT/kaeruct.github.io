@@ -2,7 +2,7 @@
 .. title: Messing Around With Trig
 .. slug: messing-around-with-trig
 .. date: 2013/03/05 13:49:47
-.. tags: programming-projects, fun, javascript
+.. tags: programming-projects, fun, javascript, canvas
 .. link:
 .. description:
 -->

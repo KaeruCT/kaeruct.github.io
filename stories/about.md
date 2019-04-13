@@ -7,7 +7,7 @@
 .. description:
 -->
 
-I'm a software developer, GNU / Linux geek, and free software enthusiast.
+I'm a software developer, passionate about the web, frontend technologies, and the open source ecosystem.
 
 This is my personal blog. I try to post things relevant to programming, but
 sometimes I might post about something else, such as music, videogames, or myself.
@@ -23,3 +23,5 @@ I haven't been able to come up with anything useful yet, but I will post it
 as soon as I do.
 
 You can contact me at [@KaeruCT](http://twitter.com/KaeruCT).
+
+You can find my CV at [andres.villarreal.co.cr](https://andres.villarreal.co.cr/).
