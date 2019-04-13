@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Pejibaye Blog (Posts about html)</title><link>http://kaeruct.github.io/</link><description></description><atom:link href="http://kaeruct.github.io/categories/html.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 13 Apr 2019 08:05:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How to show preview images when sharing links of your website</title><link>http://kaeruct.github.io/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;When you share a link on social media or mesagging apps, sometimes the app shows a nice preview thumbnail with a description? You can click on it and it will take you to the linked website. I wanted to have this functionality for a website I was working on, so I did some research on how to get it working.&lt;/p&gt;
+&lt;p&gt;Short answer: use the &lt;code&gt;og:image&lt;/code&gt; meta tag.&lt;/p&gt;
+&lt;p&gt;Longer answer: read on.&lt;/p&gt;
+&lt;p&gt;You have to use &lt;a href="https://ogp.me/"&gt;Open Graph&lt;/a&gt; meta tags.
+There's a bunch of meta tags to use, but the ones you need for previews are the following:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"twitter:card"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"summary"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;property&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"og:title"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Thumbnail example"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;property&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"og:description"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Only for Nic Cage fans"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;property&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"og:image"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://www.placecage.com/c/460/300"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;property&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"og:url"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://kaeruct.github.io/"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When a website with the previous tags is shared on social media, you will get a nice preview card with thumbnail, title, and description.&lt;/p&gt;
+&lt;p&gt;Important points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you &lt;em&gt;NEED&lt;/em&gt; to include the &lt;code&gt;twitter:card&lt;/code&gt; meta tag for Twitter to display the preview. Otherwise it won't work. If you don't care about Twitter you can remove it.&lt;/li&gt;
+&lt;li&gt;Some apps/websites will not include your preview thumbnail if it's not served via HTTPS. So make sure the image URLs always start with &lt;code&gt;https://&lt;/code&gt;!&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;og:url&lt;/code&gt; value should point to the canonical URL of the page, not to the root of your website.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below you can see some examples:&lt;/p&gt;
+&lt;h3&gt;Twitter&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Twitter" src="http://kaeruct.github.io/galleries/screenshots/og/twitter.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Slack&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Slack" src="http://kaeruct.github.io/galleries/screenshots/og/slack.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Telegram&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Telegram" src="http://kaeruct.github.io/galleries/screenshots/og/telegram.png"&gt; &lt;/p&gt;
+&lt;h3&gt;WhatsApp&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="WhatsApp" src="http://kaeruct.github.io/galleries/screenshots/og/whatsapp.png"&gt;&lt;/p&gt;
+&lt;h3&gt;Discord&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Discord" src="http://kaeruct.github.io/galleries/screenshots/og/discord.png"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>html</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html</guid><pubDate>Sat, 13 Apr 2019 07:08:24 GMT</pubDate></item></channel></rss>

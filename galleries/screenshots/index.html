@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -9,6 +9,15 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://kaeruct.github.io/galleries/screenshots/index.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<style type="text/css">
+    #gallery_container {
+        position: relative;
+    }
+    .image-block {
+        position: absolute;
+    }
+</style>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -48,11 +57,19 @@
 <li><a href="../">galleries</a></li>
                 <li>screenshots</li>
 </ul></nav><h1>screenshots</h1>
-    <ul class="thumbnails"><li>
+    <ul>
+<li><a href="og/"><i class="icon-folder-open"></i> og</a></li>
+    </ul>
+<div id="gallery_container"></div>
+<noscript>
+<ul class="thumbnails"><li>
 <a href="nospamfilter.png" class="thumbnail image-reference" title="Nospamfilter">
-                <img src="nospamfilter.thumbnail.png" alt="Nospamfilter"></a>
-    </li></ul>
-<footer id="footer"><p>Contents © 2017 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
+            <img src="nospamfilter.thumbnail.png" alt="Nospamfilter"></a>
+</li></ul>
+</noscript>
+
+        
+        <footer id="footer"><p>Contents © 2019 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
         </footer>
 </div>
@@ -67,6 +84,11 @@
   ga('create', 'UA-51284333-1', 'kaeruct.github.io');
   ga('send', 'pageview');
 
+</script><script src="../../assets/js/justified-layout.min.js"></script><script src="../../assets/js/gallery.min.js"></script><script>
+var jsonContent = [{"height": 120, "size": {"h": 120, "w": 180}, "title": "Nospamfilter", "url": "nospamfilter.png", "url_thumb": "nospamfilter.thumbnail.png", "width": 180}];
+var thumbnailSize = 180;
+renderGallery(jsonContent, thumbnailSize);
+window.addEventListener('resize', renderGallery);
 </script>
 </body>
 </html>
