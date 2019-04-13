@@ -12,6 +12,10 @@
 In my spare time I often enjoy creating visualizations using HTML5 canvas.
 I'm planning to do a little presentation about this so I thought a good way to get started was to create a blog post explaining how to do a simple one.
 
+This tutorial will teach you how to create something like the image below from scratch!
+
+![Animated Starry Sky with Moon](/galleries/screenshots/starry/moon.gif)
+
 >**IMPORTANT** -- you can try out the result of this tutorial by visiting this [CodeSandbox](https://codesandbox.io/s/kmrx1z6wn7?fontsize=14).
 >However, I encourage you to read the blog post and try to follow along to understand how and why it works.
 
