@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://kaeruct.github.io/categories/canvas.xml</loc>
-  <lastmod>2019-04-13T23:29:00Z</lastmod>
+  <lastmod>2019-04-13T23:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/email.xml</loc>
@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/javascript.xml</loc>
-  <lastmod>2019-04-13T23:29:00Z</lastmod>
+  <lastmod>2019-04-13T23:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/linux.xml</loc>
@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/programming-projects.xml</loc>
-  <lastmod>2019-04-13T23:29:00Z</lastmod>
+  <lastmod>2019-04-13T23:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/ramblings.xml</loc>
@@ -63,7 +63,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tutorials.xml</loc>
-  <lastmod>2019-04-13T23:29:00Z</lastmod>
+  <lastmod>2019-04-13T23:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/webpack.xml</loc>
@@ -111,10 +111,10 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/rss.xml</loc>
-  <lastmod>2019-04-13T23:29:00Z</lastmod>
+  <lastmod>2019-04-13T23:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/sitemap.xml</loc>
-  <lastmod>2019-04-13T23:31:00Z</lastmod>
+  <lastmod>2019-04-13T23:36:00Z</lastmod>
  </sitemap>
 </sitemapindex>

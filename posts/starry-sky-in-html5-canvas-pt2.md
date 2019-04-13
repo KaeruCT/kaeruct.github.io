@@ -1,6 +1,6 @@
 <!--
-.. title: How to create a starry sky using HTML5 canvas - Part 2
-.. slug: how-to-create-a-starry-sky-using-html5-canvas-pt2
+.. title: Starry Sky in HTML5 Canvas - Part 2
+.. slug: starry-sky-in-html5-canvas-pt2
 .. date: 2019-04-13 16:31:13 UTC-06:00
 .. tags: tutorials, javascript, programming-projects, canvas
 .. category: 
@@ -9,7 +9,7 @@
 .. type: text
 -->
 
->This is part of a series! Please make sure you have read [Part 1](./how-to-create-a-starry-sky-using-html5-canvas-pt1.html) first!
+>This is part of a series! Please make sure you have read [Part 1](./starry-sky-in-html5-canvas-pt1.html) first!
 
 >**IMPORTANT** -- you can try out the result of this tutorial by visiting this [CodeSandbox](https://codesandbox.io/s/z68y1012yl?fontsize=14).
 >However, I encourage you to read the blog post and try to follow along to understand how and why it works.
@@ -69,7 +69,8 @@ function render() {
   ctx.fillStyle = backgroundColor;
   ctx.fillRect(0, 0, width, height);
   stars.forEach(function(star, i) {
-    const factor = counter * i; // factor will be a different number for every star
+    // factor will be a different number for every star
+    const factor = counter * i; 
     const x = star.x;
     const y = star.y;
     const opacity = getOpacity(factor);

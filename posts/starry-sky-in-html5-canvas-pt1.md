@@ -1,6 +1,6 @@
 <!--
-.. title: How to create a starry sky using HTML5 canvas - Part 1
-.. slug: how-to-create-a-starry-sky-using-html5-canvas-pt1
+.. title: Starry Sky in HTML5 Canvas - Part 1
+.. slug: starry-sky-in-html5-canvas-pt1
 .. date: 2019-04-13 15:35:56 UTC-06:00
 .. tags: tutorials, javascript, programming-projects, canvas
 .. category: 
@@ -199,4 +199,4 @@ function render() {
 
 Much better! Now the stars are all different sizes!
 
-This is all for part 1. You can continue reading [Part 2](./how-to-create-a-starry-sky-using-html5-canvas-pt2.html), where we will add a moon and make our stars flicker!
+This is all for part 1. You can continue reading [Part 2](./starry-sky-in-html5-canvas-pt2.html), where we will add a moon and make our stars flicker!
