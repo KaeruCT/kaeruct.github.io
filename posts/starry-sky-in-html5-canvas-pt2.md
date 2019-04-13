@@ -69,7 +69,8 @@ function render() {
   ctx.fillStyle = backgroundColor;
   ctx.fillRect(0, 0, width, height);
   stars.forEach(function(star, i) {
-    const factor = counter * i; // factor will be a different number for every star
+    // factor will be a different number for every star
+    const factor = counter * i; 
     const x = star.x;
     const y = star.y;
     const opacity = getOpacity(factor);
