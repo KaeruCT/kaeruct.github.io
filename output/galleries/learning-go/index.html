@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -9,6 +9,15 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://kaeruct.github.io/galleries/learning-go/index.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<style type="text/css">
+    #gallery_container {
+        position: relative;
+    }
+    .image-block {
+        position: absolute;
+    }
+</style>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -48,21 +57,27 @@
 <li><a href="../">galleries</a></li>
                 <li>learning-go</li>
 </ul></nav><h1>learning-go</h1>
-    <ul class="thumbnails">
-<li>
-<a href="learning-go2.png" class="thumbnail image-reference" title="Learning go2">
-                <img src="learning-go2.thumbnail.png" alt="Learning go2"></a>
-            </li>
+
+<div id="gallery_container"></div>
+<noscript>
+<ul class="thumbnails">
 <li>
 <a href="learning-go3.png" class="thumbnail image-reference" title="Learning go3">
-                <img src="learning-go3.thumbnail.png" alt="Learning go3"></a>
-            </li>
+            <img src="learning-go3.thumbnail.png" alt="Learning go3"></a>
+        </li>
 <li>
 <a href="learning-go1.png" class="thumbnail image-reference" title="Learning go1">
-                <img src="learning-go1.thumbnail.png" alt="Learning go1"></a>
-    </li>
+            <img src="learning-go1.thumbnail.png" alt="Learning go1"></a>
+        </li>
+<li>
+<a href="learning-go2.png" class="thumbnail image-reference" title="Learning go2">
+            <img src="learning-go2.thumbnail.png" alt="Learning go2"></a>
+</li>
 </ul>
-<footer id="footer"><p>Contents © 2017 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
+</noscript>
+
+        
+        <footer id="footer"><p>Contents © 2019 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
         </footer>
 </div>
@@ -77,6 +92,11 @@
   ga('create', 'UA-51284333-1', 'kaeruct.github.io');
   ga('send', 'pageview');
 
+</script><script src="../../assets/js/justified-layout.min.js"></script><script src="../../assets/js/gallery.min.js"></script><script>
+var jsonContent = [{"height": 131, "size": {"h": 131, "w": 180}, "title": "Learning go3", "url": "learning-go3.png", "url_thumb": "learning-go3.thumbnail.png", "width": 180}, {"height": 101, "size": {"h": 101, "w": 180}, "title": "Learning go1", "url": "learning-go1.png", "url_thumb": "learning-go1.thumbnail.png", "width": 180}, {"height": 131, "size": {"h": 131, "w": 180}, "title": "Learning go2", "url": "learning-go2.png", "url_thumb": "learning-go2.thumbnail.png", "width": 180}];
+var thumbnailSize = 180;
+renderGallery(jsonContent, thumbnailSize);
+window.addEventListener('resize', renderGallery);
 </script>
 </body>
 </html>
