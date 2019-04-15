@@ -16,7 +16,7 @@ This tutorial will teach you how to create something like the image below from s
 
 ![Animated Starry Sky with Moon](/galleries/screenshots/starry/moon.gif)
 
->**IMPORTANT** -- you can try out the result of this tutorial by visiting this [CodeSandbox](https://codesandbox.io/s/kmrx1z6wn7?fontsize=14).
+>**IMPORTANT** -- you can try out the result of **this part** of the tutorial by visiting this [CodeSandbox](https://codesandbox.io/s/kmrx1z6wn7?fontsize=14).
 >However, I encourage you to read the blog post and try to follow along to understand how and why it works.
 
 First, you will need an HTML file, let's name it `index.html`:
