@@ -17,7 +17,7 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Andres Villarreal"  # (translatable)
+BLOG_AUTHOR = "Andrés Villarreal"  # (translatable)
 BLOG_TITLE = "Pejibaye Blog"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
@@ -25,7 +25,7 @@ SITE_URL = "http://kaeruct.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://kaeruct.github.io/"
-BLOG_EMAIL = "avilla898@gmail.com"
+BLOG_EMAIL = "andres@villarreal.co.cr"
 BLOG_DESCRIPTION = "Fun and code"  # (translatable)
 
 # Nikola is multilingual!
@@ -185,7 +185,7 @@ PAGES = (
 # (e.g. 'Europe/Zurich')
 # Also, if you want to use a different time zone in some of your posts,
 # you can use the ISO 8601/RFC 3339 format (ex. 2012-03-30T23:00:00+02:00)
-TIMEZONE = "GMT-6"
+TIMEZONE = "GMT+6"
 
 # If you want to use ISO 8601 (also valid RFC 3339) throughout Nikola
 # (especially in new_post), set this to True.
@@ -950,7 +950,7 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 
 # Modify the number of Post per Index Page
 # Defaults to 10
-INDEX_DISPLAY_POST_COUNT = 1
+INDEX_DISPLAY_POST_COUNT = 5
 
 # By default, Nikola generates RSS files for the website and for tags, and
 # links to it.  Set this to False to disable everything RSS-related.
