@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width">
 <title>Pejibaye Blog | Pejibaye Blog</title>
 <link href="assets/css/all.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://kaeruct.github.io/index.html">
-<link rel="next" href="index-14.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/starry-sky-in-html5-canvas-pt2.html" type="text/html">
+<link rel="next" href="index-3.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/my-top-tips-for-junior-developers.html" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -47,9 +47,119 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/starry-sky-in-html5-canvas-pt2.html" class="u-url">Starry Sky in HTML5 Canvas - Part 2</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/my-top-tips-for-junior-developers.html" class="u-url">My top tips for junior developers</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Andres Villarreal</span></p>
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/my-top-tips-for-junior-developers.html" rel="bookmark"><time class="post-date published dt-published" datetime="2020-04-18T13:06:53+02:00" title="Apr 18, 2020 01:06 PM">Apr 18, 2020 01:06 PM</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/my-top-tips-for-junior-developers.html#disqus_thread" data-disqus-identifier="cache/posts/my-top-tips-for-junior-developers.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Last year, I was tasked with mentoring an intern. It wasn't my first time mentoring, but it was my first time being fully in charge of a new employee. In the end, the intern was hired as a full-time employee, and I thought it would be helpful to compile all the advice I've been giving them, for future reference.</p>
+<p>The following tips come from my experience and my way of working, as well as my own personal opinions.</p>
+<h2>Tip 1: Learn how to search effectively</h2>
+<p>Knowing what to search and how to search is an essential skill.
+Usually, I don't remember or know most of the things my colleagues ask me. Yet, after 5 minutes I can usually figure it out or at least point them in the right direction. All thanks to the power of search.</p>
+<h3>How to search</h3>
+<p>As with most things in life, Google will probably have an answer for you. Make sure to type it in a way that makes sense for Google. For example, if you have an error, copy-paste it word-for-word and put it inside double (") quotes. This might take you to Github issues, Stack Overflow answers, or blogs like this one!</p>
+<p>If you don't find anything, try different variations of your search. You can try removing specifics (line numbers are often useless, and also data values). For example, if you get an error like this:</p>
+<pre class="code literal-block"><span></span>TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
+    at validateNumber (internal/validators.js:130:11)
+    at validateTimerDuration (internal/timers.js:146:3)
+    at ClientRequest.setTimeout (_http_client.js:735:11)
+    ...
+</pre>
+
+
+<p>You could be searching the following instead:</p>
+<pre class="code literal-block"><span></span>TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
+</pre>
+
+
+<p>If that's still too long, you can try only</p>
+<pre class="code literal-block"><span></span>The "msecs" argument must be of type number
+</pre>
+
+
+<p>If you still can't find anything useful, take advantage of your company's resources. Try the same search on your company's internal systems. Try everything: Slack, bug tracker (e.g.: JIRA), wiki, emails, Google Docs. If you still don't find anything, try reaching out to your more senior colleagues. They will surely know how to help or at least point you in the right direction.</p>
+<h3>How to navigate codebases</h3>
+<p>Sometimes your search will guide you to the source code that is throwing the error you were searching for. This is a bit sad since it means probably no one has found a solution yet for the problem you're having. In these cases you will need to read the code you found and try to understand it.</p>
+<p>I think the best way to understand code is to see the flow of the data in the code. For example, let's say you have an app that let's you search movies by actor name.</p>
+<p>I would first try to understand where the movie data is coming from. An external API? A database? A file?</p>
+<p>Then I would see what happens when I type "Nicolas Cage" into the search box and click "Search". Does the app do an external network request? Is the data already available locally? If I search "Search" in the source code, will I be able to find the code for the button that triggers the search?</p>
+<p>I would keep asking myself questions and answering them, until I have a better understanding of where the data is going to and coming from.</p>
+<h3>How to deal with Github issues</h3>
+<p>You might get lucky and find someone that had the same issue and opened a Github issue for it. If you're even luckier, someone else (or the original reporter) might have found a solution and shared it there. Then, the repository's maintainers may have merged the solution. Or maybe not yet.</p>
+<p>If you don't want to wait for the repository's maintainers to merge the fix, there's always the option of forking the repository and merging the fix yourself. This is usually not a good idea unless you need this fix very urgently, since your fork will quickly become outdated. It's up to you and/or your team to decide if this is worth the risks.</p>
+<h2>Tip 2: Don't copy-paste code without understanding it</h2>
+<p>I have noticed way too many junior developers copy &amp; paste code without understanding what it's doing. I've been guilty of this as well but I don't remember it, maybe because I rely on copy-pasting so much!</p>
+<p>The problem with this: it can cause unintended consequences. If the copy-pasted code breaks you will not know how to fix it since you didn't understand it in the first place. This means sooner or later you will have to come back to this code and understand it.</p>
+<p>If you are doing unit testing (which you should), you will need to understand the code first, to be able to write tests for it. You will need to identify every execution path it might take and think about the inputs that might break it. </p>
+<p>One thing that has worked for me is to avoid copy-pasting the code and try to write it on my own. <a href="https://wiki.c2.com/?ToGrok">Grok</a> what the code is doing and writing it using variable/function/class names that match your project and business logic. Once you have done this you might understand it a bit better.</p>
+<h2>Tip 3: Know your tools</h2>
+<p>With tools, I mean everything that helps you get your work done. A few examples:</p>
+<p>Shell, text editor, IDE, compiler, package manager, version control, CI/CD (continuous integration/continuous delivery).</p>
+<p>Notice I am using the generic terms and not the specific tools you or your company might be using. Why is that? Because you should be able to pick up tools and work with them.</p>
+<p>To have a good productivity, you need to become familiar with the tools used by your colleagues, so make sure to ask around for recommendations.</p>
+<p>In some cases you will need to use tools that you don't necessarily enjoy using, and that's okay. Tools are a means to an end. Tools should help you build your final product. They should not be your main focus - unless you work for a software company that builds software development tools.</p>
+<p>Here are some of my favorite tools at the moment:</p>
+<ul>
+<li>Bash</li>
+<li>Visual Studio Code</li>
+<li>IntelliJ IDEA</li>
+<li>yarn</li>
+<li>Git</li>
+<li>Gitlab CI</li>
+</ul>
+<p>Why are they my favorite tools? Because I'm used to them. Only looking at them, many developers will know I am primarily a frontend developer. There's always going to be something better and everyone has different preferences. But it doesn't matter, as long as the tools help you get the job done. Still, always be open to new tools and ask other people why they chose theirs. They might change your mind and you will become even more productive! A good way to quickly get to know a tool is to do a search like this: "&lt;tool&gt; tips and tricks".</p>
+<h3>Know your programming language(s)</h3>
+<p>It's also very important to know all the fundamental concepts of the programming language(s) you are using at work. Again, make sure to ask your more experienced colleagues for recommendations. There are tons of books, online courses, and tutorials for every mainstream programming language out there.</p>
+<p>You need to be fluent in your language. This will allow you to focus on solving the business problems instead of fighting against the language to make the code work. You don't have to be an expert immediately, it will take time. But make sure to keep learning and aim to become an expert in the language within the first two years of your career.</p>
+<h2>Tip 4: Know how and when to ask for help</h2>
+<p>When you are new, you will have a lot of questions, and that's okay. Asking questions is how we learn.</p>
+<h3>Ask yourself first</h3>
+<p>Before you ask the question to someone else, ask it to yourself. Then try to come up with a few guesses and try to validate them. This will lead to more and more questions.</p>
+<p>This helps you understand what you really need to know to solve the problem, and when you go to someone else you will have a much better question to ask. Good questions breed good answers.</p>
+<p>For example, let's say you have to change the <code>href</code> of a link in the footer of your company's website.
+I would ask myself: "where is the code for this link?"</p>
+<p>Then I would come up with a few hypotheses:</p>
+<ul>
+<li>I can find it if I search for the current <code>href</code> on the codebase.</li>
+<li>If I change it here and deploy the code, the link will change.</li>
+</ul>
+<p>After that, I would try to prove my first hypothesis by searching for the current <code>href</code>.
+Let's say I could not find it in the code. Then I would come up with a different hypothesis:</p>
+<ul>
+<li>It is not in the code, so the content must come from somewhere else.</li>
+</ul>
+<p>Then I would ask myself more questions:</p>
+<ul>
+<li>Where is the content for the footer stored?</li>
+<li>How can I change it?</li>
+</ul>
+<p>Once I have these questions, I can go to a more experienced colleague, and they will be able to quickly point me in the right direction: "Oh, that content is stored in our content management system. I will show you how to change it".</p>
+<p>If I had  asked them my first question instead: "where is the code for this link", they would have given me a very simple answer that would take me straight to the code and that would have not been as helpful.</p>
+<h3>Fighting forgetfulness</h3>
+<p>I am very forgetful, so I like to keep notes. Whenever I find the answer to a an important question, I make sure to write it down somewhere. This has several benefits:</p>
+<ul>
+<li>You don't need to remember everything.</li>
+<li>You can share your notes with others (this is usually called documentation).</li>
+<li>You can easily keep track of how much you have learned over time.</li>
+</ul>
+<p>You can keep your notes on paper or digitally. Make sure to try both and see what works best for you.</p>
+<h2>Tip 5: Maintain a healthy work-life balance</h2>
+<p>When you're starting out you always want to keep learning more and more while also delivering your work. This means you will probably work many hours a day if you're very passionate. This is fine if you are enjoying yourself, but you should be careful and aware of <a href="https://en.wikipedia.org/wiki/Occupational_burnout">burn out</a>. A good way to avoid this is to have a routine you follow every work day, and make sure you have enough breaks throughout the day. In the end it all comes down to a matter of discipline and knowing yourself.</p>
+<p>Remember life is about living, not about working! It's a good idea to have other things outside going on in your life aside from work. There's no right or wrong here because it depends on you, but make sure you manage your stress in a healthy way.</p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/starry-sky-in-html5-canvas-pt2.html" class="u-url">Starry Sky in HTML5 Canvas - Part 2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
             <p class="dateline"><a href="posts/starry-sky-in-html5-canvas-pt2.html" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-13T16:31:13-06:00" title="Apr 13, 2019 04:31 PM">Apr 13, 2019 04:31 PM</time></a></p>
                 <p class="commentline">
         
@@ -184,14 +294,297 @@ Some ideas you may want to try to learn more and improve your skills:</p>
 <p>Don't hesitate to contact me at <a href="http://twitter.com/KaeruCT">@KaeruCT</a> if you have any questions, suggestions, or improvements for this tutorial!</p>
 </div>
     </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/starry-sky-in-html5-canvas-pt1.html" class="u-url">Starry Sky in HTML5 Canvas - Part 1</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/starry-sky-in-html5-canvas-pt1.html" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-13T15:35:56-06:00" title="Apr 13, 2019 03:35 PM">Apr 13, 2019 03:35 PM</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/starry-sky-in-html5-canvas-pt1.html#disqus_thread" data-disqus-identifier="cache/posts/starry-sky-in-html5-canvas-pt1.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>In my spare time I often enjoy creating visualizations using HTML5 canvas.
+I'm planning to do a little presentation about this so I thought a good way to get started was to create a blog post explaining how to do a simple one.</p>
+<p>This tutorial will teach you how to create something like the image below from scratch!</p>
+<p><img alt="Animated Starry Sky with Moon" src="galleries/screenshots/starry/moon.gif"></p>
+<blockquote>
+<p><strong>IMPORTANT</strong> -- you can try out the result of <strong>this part</strong> of the tutorial by visiting this <a href="https://codesandbox.io/s/kmrx1z6wn7?fontsize=14">CodeSandbox</a>.
+However, I encourage you to read the blog post and try to follow along to understand how and why it works.</p>
+</blockquote>
+<p>First, you will need an HTML file, let's name it <code>index.html</code>:</p>
+<pre class="code literal-block"><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Starry sky<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+      <span class="nt">body</span><span class="o">,</span> <span class="nt">html</span> <span class="p">{</span>
+        <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nt">canvas</span> <span class="p">{</span>
+        <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">"canvas"</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre>
+
+
+<p>Nothing crazy so far, just some styles and a <code>canvas</code> element.</p>
+<p>Next, let's create a JavaScript file. Let's name this <code>index.js</code>.</p>
+<pre class="code literal-block"><span></span><span class="kr">const</span> <span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">"#030318"</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">width</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">height</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#canvas"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">"2d"</span><span class="p">);</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">render</span><span class="p">();</span>
+</pre>
+
+
+<p>In the code above, we set the canvas' width and height so it takes up the whole window.
+Then, in the <code>render()</code> function, we fill the canvas with the background color.
+If you run it on your browser, it will look like this:</p>
+<p><img alt="Step 1" src="galleries/screenshots/starry/step1.png"></p>
+<p>Yup. Not very interesting. Let's put something in there!
+Let's add some code to our <code>index.js</code> file to draw some stars.</p>
+<p>First, let's have a function that creates the stars.</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">createStars</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">stars</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">width</span><span class="p">;</span> <span class="nx">x</span> <span class="o">+=</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">y</span> <span class="o">&lt;</span> <span class="nx">height</span><span class="p">;</span> <span class="nx">y</span> <span class="o">+=</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">star</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">x</span><span class="o">:</span> <span class="nx">x</span><span class="p">,</span>
+        <span class="nx">y</span><span class="o">:</span> <span class="nx">y</span>
+      <span class="p">};</span>
+      <span class="nx">stars</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">star</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">stars</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">stars</span> <span class="o">=</span> <span class="nx">createStars</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+</pre>
+
+
+<p>The <code>spacing</code> parameter will control the spacing between stars.</p>
+<p>Then, let's update our <code>render()</code> function so it renders the stars.</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"rgb(255, 255, 255)"</span><span class="p">;</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>For our purposes, a star is a circle, so we can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc"><code>arc()</code> function</a> to draw our stars.
+An explanation of the parameters:</p>
+<ul>
+<li>
+<code>x</code> and <code>y</code> are used for the position.</li>
+<li>
+<code>r</code> is used for the radius of the circle.</li>
+<li>
+<code>0</code> and <code>Math.PI * 2</code> are the start and end angle, respectively.
+   A full circle goes from <code>0</code> to <code>2pi</code>.</li>
+</ul>
+<p>The line <code>ctx.fillStyle = "rgb(255, 255, 255)";</code> is used to set the color of the circle to white.</p>
+<p>Let's see what we get now:</p>
+<p><img alt="Step 2" src="galleries/screenshots/starry/step2.png"></p>
+<p>It's definitely a bit more interesting. But it doesn't look like a starry sky at all!
+Stars don't usually look so uniform and boring. We need to add some randomness.</p>
+<p>Let's create a function called <code>randomInt(max)</code> that will return a random number:</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">randomInt</span><span class="p">(</span><span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">max</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>Then, let's use these random numbers when creating our stars:</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">createStars</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">stars</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">width</span><span class="p">;</span> <span class="nx">x</span> <span class="o">+=</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">y</span> <span class="o">&lt;</span> <span class="nx">height</span><span class="p">;</span> <span class="nx">y</span> <span class="o">+=</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">star</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">x</span><span class="o">:</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">randomInt</span><span class="p">(</span><span class="nx">spacing</span><span class="p">),</span>
+        <span class="nx">y</span><span class="o">:</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">randomInt</span><span class="p">(</span><span class="nx">spacing</span><span class="p">)</span>
+      <span class="p">};</span>
+      <span class="nx">stars</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">star</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">stars</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+
+
+<p><img alt="Step 3" src="galleries/screenshots/starry/step3.png"></p>
+<p>That looks already almost real! Now let's make it so the stars are different sizes.
+To do this, we will need a different radius for each star, so we will add it to the star objects.</p>
+<pre class="code literal-block"><span></span><span class="kr">const</span> <span class="nx">maxStarRadius</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">createStars</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">stars</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">width</span><span class="p">;</span> <span class="nx">x</span> <span class="o">+=</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">y</span> <span class="o">&lt;</span> <span class="nx">height</span><span class="p">;</span> <span class="nx">y</span> <span class="o">+=</span> <span class="nx">spacing</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">star</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">x</span><span class="o">:</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">randomInt</span><span class="p">(</span><span class="nx">spacing</span><span class="p">),</span>
+        <span class="nx">y</span><span class="o">:</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">randomInt</span><span class="p">(</span><span class="nx">spacing</span><span class="p">),</span>
+        <span class="nx">r</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">maxStarRadius</span><span class="p">,</span>
+      <span class="p">};</span>
+      <span class="nx">stars</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">star</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">stars</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>Then, we will update the <code>render()</code> function so it uses the star's radius when drawing.
+While we're at it, let's extract the circle drawing logic to a new function as well.</p>
+<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">fillStyle</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">fillStyle</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">;</span>
+    <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="s2">"rgb(255, 255, 255)"</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre>
+
+
+<p><img alt="Step 4" src="galleries/screenshots/starry/step4.png"></p>
+<p>Much better! Now the stars are all different sizes!</p>
+<p>This is all for part 1. You can continue reading <a href="posts/starry-sky-in-html5-canvas-pt2.html">Part 2</a>, where we will add a moon and make our stars flicker!</p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html" class="u-url">How to show preview images when sharing links of your website</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-13T01:08:24-06:00" title="Apr 13, 2019 01:08 AM">Apr 13, 2019 01:08 AM</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html#disqus_thread" data-disqus-identifier="cache/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>When you share a link on social media or mesagging apps, sometimes the app shows a nice preview thumbnail with a description? You can click on it and it will take you to the linked website. I wanted to have this functionality for a website I was working on, so I did some research on how to get it working.</p>
+<p>Short answer: use the <code>og:image</code> meta tag.</p>
+<p>Longer answer: read on.</p>
+<p>You have to use <a href="https://ogp.me/">Open Graph</a> meta tags.
+There's a bunch of meta tags to use, but the ones you need for previews are the following:</p>
+<pre class="code literal-block"><span></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"twitter:card"</span> <span class="na">content</span><span class="o">=</span><span class="s">"summary"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:title"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Thumbnail example"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:description"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Only for Nic Cage fans"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:image"</span> <span class="na">content</span><span class="o">=</span><span class="s">"https://www.placecage.com/c/460/300"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:url"</span> <span class="na">content</span><span class="o">=</span><span class="s">"https://kaeruct.github.io/"</span><span class="p">&gt;</span>
+</pre>
+
+
+<p>When a website with the previous tags is shared on social media, you will get a nice preview card with thumbnail, title, and description.</p>
+<p>Important points:</p>
+<ul>
+<li>You <strong>NEED</strong> to include the <code>twitter:card</code> meta tag for Twitter to display the preview. Otherwise it won't work. If you don't care about Twitter you can remove it.</li>
+<li>Some apps/websites will not include your preview thumbnail if it's not served via HTTPS. So make sure the image URLs always start with <code>https://</code>!</li>
+<li>The <code>og:url</code> value should point to the canonical URL of the page, not to the root of your website.</li>
+</ul>
+<p>Below you can see some examples:</p>
+<h3>Twitter</h3>
+<p><img alt="Twitter" src="galleries/screenshots/og/twitter.png"></p>
+<h3>Slack</h3>
+<p><img alt="Slack" src="galleries/screenshots/og/slack.png"></p>
+<h3>Telegram</h3>
+<p><img alt="Telegram" src="galleries/screenshots/og/telegram.png"></p>
+<h3>WhatsApp</h3>
+<p><img alt="WhatsApp" src="galleries/screenshots/og/whatsapp.png"></p>
+<h3>Discord</h3>
+<p><img alt="Discord" src="galleries/screenshots/og/discord.png"></p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/migrating-old-style-javascript-code-to-es6.html" class="u-url">Migrating old-style JavaScript code to ES6</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/migrating-old-style-javascript-code-to-es6.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-12-28T15:26:16-06:00" title="Dec 28, 2017 03:26 PM">Dec 28, 2017 03:26 PM</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/migrating-old-style-javascript-code-to-es6.html#disqus_thread" data-disqus-identifier="cache/posts/migrating-old-style-javascript-code-to-es6.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Recently (at work) I had to migrate a medium-sized JavaScript codebase (20KLOC) to <a href="https://github.com/lukehoban/es6features">ES6</a>.</p>
+<p>We wanted to migrate to take advantage of the new features such as arrow functions, destructuring, and classes (there are a bunch more!).
+Additionally, I was tasked with introducing <a href="https://eslint.org/">eslint</a> and <a href="https://prettier.io/">prettier</a> to improve the quality of our code a bit more.</p>
+<blockquote>
+<p>Before diving into the migration process, first I'd like to give some context on the state of the application.</p>
+<p>We already used <a href="https://www.npmjs.com/">npm</a> and <a href="https://webpack.js.org/">webpack</a> to build our frontend, so I thought the migration should be straightforward -- and it was.</p>
+<p>I was heavily involved in modifying our build process to use npm instead of ad-hoc shell scripts, and I found <a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">this guide</a> to be incredibly helpful.</p>
+</blockquote>
+<p>Back to the migration, the first thing I did was to add babel to webpack using <a href="https://github.com/babel/babel-loader">babel-loader</a>.
+It was easy to add to webpack and took almost no time to set up.
+This meant that webpack would take our JavaScript files and transpile them from ES6 to "normal" JavaScript that all browsers can run.
+However, in order to get our mocha tests running, it was necessary to hook
+babel into our tests as well. I used <a href="https://istanbul.js.org/docs/tutorials/es2015/">this guide</a> from istanbul and was able to get them running fairly quickly.</p>
+<p>Once I ran the build and the tests and everything looked good, then it was time to really port our code to ES6.
+First, it was necessary to port some code that was using the <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a> to ES6 module syntax. I did this manually (using search/replace tools) and it took me a few hours.</p>
+<p>In some cases we had some ugly dependencies on globals so a bit of refactoring was required.
+In cases where it wasn't possible, webpack has the <a href="https://webpack.js.org/plugins/provide-plugin/">ProvidePlugin</a>, which covers most cases.
+I also found the <a href="https://github.com/webpack-contrib/expose-loader">expose-loader</a> to be useful becase we have some code not under our control that required jQuery to be a browser global.</p>
+<p>Once that was done, it was time to get started with the syntax changes.
+I found an amazing tool for that, <a href="https://lebab.io/">Lebab</a>. It is a very realiable tool and I would totally use it again.
+I ran all the "safe" transformations, verified them, and then ran some of the "unsafe" ones, checking how the code changed each time.</p>
+<p>Finally, I ran the build and our mocha tests to make sure they still passed.
+The tests broke in a few places because of things like variables being shadowed because of the changes from <code>var</code> to <code>let</code> or <code>const</code>.</p>
+<p>However, with the help of the <a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a> eslint rule, I was able to find all those cases quickly and get them fixed. ESLint was also very helpful in making sure I was not breaking any code with the refactoring I had to do.</p>
+<p>The lines of code initially went down because of the ES6 syntax sugar, but they went back up with the introduction of prettier and its opinionated formatting -- especially regarding line length.</p>
+<p>In the end, the migration was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.</p>
+</div>
+    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-14.html" rel="next">Older posts</a>
+                <a href="index-3.html" rel="next">Older posts</a>
             </li>
-        </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2019 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
+        </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2020 <a href="mailto:andres@villarreal.co.cr">Andrés Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
         </footer>
 </div>

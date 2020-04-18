@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width">
 <title>Pejibaye Blog (old posts, page 3) | Pejibaye Blog</title>
 <link href="assets/css/all.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://kaeruct.github.io/index-3.html">
-<link rel="prev" href="index-4.html" type="text/html">
+<link rel="prev" href="index.html" type="text/html">
 <link rel="next" href="index-2.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
@@ -48,34 +48,117 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/project-euler.html" class="u-url">Project Euler</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/setting-up-sendmail-to-redirect-emails.html" class="u-url">Setting up sendmail to redirect emails</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Andres Villarreal</span></p>
-            <p class="dateline"><a href="posts/project-euler.html" rel="bookmark"><time class="post-date published dt-published" datetime="2013-03-12T20:01:25-06:00" title="Mar 12, 2013 08:01 PM">Mar 12, 2013 08:01 PM</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/setting-up-sendmail-to-redirect-emails.html" rel="bookmark"><time class="post-date published dt-published" datetime="2016-05-14T10:33:44-06:00" title="May 14, 2016 10:33 AM">May 14, 2016 10:33 AM</time></a></p>
                 <p class="commentline">
         
-    <a href="posts/project-euler.html#disqus_thread" data-disqus-identifier="cache/posts/project-euler.html">Comments</a>
+    <a href="posts/setting-up-sendmail-to-redirect-emails.html#disqus_thread" data-disqus-identifier="cache/posts/setting-up-sendmail-to-redirect-emails.html">Comments</a>
 
 
         </p>
 </div>
     </header><div class="e-content entry-content">
     <div>
-<p>I started doing the <a href="http://projecteuler.net/">Project Euler problems</a>
-last weekend. So far managed to get to problem 10.</p>
-<p>I have realized how much I suck at math, and now I want to learn more.
-I know people with knowledge in math will probably laugh at my solutions,
-I really feel like I half-assed most of them so far.</p>
-<p>Those with knowledge in math will probably find the problems easier than
-those with knowledge only in programming... Being good at math makes you
-a better programmer.</p>
-<p>Did I mention I'm trying to program the solution to each problem in a
-different programming language? Last one I used was pascal. Never had used
-it before. It's a horrible language, I'm glad I don't have to use it ever
-again for anything.</p>
-<p>By the way, every time I solve a problem I will updated my github repo.
-<a href="https://github.com/KaeruCT/project-euler">Check it out here</a>. Feel free
-to critique!</p>
+<p><small>
+  Disclaimer: the instructions below are for Ubuntu, but they should work for most distros,
+  the biggest difference is that the configuration files might be located elsewhere.
+</small></p>
+<p>If you're like me, you have a main email address and other email addresses set up in other domains.</p>
+<p>I dislike having to check all my email addresses individually, so I set up my mail servers to redirect
+all the email to my main address automatically.</p>
+<p>Sendmail has an aliases feature that makes this very simple to set up.</p>
+<p>Let's say you want to redirect emails this way:</p>
+<ul>
+<li>
+<code>webmaster@yourdomain.com</code> -&gt; <code>example@gmail.com, someoneelse@gmail.com</code>
+</li>
+<li>
+<code>help@yourdomain.com</code> -&gt; <code>helper@gmail.com</code>
+</li>
+<li>
+<code>support@yourdomain.com</code> -&gt; <code>helper@gmail.com</code>
+</li>
+</ul>
+<p>Follow these steps as root:</p>
+<ol>
+<li>
+<p>Change the <code>/etc/mail/aliases</code> file to look like this:</p>
+<pre class="code literal-block"><span></span> webmaster: example@gmail.com, someoneelse@gmail.com
+ help: helper@gmail.com
+ support: help
+</pre>
+
+
+<p>As you can see, each line in the file matches an origin email to a destination email.
+ Each line can reference previous entries as well.</p>
+</li>
+<li>
+<p>After changing the file, run:</p>
+<pre class="code literal-block"><span></span> $ newaliases
+</pre>
+
+
+</li>
+<li>
+<p>Make sure port 25 is open on your machine, so sendmail is able to listen for incoming email:</p>
+<pre class="code literal-block"><span></span> $ iptables -A INPUT -p tcp --dport 25 -j ACCEPT
+</pre>
+
+
+<p>Also make sure to save the iptables rules so they will be restored when the service restarts.
+ This varies by distro, so it's better to google something like <code>iptables save &lt;your distro&gt;</code>.</p>
+</li>
+<li>
+<p>Change <code>/etc/mail/sendmail.mc</code> so sendmail receives email from the outside world.</p>
+<p>Change this line:</p>
+<pre class="code literal-block"><span></span> DAEMON_OPTIONS(`Family=inet,  Name=MTA-v4, Port=smtp, Addr=127.0.0.1')dnl
+</pre>
+
+
+<p>to</p>
+<pre class="code literal-block"><span></span> DAEMON_OPTIONS(`Family=inet,  Name=MTA-v4, Port=smtp')dnl
+</pre>
+
+
+<p>We're not done modifying this file yet.
+ Now we need to verify that the domain in the configuration matches your server's domain. If not, change it:</p>
+<pre class="code literal-block"><span></span> MASQUERADE_AS(`yourdomain.com')dnl
+</pre>
+
+
+</li>
+<li>
+<p>After saving the file, you need to regenerate <code>sendmail.cf</code>:</p>
+<pre class="code literal-block"><span></span> m4 /etc/mail/sendmail.mc &gt; /etc/mail/sendmail.cf
+</pre>
+
+
+</li>
+<li>
+<p>Add your domain to <code>/etc/mail/local-host-names</code>. This file has a domain per line.
+    If your domain is not there, add it on a new line.</p>
+</li>
+<li>
+<p>Restart sendmail:</p>
+<pre class="code literal-block"><span></span> $ /etc/init.d/sendmail restart
+</pre>
+
+
+</li>
+</ol>
+<p>Depending on the configuration of your email client or web UI, the emails might end up stuck in a spam folder,
+so make sure to check there.</p>
+<p>If you use Gmail, you can make a filter to avoid sending your redirected emails to spam.
+To do so:</p>
+<ol>
+<li>Do a search for <code>from:yourdomain.com</code>.</li>
+<li>Click on "Create a filter with this search".</li>
+<li>Check the "Never send it to Spam" box.</li>
+<li>Click on "Create filter".</li>
+</ol>
+<p><img alt="Preventing email from being sent to Spam" src="galleries/screenshots/nospamfilter.png"></p>
 </div>
     </div>
     </article>
@@ -83,12 +166,12 @@ to critique!</p>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="index-4.html" rel="prev">Newer posts</a>
+                <a href="index.html" rel="prev">Newer posts</a>
             </li>
             <li class="next">
                 <a href="index-2.html" rel="next">Older posts</a>
             </li>
-        </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2019 <a href="mailto:avilla898@gmail.com">Andres Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
+        </ul></nav><script>var disqus_shortname="pejibayeblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2020 <a href="mailto:andres@villarreal.co.cr">Andrés Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
         </footer>
 </div>

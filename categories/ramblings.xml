@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pejibaye Blog (Posts about ramblings)</title><link>http://kaeruct.github.io/</link><description></description><atom:link href="http://kaeruct.github.io/categories/ramblings.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 15 Apr 2019 09:30:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning a Programming Language</title><link>http://kaeruct.github.io/posts/learning-a-programming-language.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I've heard that if you're a good programmer, you should be able to pick up a
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Pejibaye Blog (Posts about ramblings)</title><link>http://kaeruct.github.io/</link><description></description><atom:link type="application/rss+xml" href="http://kaeruct.github.io/categories/ramblings.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 18 Apr 2020 12:39:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning a Programming Language</title><link>http://kaeruct.github.io/posts/learning-a-programming-language.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I've heard that if you're a good programmer, you should be able to pick up a
 new language in a few days. And I've done this myself, I learned the basics of
 Go a few months ago. Built some command line programs and a web app with it,
 all in a few days.&lt;/p&gt;
@@ -36,7 +36,7 @@ frameworks. You could even build some of those yourself!&lt;/p&gt;
 language, go ahead. I believe it is worth the effort. Yet, I don't consider
 myself a master of any language. There's just way too much to learn and to do.
 I prefer having enough knowledge in a few languages and getting things done in
-them, than to be a &lt;em&gt;PHP Guru&lt;/em&gt; or &lt;em&gt;JavaScript Wizard&lt;/em&gt;. I advise you do the same.&lt;/p&gt;&lt;/div&gt;</description><category>ramblings</category><guid>http://kaeruct.github.io/posts/learning-a-programming-language.html</guid><pubDate>Fri, 14 Feb 2014 15:14:19 GMT</pubDate></item><item><title>Just switched to Ubuntu</title><link>http://kaeruct.github.io/posts/just-switched-to-ubuntu.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I decided to replace the Arch Linux installation on my desktop (my main computer)
+them, than to be a &lt;em&gt;PHP Guru&lt;/em&gt; or &lt;em&gt;JavaScript Wizard&lt;/em&gt;. I advise you do the same.&lt;/p&gt;&lt;/div&gt;</description><category>ramblings</category><guid>http://kaeruct.github.io/posts/learning-a-programming-language.html</guid><pubDate>Fri, 14 Feb 2014 03:14:19 GMT</pubDate></item><item><title>Just switched to Ubuntu</title><link>http://kaeruct.github.io/posts/just-switched-to-ubuntu.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I decided to replace the Arch Linux installation on my desktop (my main computer)
 with Ubuntu. Too bad I don't get to feel 1337 for using Arch anymore.&lt;/p&gt;
 &lt;p&gt;So far, so good, except I had a few issues when setting up Eclipse,
 but I always seem to get issues when installing Eclipse, no matter what platform...&lt;/p&gt;
@@ -56,7 +56,7 @@ directory and dump it on another installation, and most programs will pick up
 the correct settings. This made it really quick to get all my stuff up and running
 exactly how I had it set up before. Actually, I have a
 &lt;a href="https://github.com/KaeruCT/kaeru-linux-configs"&gt;git repo&lt;/a&gt; just for that.&lt;/p&gt;
-&lt;p&gt;Now... back to programming.&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><category>ramblings</category><guid>http://kaeruct.github.io/posts/just-switched-to-ubuntu.html</guid><pubDate>Tue, 28 May 2013 23:25:16 GMT</pubDate></item><item><title>Origins</title><link>http://kaeruct.github.io/posts/origins.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I really wanted to make a new post today. It took me a while to think of a good
+&lt;p&gt;Now... back to programming.&lt;/p&gt;&lt;/div&gt;</description><category>linux</category><category>ramblings</category><guid>http://kaeruct.github.io/posts/just-switched-to-ubuntu.html</guid><pubDate>Tue, 28 May 2013 11:25:16 GMT</pubDate></item><item><title>Origins</title><link>http://kaeruct.github.io/posts/origins.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I really wanted to make a new post today. It took me a while to think of a good
 thing to post about, but I finally came up with something. I'm going to tell you
 how I got into programming.&lt;/p&gt;
 &lt;p&gt;I've always been an introvert. When I was a kid, I had only one or two friends,
@@ -132,4 +132,4 @@ graduated from college.&lt;/p&gt;
 &lt;p&gt;I'm also thinking about studying either Business Administration or something else
 related to business, but I'll wait until I have my Bachelor's degree in software development
 to decide what else to study.&lt;/p&gt;
-&lt;p&gt;And that's my post for the month. Thanks for reading!&lt;/p&gt;&lt;/div&gt;</description><category>ramblings</category><guid>http://kaeruct.github.io/posts/origins.html</guid><pubDate>Wed, 15 May 2013 03:07:22 GMT</pubDate></item></channel></rss>
+&lt;p&gt;And that's my post for the month. Thanks for reading!&lt;/p&gt;&lt;/div&gt;</description><category>ramblings</category><guid>http://kaeruct.github.io/posts/origins.html</guid><pubDate>Tue, 14 May 2013 15:07:22 GMT</pubDate></item></channel></rss>

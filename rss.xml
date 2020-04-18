@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pejibaye Blog</title><link>http://kaeruct.github.io/</link><description>Fun and code</description><atom:link href="http://kaeruct.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 15 Apr 2019 09:30:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Starry Sky in HTML5 Canvas - Part 2</title><link>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt2.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Pejibaye Blog</title><link>http://kaeruct.github.io/</link><description>Fun and code</description><atom:link type="application/rss+xml" href="http://kaeruct.github.io/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 18 Apr 2020 12:39:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My top tips for junior developers</title><link>http://kaeruct.github.io/posts/my-top-tips-for-junior-developers.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Last year, I was tasked with mentoring an intern. It wasn't my first time mentoring, but it was my first time being fully in charge of a new employee. In the end, the intern was hired as a full-time employee, and I thought it would be helpful to compile all the advice I've been giving them, for future reference.&lt;/p&gt;
+&lt;p&gt;The following tips come from my experience and my way of working, as well as my own personal opinions.&lt;/p&gt;
+&lt;h2&gt;Tip 1: Learn how to search effectively&lt;/h2&gt;
+&lt;p&gt;Knowing what to search and how to search is an essential skill.
+Usually, I don't remember or know most of the things my colleagues ask me. Yet, after 5 minutes I can usually figure it out or at least point them in the right direction. All thanks to the power of search.&lt;/p&gt;
+&lt;h3&gt;How to search&lt;/h3&gt;
+&lt;p&gt;As with most things in life, Google will probably have an answer for you. Make sure to type it in a way that makes sense for Google. For example, if you have an error, copy-paste it word-for-word and put it inside double (") quotes. This might take you to Github issues, Stack Overflow answers, or blogs like this one!&lt;/p&gt;
+&lt;p&gt;If you don't find anything, try different variations of your search. You can try removing specifics (line numbers are often useless, and also data values). For example, if you get an error like this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
+    at validateNumber (internal/validators.js:130:11)
+    at validateTimerDuration (internal/timers.js:146:3)
+    at ClientRequest.setTimeout (_http_client.js:735:11)
+    ...
+&lt;/pre&gt;
+
+
+&lt;p&gt;You could be searching the following instead:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
+&lt;/pre&gt;
+
+
+&lt;p&gt;If that's still too long, you can try only&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;The "msecs" argument must be of type number
+&lt;/pre&gt;
+
+
+&lt;p&gt;If you still can't find anything useful, take advantage of your company's resources. Try the same search on your company's internal systems. Try everything: Slack, bug tracker (e.g.: JIRA), wiki, emails, Google Docs. If you still don't find anything, try reaching out to your more senior colleagues. They will surely know how to help or at least point you in the right direction.&lt;/p&gt;
+&lt;h3&gt;How to navigate codebases&lt;/h3&gt;
+&lt;p&gt;Sometimes your search will guide you to the source code that is throwing the error you were searching for. This is a bit sad since it means probably no one has found a solution yet for the problem you're having. In these cases you will need to read the code you found and try to understand it.&lt;/p&gt;
+&lt;p&gt;I think the best way to understand code is to see the flow of the data in the code. For example, let's say you have an app that let's you search movies by actor name.&lt;/p&gt;
+&lt;p&gt;I would first try to understand where the movie data is coming from. An external API? A database? A file?&lt;/p&gt;
+&lt;p&gt;Then I would see what happens when I type "Nicolas Cage" into the search box and click "Search". Does the app do an external network request? Is the data already available locally? If I search "Search" in the source code, will I be able to find the code for the button that triggers the search?&lt;/p&gt;
+&lt;p&gt;I would keep asking myself questions and answering them, until I have a better understanding of where the data is going to and coming from.&lt;/p&gt;
+&lt;h3&gt;How to deal with Github issues&lt;/h3&gt;
+&lt;p&gt;You might get lucky and find someone that had the same issue and opened a Github issue for it. If you're even luckier, someone else (or the original reporter) might have found a solution and shared it there. Then, the repository's maintainers may have merged the solution. Or maybe not yet.&lt;/p&gt;
+&lt;p&gt;If you don't want to wait for the repository's maintainers to merge the fix, there's always the option of forking the repository and merging the fix yourself. This is usually not a good idea unless you need this fix very urgently, since your fork will quickly become outdated. It's up to you and/or your team to decide if this is worth the risks.&lt;/p&gt;
+&lt;h2&gt;Tip 2: Don't copy-paste code without understanding it&lt;/h2&gt;
+&lt;p&gt;I have noticed way too many junior developers copy &amp;amp; paste code without understanding what it's doing. I've been guilty of this as well but I don't remember it, maybe because I rely on copy-pasting so much!&lt;/p&gt;
+&lt;p&gt;The problem with this: it can cause unintended consequences. If the copy-pasted code breaks you will not know how to fix it since you didn't understand it in the first place. This means sooner or later you will have to come back to this code and understand it.&lt;/p&gt;
+&lt;p&gt;If you are doing unit testing (which you should), you will need to understand the code first, to be able to write tests for it. You will need to identify every execution path it might take and think about the inputs that might break it. &lt;/p&gt;
+&lt;p&gt;One thing that has worked for me is to avoid copy-pasting the code and try to write it on my own. &lt;a href="https://wiki.c2.com/?ToGrok"&gt;Grok&lt;/a&gt; what the code is doing and writing it using variable/function/class names that match your project and business logic. Once you have done this you might understand it a bit better.&lt;/p&gt;
+&lt;h2&gt;Tip 3: Know your tools&lt;/h2&gt;
+&lt;p&gt;With tools, I mean everything that helps you get your work done. A few examples:&lt;/p&gt;
+&lt;p&gt;Shell, text editor, IDE, compiler, package manager, version control, CI/CD (continuous integration/continuous delivery).&lt;/p&gt;
+&lt;p&gt;Notice I am using the generic terms and not the specific tools you or your company might be using. Why is that? Because you should be able to pick up tools and work with them.&lt;/p&gt;
+&lt;p&gt;To have a good productivity, you need to become familiar with the tools used by your colleagues, so make sure to ask around for recommendations.&lt;/p&gt;
+&lt;p&gt;In some cases you will need to use tools that you don't necessarily enjoy using, and that's okay. Tools are a means to an end. Tools should help you build your final product. They should not be your main focus - unless you work for a software company that builds software development tools.&lt;/p&gt;
+&lt;p&gt;Here are some of my favorite tools at the moment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bash&lt;/li&gt;
+&lt;li&gt;Visual Studio Code&lt;/li&gt;
+&lt;li&gt;IntelliJ IDEA&lt;/li&gt;
+&lt;li&gt;yarn&lt;/li&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;li&gt;Gitlab CI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Why are they my favorite tools? Because I'm used to them. Only looking at them, many developers will know I am primarily a frontend developer. There's always going to be something better and everyone has different preferences. But it doesn't matter, as long as the tools help you get the job done. Still, always be open to new tools and ask other people why they chose theirs. They might change your mind and you will become even more productive! A good way to quickly get to know a tool is to do a search like this: "&amp;lt;tool&amp;gt; tips and tricks".&lt;/p&gt;
+&lt;h3&gt;Know your programming language(s)&lt;/h3&gt;
+&lt;p&gt;It's also very important to know all the fundamental concepts of the programming language(s) you are using at work. Again, make sure to ask your more experienced colleagues for recommendations. There are tons of books, online courses, and tutorials for every mainstream programming language out there.&lt;/p&gt;
+&lt;p&gt;You need to be fluent in your language. This will allow you to focus on solving the business problems instead of fighting against the language to make the code work. You don't have to be an expert immediately, it will take time. But make sure to keep learning and aim to become an expert in the language within the first two years of your career.&lt;/p&gt;
+&lt;h2&gt;Tip 4: Know how and when to ask for help&lt;/h2&gt;
+&lt;p&gt;When you are new, you will have a lot of questions, and that's okay. Asking questions is how we learn.&lt;/p&gt;
+&lt;h3&gt;Ask yourself first&lt;/h3&gt;
+&lt;p&gt;Before you ask the question to someone else, ask it to yourself. Then try to come up with a few guesses and try to validate them. This will lead to more and more questions.&lt;/p&gt;
+&lt;p&gt;This helps you understand what you really need to know to solve the problem, and when you go to someone else you will have a much better question to ask. Good questions breed good answers.&lt;/p&gt;
+&lt;p&gt;For example, let's say you have to change the &lt;code&gt;href&lt;/code&gt; of a link in the footer of your company's website.
+I would ask myself: "where is the code for this link?"&lt;/p&gt;
+&lt;p&gt;Then I would come up with a few hypotheses:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I can find it if I search for the current &lt;code&gt;href&lt;/code&gt; on the codebase.&lt;/li&gt;
+&lt;li&gt;If I change it here and deploy the code, the link will change.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After that, I would try to prove my first hypothesis by searching for the current &lt;code&gt;href&lt;/code&gt;.
+Let's say I could not find it in the code. Then I would come up with a different hypothesis:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It is not in the code, so the content must come from somewhere else.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then I would ask myself more questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Where is the content for the footer stored?&lt;/li&gt;
+&lt;li&gt;How can I change it?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once I have these questions, I can go to a more experienced colleague, and they will be able to quickly point me in the right direction: "Oh, that content is stored in our content management system. I will show you how to change it".&lt;/p&gt;
+&lt;p&gt;If I had  asked them my first question instead: "where is the code for this link", they would have given me a very simple answer that would take me straight to the code and that would have not been as helpful.&lt;/p&gt;
+&lt;h3&gt;Fighting forgetfulness&lt;/h3&gt;
+&lt;p&gt;I am very forgetful, so I like to keep notes. Whenever I find the answer to a an important question, I make sure to write it down somewhere. This has several benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You don't need to remember everything.&lt;/li&gt;
+&lt;li&gt;You can share your notes with others (this is usually called documentation).&lt;/li&gt;
+&lt;li&gt;You can easily keep track of how much you have learned over time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can keep your notes on paper or digitally. Make sure to try both and see what works best for you.&lt;/p&gt;
+&lt;h2&gt;Tip 5: Maintain a healthy work-life balance&lt;/h2&gt;
+&lt;p&gt;When you're starting out you always want to keep learning more and more while also delivering your work. This means you will probably work many hours a day if you're very passionate. This is fine if you are enjoying yourself, but you should be careful and aware of &lt;a href="https://en.wikipedia.org/wiki/Occupational_burnout"&gt;burn out&lt;/a&gt;. A good way to avoid this is to have a routine you follow every work day, and make sure you have enough breaks throughout the day. In the end it all comes down to a matter of discipline and knowing yourself.&lt;/p&gt;
+&lt;p&gt;Remember life is about living, not about working! It's a good idea to have other things outside going on in your life aside from work. There's no right or wrong here because it depends on you, but make sure you manage your stress in a healthy way.&lt;/p&gt;&lt;/div&gt;</description><category>career</category><category>mentoring</category><category>tips</category><guid>http://kaeruct.github.io/posts/my-top-tips-for-junior-developers.html</guid><pubDate>Sat, 18 Apr 2020 11:06:53 GMT</pubDate></item><item><title>Starry Sky in HTML5 Canvas - Part 2</title><link>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt2.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
 &lt;p&gt;This is part of a series! Please make sure you have read &lt;a href="http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt1.html"&gt;Part 1&lt;/a&gt; first!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt; -- you can try out the result of this tutorial by visiting this &lt;a href="https://codesandbox.io/s/z68y1012yl?fontsize=14"&gt;CodeSandbox&lt;/a&gt;.
 However, I encourage you to read the blog post and try to follow along to understand how and why it works.&lt;/p&gt;
@@ -120,7 +214,7 @@ Some ideas you may want to try to learn more and improve your skills:&lt;/p&gt;
 &lt;li&gt;Add a gradient background instead of a solid color.&lt;/li&gt;
 &lt;li&gt;Add multiple moons.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Don't hesitate to contact me at &lt;a href="http://twitter.com/KaeruCT"&gt;@KaeruCT&lt;/a&gt; if you have any questions, suggestions, or improvements for this tutorial!&lt;/p&gt;&lt;/div&gt;</description><category>canvas</category><category>javascript</category><category>programming-projects</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt2.html</guid><pubDate>Sat, 13 Apr 2019 22:31:13 GMT</pubDate></item><item><title>Starry Sky in HTML5 Canvas - Part 1</title><link>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt1.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;In my spare time I often enjoy creating visualizations using HTML5 canvas.
+&lt;p&gt;Don't hesitate to contact me at &lt;a href="http://twitter.com/KaeruCT"&gt;@KaeruCT&lt;/a&gt; if you have any questions, suggestions, or improvements for this tutorial!&lt;/p&gt;&lt;/div&gt;</description><category>canvas</category><category>javascript</category><category>programming-projects</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt2.html</guid><pubDate>Sat, 13 Apr 2019 22:31:13 GMT</pubDate></item><item><title>Starry Sky in HTML5 Canvas - Part 1</title><link>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt1.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;In my spare time I often enjoy creating visualizations using HTML5 canvas.
 I'm planning to do a little presentation about this so I thought a good way to get started was to create a blog post explaining how to do a simple one.&lt;/p&gt;
 &lt;p&gt;This tutorial will teach you how to create something like the image below from scratch!&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Animated Starry Sky with Moon" src="http://kaeruct.github.io/galleries/screenshots/starry/moon.gif"&gt;&lt;/p&gt;
@@ -297,7 +391,7 @@ While we're at it, let's extract the circle drawing logic to a new function as w
 
 &lt;p&gt;&lt;img alt="Step 4" src="http://kaeruct.github.io/galleries/screenshots/starry/step4.png"&gt;&lt;/p&gt;
 &lt;p&gt;Much better! Now the stars are all different sizes!&lt;/p&gt;
-&lt;p&gt;This is all for part 1. You can continue reading &lt;a href="http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt2.html"&gt;Part 2&lt;/a&gt;, where we will add a moon and make our stars flicker!&lt;/p&gt;&lt;/div&gt;</description><category>canvas</category><category>javascript</category><category>programming-projects</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt1.html</guid><pubDate>Sat, 13 Apr 2019 21:35:56 GMT</pubDate></item><item><title>How to show preview images when sharing links of your website</title><link>http://kaeruct.github.io/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;When you share a link on social media or mesagging apps, sometimes the app shows a nice preview thumbnail with a description? You can click on it and it will take you to the linked website. I wanted to have this functionality for a website I was working on, so I did some research on how to get it working.&lt;/p&gt;
+&lt;p&gt;This is all for part 1. You can continue reading &lt;a href="http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt2.html"&gt;Part 2&lt;/a&gt;, where we will add a moon and make our stars flicker!&lt;/p&gt;&lt;/div&gt;</description><category>canvas</category><category>javascript</category><category>programming-projects</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/starry-sky-in-html5-canvas-pt1.html</guid><pubDate>Sat, 13 Apr 2019 21:35:56 GMT</pubDate></item><item><title>How to show preview images when sharing links of your website</title><link>http://kaeruct.github.io/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;When you share a link on social media or mesagging apps, sometimes the app shows a nice preview thumbnail with a description? You can click on it and it will take you to the linked website. I wanted to have this functionality for a website I was working on, so I did some research on how to get it working.&lt;/p&gt;
 &lt;p&gt;Short answer: use the &lt;code&gt;og:image&lt;/code&gt; meta tag.&lt;/p&gt;
 &lt;p&gt;Longer answer: read on.&lt;/p&gt;
 &lt;p&gt;You have to use &lt;a href="https://ogp.me/"&gt;Open Graph&lt;/a&gt; meta tags.
@@ -327,7 +421,7 @@ There's a bunch of meta tags to use, but the ones you need for previews are the 
 &lt;h3&gt;WhatsApp&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="WhatsApp" src="http://kaeruct.github.io/galleries/screenshots/og/whatsapp.png"&gt;&lt;/p&gt;
 &lt;h3&gt;Discord&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="Discord" src="http://kaeruct.github.io/galleries/screenshots/og/discord.png"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>html</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html</guid><pubDate>Sat, 13 Apr 2019 07:08:24 GMT</pubDate></item><item><title>Migrating old-style JavaScript code to ES6</title><link>http://kaeruct.github.io/posts/migrating-old-style-javascript-code-to-es6.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Recently (at work) I had to migrate a medium-sized JavaScript codebase (20KLOC) to &lt;a href="https://github.com/lukehoban/es6features"&gt;ES6&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Discord" src="http://kaeruct.github.io/galleries/screenshots/og/discord.png"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>html</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/how-to-show-preview-images-when-sharing-links-of-your-website.html</guid><pubDate>Sat, 13 Apr 2019 07:08:24 GMT</pubDate></item><item><title>Migrating old-style JavaScript code to ES6</title><link>http://kaeruct.github.io/posts/migrating-old-style-javascript-code-to-es6.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Recently (at work) I had to migrate a medium-sized JavaScript codebase (20KLOC) to &lt;a href="https://github.com/lukehoban/es6features"&gt;ES6&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We wanted to migrate to take advantage of the new features such as arrow functions, destructuring, and classes (there are a bunch more!).
 Additionally, I was tasked with introducing &lt;a href="https://eslint.org/"&gt;eslint&lt;/a&gt; and &lt;a href="https://prettier.io/"&gt;prettier&lt;/a&gt; to improve the quality of our code a bit more.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -352,7 +446,7 @@ I ran all the "safe" transformations, verified them, and then ran some of the "u
 The tests broke in a few places because of things like variables being shadowed because of the changes from &lt;code&gt;var&lt;/code&gt; to &lt;code&gt;let&lt;/code&gt; or &lt;code&gt;const&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;However, with the help of the &lt;a href="https://eslint.org/docs/rules/no-shadow"&gt;no-shadow&lt;/a&gt; eslint rule, I was able to find all those cases quickly and get them fixed. ESLint was also very helpful in making sure I was not breaking any code with the refactoring I had to do.&lt;/p&gt;
 &lt;p&gt;The lines of code initially went down because of the ES6 syntax sugar, but they went back up with the introduction of prettier and its opinionated formatting -- especially regarding line length.&lt;/p&gt;
-&lt;p&gt;In the end, the migration was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.&lt;/p&gt;&lt;/div&gt;</description><category>es6</category><category>javascript</category><category>refactoring</category><category>webpack</category><guid>http://kaeruct.github.io/posts/migrating-old-style-javascript-code-to-es6.html</guid><pubDate>Thu, 28 Dec 2017 21:26:16 GMT</pubDate></item><item><title>Setting up sendmail to redirect emails</title><link>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;small&gt;
+&lt;p&gt;In the end, the migration was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.&lt;/p&gt;&lt;/div&gt;</description><category>es6</category><category>javascript</category><category>refactoring</category><category>webpack</category><guid>http://kaeruct.github.io/posts/migrating-old-style-javascript-code-to-es6.html</guid><pubDate>Thu, 28 Dec 2017 21:26:16 GMT</pubDate></item><item><title>Setting up sendmail to redirect emails</title><link>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;small&gt;
   Disclaimer: the instructions below are for Ubuntu, but they should work for most distros,
   the biggest difference is that the configuration files might be located elsewhere.
 &lt;/small&gt;&lt;/p&gt;
@@ -443,7 +537,7 @@ To do so:&lt;/p&gt;
 &lt;li&gt;Check the "Never send it to Spam" box.&lt;/li&gt;
 &lt;li&gt;Click on "Create filter".&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt="Preventing email from being sent to Spam" src="http://kaeruct.github.io/galleries/screenshots/nospamfilter.png"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>email</category><category>linux</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</guid><pubDate>Sat, 14 May 2016 16:33:44 GMT</pubDate></item><item><title>Generating partner.jar for Salesforce API Integration</title><link>http://kaeruct.github.io/posts/generating-partnerjar-for-salesforce-api-integration.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I ran into a small issue recently when setting up a Java project to use the
+&lt;p&gt;&lt;img alt="Preventing email from being sent to Spam" src="http://kaeruct.github.io/galleries/screenshots/nospamfilter.png"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>email</category><category>linux</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/setting-up-sendmail-to-redirect-emails.html</guid><pubDate>Sat, 14 May 2016 16:33:44 GMT</pubDate></item><item><title>Generating partner.jar for Salesforce API Integration</title><link>http://kaeruct.github.io/posts/generating-partnerjar-for-salesforce-api-integration.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I ran into a small issue recently when setting up a Java project to use the
 Salesforce APIs.&lt;/p&gt;
 &lt;p&gt;Basically, you need to download a WSDL file from Salesforce, then use a tool made
 by them to generate a jar that you then include in your Java program.&lt;/p&gt;
@@ -461,7 +555,7 @@ you run it you realize they didn't pack the dependencies within the jar!&lt;/p&g
 
 
 &lt;p&gt;Please note these were the versions that worked for me. If your &lt;code&gt;force-wsc.jar&lt;/code&gt; is
-a different version, check if you need to include other version of its dependencies.&lt;/p&gt;&lt;/div&gt;</description><category>java</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/generating-partnerjar-for-salesforce-api-integration.html</guid><pubDate>Wed, 12 Nov 2014 02:12:38 GMT</pubDate></item><item><title>How to use the Youtube JS API to play music in the background</title><link>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;The Youtube JavaScript API allows you to embed YouTube videos and
+a different version, check if you need to include other version of its dependencies.&lt;/p&gt;&lt;/div&gt;</description><category>java</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/generating-partnerjar-for-salesforce-api-integration.html</guid><pubDate>Wed, 12 Nov 2014 02:12:38 GMT</pubDate></item><item><title>How to use the Youtube JS API to play music in the background</title><link>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;The Youtube JavaScript API allows you to embed YouTube videos and
 interact with them programatically. To use it, first you need to embed this
 script into your page:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;lt;script src="http://www.youtube.com/player_api"&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;.&lt;/p&gt;
@@ -473,7 +567,7 @@ from the Youtube player from triggering on Firefox. I ran across this problem
 when making &lt;a href="http://kaeru.neritic.net/projects/short-experiments/walk"&gt;this&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Finally, here's &lt;a href="http://kaeruct.github.io/examples/yt-js-api"&gt;a full example&lt;/a&gt; that will wait for the video to
 load and automatically play it:&lt;/p&gt;
-&lt;script src="https://gist.github.com/KaeruCT/dcfae82a15af514ea95e.js"&gt;&lt;/script&gt;&lt;/div&gt;</description><category>javascript</category><category>tutorials</category><category>youtube</category><guid>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</guid><pubDate>Fri, 23 May 2014 18:29:55 GMT</pubDate></item><item><title>Learning a Programming Language</title><link>http://kaeruct.github.io/posts/learning-a-programming-language.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I've heard that if you're a good programmer, you should be able to pick up a
+&lt;script src="https://gist.github.com/KaeruCT/dcfae82a15af514ea95e.js"&gt;&lt;/script&gt;&lt;/div&gt;</description><category>javascript</category><category>tutorials</category><category>youtube</category><guid>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</guid><pubDate>Fri, 23 May 2014 18:29:55 GMT</pubDate></item><item><title>Learning a Programming Language</title><link>http://kaeruct.github.io/posts/learning-a-programming-language.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I've heard that if you're a good programmer, you should be able to pick up a
 new language in a few days. And I've done this myself, I learned the basics of
 Go a few months ago. Built some command line programs and a web app with it,
 all in a few days.&lt;/p&gt;
@@ -510,7 +604,7 @@ frameworks. You could even build some of those yourself!&lt;/p&gt;
 language, go ahead. I believe it is worth the effort. Yet, I don't consider
 myself a master of any language. There's just way too much to learn and to do.
 I prefer having enough knowledge in a few languages and getting things done in
-them, than to be a &lt;em&gt;PHP Guru&lt;/em&gt; or &lt;em&gt;JavaScript Wizard&lt;/em&gt;. I advise you do the same.&lt;/p&gt;&lt;/div&gt;</description><category>ramblings</category><guid>http://kaeruct.github.io/posts/learning-a-programming-language.html</guid><pubDate>Fri, 14 Feb 2014 15:14:19 GMT</pubDate></item><item><title>Go Learn</title><link>http://kaeruct.github.io/posts/go-learn.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Today I decided to try out &lt;a href="http://golang.org/"&gt;Go&lt;/a&gt;.&lt;/p&gt;
+them, than to be a &lt;em&gt;PHP Guru&lt;/em&gt; or &lt;em&gt;JavaScript Wizard&lt;/em&gt;. I advise you do the same.&lt;/p&gt;&lt;/div&gt;</description><category>ramblings</category><guid>http://kaeruct.github.io/posts/learning-a-programming-language.html</guid><pubDate>Fri, 14 Feb 2014 03:14:19 GMT</pubDate></item><item><title>Go Learn</title><link>http://kaeruct.github.io/posts/go-learn.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Today I decided to try out &lt;a href="http://golang.org/"&gt;Go&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;What is Go?&lt;/h3&gt;
 &lt;p&gt;Go is a programming language designed and developed at Google.
 It was designed by really smart people: Robert Griesemer,
@@ -559,34 +653,4 @@ submodule in my project.&lt;/p&gt;
     &lt;img width="540px" class="thumbnail" src="http://kaeruct.github.io/galleries/learning-go/learning-go1.png"&gt;
     &lt;center&gt;A screenshot of my development process. Click to see the gallery.&lt;/center&gt;
 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As usual, my project is on &lt;a href="https://github.com/KaeruCT/go-learn"&gt;Github&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>golang</category><category>programming-projects</category><guid>http://kaeruct.github.io/posts/go-learn.html</guid><pubDate>Sun, 08 Sep 2013 22:33:11 GMT</pubDate></item><item><title>Trying out Ruby on Rails</title><link>http://kaeruct.github.io/posts/trying-out-ruby-on-rails.html</link><dc:creator>Andres Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I've heard a lot of stuff about RoR for a while, so I decided to finally
-try it out and see what all the fuss is about.&lt;/p&gt;
-&lt;p&gt;What is Ruby on Rails? A web framework that runs on the Ruby programming language.&lt;/p&gt;
-&lt;p&gt;First impressions: too much magic going on. It seems like a good thing for quick
-development, but I prefer knowing exactly what is going on in case anything
-goes wrong so the problem can be fixed easily. For this reason, I probably will not use RoR
-on any on my projects until I understand more about it.&lt;/p&gt;
-&lt;p&gt;Things I liked about RoR: the ActiveRecord ORM, and the built-in REST support.
-I also liked that it is very easy to deploy once you know what you're doing.&lt;/p&gt;
-&lt;p&gt;Thinks I dislike so far: using SCSS and Coffeescript by default.
-These could add to the cognitive load of beginner, and they have to wrap their
-head around how RoR first has to process these files into what the browser
-can understand (CSS y JavaScript, respectively).&lt;/p&gt;
-&lt;p&gt;I've never been a big fan of Coffeescript. I think it's annoying to debug
-and I would rather write plain JavaScript, but that's just my opinion. However, I do think
-it has a nice syntax.&lt;/p&gt;
-&lt;p&gt;I had heard of SCSS, but I had never used it. It's very enjoyable to use, since you
-can nest CSS definitions, and it has some neat features that make it a lot easier
-to maintain stylesheets, such as variables and functions.&lt;/p&gt;
-&lt;p&gt;When learning a new framework, I try to follow the official tutorial,
-but tweaking the steps a bit in order to create a different application.&lt;/p&gt;
-&lt;p&gt;To learn RoR, I decided to make a small contacts application, where you can add contacts to a list
-and edit/delete them. &lt;a href="https://github.com/KaeruCT/learning-rails-contacts-app"&gt;It's on a repo at Github&lt;/a&gt;,
-in case you wanna take a look.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://kaeruct.github.io/galleries/learning-rails/"&gt;
-    &lt;img width="540px" class="thumbnail" src="http://kaeruct.github.io/galleries/learning-rails/screenshot.png"&gt;
-    &lt;center&gt;A screenshot of my development process. Click to see the gallery.&lt;/center&gt;
-&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Now I'm also learning Django (a python web framework), and everything seems a lot less magical,
-so I will probably use it instead of RoR.
-Both of them seem to solve the same problem (CRUD apps).&lt;/p&gt;&lt;/div&gt;</description><category>programming-projects</category><category>ruby</category><guid>http://kaeruct.github.io/posts/trying-out-ruby-on-rails.html</guid><pubDate>Sun, 30 Jun 2013 06:21:53 GMT</pubDate></item></channel></rss>
+&lt;p&gt;As usual, my project is on &lt;a href="https://github.com/KaeruCT/go-learn"&gt;Github&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>golang</category><category>programming-projects</category><guid>http://kaeruct.github.io/posts/go-learn.html</guid><pubDate>Sun, 08 Sep 2013 10:33:11 GMT</pubDate></item></channel></rss>
