@@ -23,11 +23,11 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/fun.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/golang.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/html.xml</loc>
@@ -35,19 +35,19 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/java.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/javascript.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/linux.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/math.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/mentoring.xml</loc>
@@ -55,11 +55,11 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/programming-projects.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/ramblings.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/refactoring.xml</loc>
@@ -67,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/ruby.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tips.xml</loc>
@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tutorials.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/webpack.xml</loc>
@@ -83,50 +83,50 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/youtube.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/glxy-android/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/kaeruftpload/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/learning-go/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/learning-rails/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/rainbow/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/screenshots/og/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/screenshots/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/screenshots/starry/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/rss.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/sitemap.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2020-12-27T14:47:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -62,12 +62,16 @@
 <noscript>
 <ul class="thumbnails">
 <li>
+<a href="step3.png" class="thumbnail image-reference" title="Step3">
+            <img src="step3.thumbnail.png" alt="Step3"></a>
+        </li>
+<li>
 <a href="step1.png" class="thumbnail image-reference" title="Step1">
             <img src="step1.thumbnail.png" alt="Step1"></a>
         </li>
 <li>
-<a href="step3.png" class="thumbnail image-reference" title="Step3">
-            <img src="step3.thumbnail.png" alt="Step3"></a>
+<a href="step2.png" class="thumbnail image-reference" title="Step2">
+            <img src="step2.thumbnail.png" alt="Step2"></a>
         </li>
 <li>
 <a href="step5.png" class="thumbnail image-reference" title="Step5">
@@ -76,10 +80,6 @@
 <li>
 <a href="step4.png" class="thumbnail image-reference" title="Step4">
             <img src="step4.thumbnail.png" alt="Step4"></a>
-        </li>
-<li>
-<a href="step2.png" class="thumbnail image-reference" title="Step2">
-            <img src="step2.thumbnail.png" alt="Step2"></a>
 </li>
 </ul>
 </noscript>
@@ -91,17 +91,21 @@
 </div>
     </div>
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-51284333-1', 'kaeruct.github.io');
-  ga('send', 'pageview');
-
+    
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.villarreal.co.cr/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script><script src="../../assets/js/justified-layout.min.js"></script><script src="../../assets/js/gallery.min.js"></script><script>
-var jsonContent = [{"height": 130, "size": {"h": 130, "w": 180}, "title": "Step1", "url": "step1.png", "url_thumb": "step1.thumbnail.png", "width": 180}, {"height": 180, "size": {"h": 180, "w": 147}, "title": "Step3", "url": "step3.png", "url_thumb": "step3.thumbnail.png", "width": 147}, {"height": 130, "size": {"h": 130, "w": 180}, "title": "Step5", "url": "step5.png", "url_thumb": "step5.thumbnail.png", "width": 180}, {"height": 180, "size": {"h": 180, "w": 147}, "title": "Step4", "url": "step4.png", "url_thumb": "step4.thumbnail.png", "width": 147}, {"height": 126, "size": {"h": 126, "w": 180}, "title": "Step2", "url": "step2.png", "url_thumb": "step2.thumbnail.png", "width": 180}];
+var jsonContent = [{"height": 180, "size": {"h": 180, "w": 147}, "title": "Step3", "url": "step3.png", "url_thumb": "step3.thumbnail.png", "width": 147}, {"height": 130, "size": {"h": 130, "w": 180}, "title": "Step1", "url": "step1.png", "url_thumb": "step1.thumbnail.png", "width": 180}, {"height": 126, "size": {"h": 126, "w": 180}, "title": "Step2", "url": "step2.png", "url_thumb": "step2.thumbnail.png", "width": 180}, {"height": 130, "size": {"h": 130, "w": 180}, "title": "Step5", "url": "step5.png", "url_thumb": "step5.thumbnail.png", "width": 180}, {"height": 180, "size": {"h": 180, "w": 147}, "title": "Step4", "url": "step4.png", "url_thumb": "step4.thumbnail.png", "width": 147}];
 var thumbnailSize = 180;
 renderGallery(jsonContent, thumbnailSize);
 window.addEventListener('resize', renderGallery);
