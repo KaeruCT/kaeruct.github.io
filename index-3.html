@@ -48,7 +48,42 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/setting-up-sendmail-to-redirect-emails.html" class="u-url">Setting up sendmail to redirect emails</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/migrating-old-style-javascript-code-to-es6.html" class="u-url">Migrating old-style JavaScript code to ES6</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/migrating-old-style-javascript-code-to-es6.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-12-28T15:26:16-06:00" title="Dec 28, 2017 03:26 PM">Dec 28, 2017 03:26 PM</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Recently (at work) I had to migrate a medium-sized JavaScript codebase (20KLOC) to <a href="https://github.com/lukehoban/es6features">ES6</a>.</p>
+<p>We wanted to migrate to take advantage of the new features such as arrow functions, destructuring, and classes (there are a bunch more!).
+Additionally, I was tasked with introducing <a href="https://eslint.org/">eslint</a> and <a href="https://prettier.io/">prettier</a> to improve the quality of our code a bit more.</p>
+<blockquote>
+<p>Before diving into the migration process, first I'd like to give some context on the state of the application.</p>
+<p>We already used <a href="https://www.npmjs.com/">npm</a> and <a href="https://webpack.js.org/">webpack</a> to build our frontend, so I thought the migration should be straightforward -- and it was.</p>
+<p>I was heavily involved in modifying our build process to use npm instead of ad-hoc shell scripts, and I found <a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">this guide</a> to be incredibly helpful.</p>
+</blockquote>
+<p>Back to the migration, the first thing I did was to add babel to webpack using <a href="https://github.com/babel/babel-loader">babel-loader</a>.
+It was easy to add to webpack and took almost no time to set up.
+This meant that webpack would take our JavaScript files and transpile them from ES6 to "normal" JavaScript that all browsers can run.
+However, in order to get our mocha tests running, it was necessary to hook
+babel into our tests as well. I used <a href="https://istanbul.js.org/docs/tutorials/es2015/">this guide</a> from istanbul and was able to get them running fairly quickly.</p>
+<p>Once I ran the build and the tests and everything looked good, then it was time to really port our code to ES6.
+First, it was necessary to port some code that was using the <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a> to ES6 module syntax. I did this manually (using search/replace tools) and it took me a few hours.</p>
+<p>In some cases we had some ugly dependencies on globals so a bit of refactoring was required.
+In cases where it wasn't possible, webpack has the <a href="https://webpack.js.org/plugins/provide-plugin/">ProvidePlugin</a>, which covers most cases.
+I also found the <a href="https://github.com/webpack-contrib/expose-loader">expose-loader</a> to be useful becase we have some code not under our control that required jQuery to be a browser global.</p>
+<p>Once that was done, it was time to get started with the syntax changes.
+I found an amazing tool for that, <a href="https://lebab.io/">Lebab</a>. It is a very realiable tool and I would totally use it again.
+I ran all the "safe" transformations, verified them, and then ran some of the "unsafe" ones, checking how the code changed each time.</p>
+<p>Finally, I ran the build and our mocha tests to make sure they still passed.
+The tests broke in a few places because of things like variables being shadowed because of the changes from <code>var</code> to <code>let</code> or <code>const</code>.</p>
+<p>However, with the help of the <a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a> eslint rule, I was able to find all those cases quickly and get them fixed. ESLint was also very helpful in making sure I was not breaking any code with the refactoring I had to do.</p>
+<p>The lines of code initially went down because of the ES6 syntax sugar, but they went back up with the introduction of prettier and its opinionated formatting -- especially regarding line length.</p>
+<p>In the end, the migration was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.</p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/setting-up-sendmail-to-redirect-emails.html" class="u-url">Setting up sendmail to redirect emails</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
             <p class="dateline"><a href="posts/setting-up-sendmail-to-redirect-emails.html" rel="bookmark"><time class="post-date published dt-published" datetime="2016-05-14T10:33:44-06:00" title="May 14, 2016 10:33 AM">May 14, 2016 10:33 AM</time></a></p>

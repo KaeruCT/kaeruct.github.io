@@ -10,7 +10,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://kaeruct.github.io/index.html">
 <link rel="next" href="index-3.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/my-top-tips-for-junior-developers.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/publishing-an-app-on-f-droid.html" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -47,7 +47,63 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/my-top-tips-for-junior-developers.html" class="u-url">My top tips for junior developers</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/publishing-an-app-on-f-droid.html" class="u-url">Publishing an App on F-Droid</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/publishing-an-app-on-f-droid.html" rel="bookmark"><time class="post-date published dt-published" datetime="2021-08-03T21:29:13+06:00" title="Aug 3, 2021 09:29 PM">Aug 3, 2021 09:29 PM</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p><a href="https://f-droid.org/"><img alt="F-Droid" src="fdroid.svg"></a></p>
+<p>I made <a href="https://f-droid.org/packages/com.kaeruct.raumballer/">some</a> <a href="https://f-droid.org/packages/com.kaeruct.gotosleep/">small</a> <a href="https://f-droid.org/packages/com.kaeruct.glxy/">apps</a> for Android and I wanted to distribute them. I also care a lot about software freedom, so F-Droid is the best place for me to publish my apps.</p>
+<blockquote>
+<p>Disclaimer!
+You are not able to sell your app on F-Droid. If you want to make money with it, you would need to allow users to pay through another method. Please see this <a href="https://opensource.stackexchange.com/questions/88/how-can-free-and-open-source-projects-be-monetized">StackExchange question</a> if you're interested in monetization.</p>
+</blockquote>
+<h2>What's F-Droid?</h2>
+<p>F-Droid is an alternative for the Play Store and other Android stores focused on software freedom and privacy.</p>
+<p>The biggest difference is that F-Droid only allows <a href="https://www.gnu.org/philosophy/free-sw.en.html">Free and Open Source (FOSS) software</a>. F-Droid also respects your privacy and discourages application which do not.</p>
+<p>In an age where privacy and software freedom matters most, F-Droid is the perfect replacement for other Android stores.</p>
+<h2>Why publish on F-Droid?</h2>
+<p>F-Droid is a great way of distributing your FOSS Android application. It makes it very easy for your users to install your app and keep it up to date, without requiring them to side-load it.</p>
+<p>There is also a higher level of trust since every apk published on F-Droid is built from source.</p>
+<h2>How to submit your app to F-Droid</h2>
+<p>I've broken this down into two big steps:</p>
+<ul>
+<li>
+<strong>Preparing</strong> your app</li>
+<li>
+<strong>Submitting</strong> it to F-Droid</li>
+</ul>
+<h3>Preparing your app's repo</h3>
+<p>F-Droid needs some metadata about your app so it can show something to the users. For example: app name, description, screenshots, and the changelog.</p>
+<p>Makes sure you have good screenshots and good explanatory texts about your app. This makes people more interested in it, and speeds up the review process.</p>
+<p>The best way to get this metadata to F-Droid is to put it in your app's repo. You only need to create a few files, following either of these methods. I recommend Fastlane.</p>
+<ul>
+<li><a href="https://gitlab.com/-/snippets/1895688">Fastlane</a></li>
+<li><a href="https://gitlab.com/-/snippets/1901490">Triple-T</a></li>
+</ul>
+<h3>Submitting your app's build metadata to F-Droid</h3>
+<p>Getting your app on F-Droid is as easy as sending them a merge request to their <a href="https://gitlab.com/fdroid/fdroiddata">data repo</a>.</p>
+<p>To summarize, you need to:</p>
+<ol>
+<li>Fork the repo on GitLab</li>
+<li>Create a new branch for your changes</li>
+<li>Create a metadata <code>.yml</code> file for your app. You should name it using your app's id, for example: <code>com.kaeruct.raumballer.yml</code>. There are some templates <a href="https://gitlab.com/fdroid/wiki/-/wikis/Metadata/YAML-Metadata">here</a>.</li>
+<li>Submit the merge request to <a href="https://gitlab.com/fdroid/fdroiddata">F-Droid's data repo</a>.</li>
+<li>Wait for the automated build to finish.</li>
+<li>Fix any errors in the build or feedback to your merge request.</li>
+</ol>
+<p>There are details instructions in the repo's <a href="https://gitlab.com/fdroid/fdroiddata/-/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> file.</p>
+<p>I highly recommend you also set up auto updates. This allows F-Droid to automatically know when you have released a new version. It will then update your app's metadata <code>.yml</code> file automatically and publish the new version of your app on the store.</p>
+<h3>My experience</h3>
+<p>Each of the apps I submitted were approved around 2 or 3 weeks, but this may vary depending on the complexity of your app. The contributors are very friendly and always give you helpful feedback to get your app on F-Droid as soon as possible.</p>
+<p><a href="https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.kaeruct.raumballer.yml">Here is one of my app's metadata file on the F-Droid data repo</a> and <a href="https://github.com/KaeruCT/RaumBaller">the source code on GitHub</a>.</p>
+<h3>Closing words</h3>
+<p>F-Droid is a very valuable resource for people who care about software freedom and privacy. It is also run by volunteers. Please <a href="https://f-droid.org/en/donate/">donate</a> if you are able to!</p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/my-top-tips-for-junior-developers.html" class="u-url">My top tips for junior developers</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
             <p class="dateline"><a href="posts/my-top-tips-for-junior-developers.html" rel="bookmark"><time class="post-date published dt-published" datetime="2020-04-18T13:06:53+02:00" title="Apr 18, 2020 01:06 PM">Apr 18, 2020 01:06 PM</time></a></p>
@@ -510,41 +566,6 @@ There's a bunch of meta tags to use, but the ones you need for previews are the 
 <p><img alt="WhatsApp" src="galleries/screenshots/og/whatsapp.png"></p>
 <h3>Discord</h3>
 <p><img alt="Discord" src="galleries/screenshots/og/discord.png"></p>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/migrating-old-style-javascript-code-to-es6.html" class="u-url">Migrating old-style JavaScript code to ES6</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
-            <p class="dateline"><a href="posts/migrating-old-style-javascript-code-to-es6.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-12-28T15:26:16-06:00" title="Dec 28, 2017 03:26 PM">Dec 28, 2017 03:26 PM</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>Recently (at work) I had to migrate a medium-sized JavaScript codebase (20KLOC) to <a href="https://github.com/lukehoban/es6features">ES6</a>.</p>
-<p>We wanted to migrate to take advantage of the new features such as arrow functions, destructuring, and classes (there are a bunch more!).
-Additionally, I was tasked with introducing <a href="https://eslint.org/">eslint</a> and <a href="https://prettier.io/">prettier</a> to improve the quality of our code a bit more.</p>
-<blockquote>
-<p>Before diving into the migration process, first I'd like to give some context on the state of the application.</p>
-<p>We already used <a href="https://www.npmjs.com/">npm</a> and <a href="https://webpack.js.org/">webpack</a> to build our frontend, so I thought the migration should be straightforward -- and it was.</p>
-<p>I was heavily involved in modifying our build process to use npm instead of ad-hoc shell scripts, and I found <a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">this guide</a> to be incredibly helpful.</p>
-</blockquote>
-<p>Back to the migration, the first thing I did was to add babel to webpack using <a href="https://github.com/babel/babel-loader">babel-loader</a>.
-It was easy to add to webpack and took almost no time to set up.
-This meant that webpack would take our JavaScript files and transpile them from ES6 to "normal" JavaScript that all browsers can run.
-However, in order to get our mocha tests running, it was necessary to hook
-babel into our tests as well. I used <a href="https://istanbul.js.org/docs/tutorials/es2015/">this guide</a> from istanbul and was able to get them running fairly quickly.</p>
-<p>Once I ran the build and the tests and everything looked good, then it was time to really port our code to ES6.
-First, it was necessary to port some code that was using the <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a> to ES6 module syntax. I did this manually (using search/replace tools) and it took me a few hours.</p>
-<p>In some cases we had some ugly dependencies on globals so a bit of refactoring was required.
-In cases where it wasn't possible, webpack has the <a href="https://webpack.js.org/plugins/provide-plugin/">ProvidePlugin</a>, which covers most cases.
-I also found the <a href="https://github.com/webpack-contrib/expose-loader">expose-loader</a> to be useful becase we have some code not under our control that required jQuery to be a browser global.</p>
-<p>Once that was done, it was time to get started with the syntax changes.
-I found an amazing tool for that, <a href="https://lebab.io/">Lebab</a>. It is a very realiable tool and I would totally use it again.
-I ran all the "safe" transformations, verified them, and then ran some of the "unsafe" ones, checking how the code changed each time.</p>
-<p>Finally, I ran the build and our mocha tests to make sure they still passed.
-The tests broke in a few places because of things like variables being shadowed because of the changes from <code>var</code> to <code>let</code> or <code>const</code>.</p>
-<p>However, with the help of the <a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a> eslint rule, I was able to find all those cases quickly and get them fixed. ESLint was also very helpful in making sure I was not breaking any code with the refactoring I had to do.</p>
-<p>The lines of code initially went down because of the ES6 syntax sugar, but they went back up with the introduction of prettier and its opinionated formatting -- especially regarding line length.</p>
-<p>In the end, the migration was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.</p>
 </div>
     </div>
     </article>
