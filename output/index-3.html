@@ -36,9 +36,7 @@
           
     <h3 id="brand" class="masthead-title">
       <a href="http://kaeruct.github.io/" title="Pejibaye Blog" rel="home">
-        <img src="pejibaye.jpg" class="logo" alt="">
-        Pejibaye Blog
-      </a>
+        <img src="pejibaye.jpg" class="logo" alt=""><!--Pejibaye Blog--></a>
     </h3>
 
         </div>
@@ -48,7 +46,47 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/migrating-old-style-javascript-code-to-es6.html" class="u-url">Migrating old-style JavaScript code to ES6</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html" class="u-url">How to show preview images when sharing links of your website</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
+            <p class="dateline"><a href="posts/how-to-show-preview-images-when-sharing-links-of-your-website.html" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-13T01:08:24-06:00" title="Apr 13, 2019 01:08 AM">Apr 13, 2019 01:08 AM</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>When you share a link on social media or mesagging apps, sometimes the app shows a nice preview thumbnail with a description? You can click on it and it will take you to the linked website. I wanted to have this functionality for a website I was working on, so I did some research on how to get it working.</p>
+<p>Short answer: use the <code>og:image</code> meta tag.</p>
+<p>Longer answer: read on.</p>
+<p>You have to use <a href="https://ogp.me/">Open Graph</a> meta tags.
+There's a bunch of meta tags to use, but the ones you need for previews are the following:</p>
+<pre class="code literal-block"><span></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"twitter:card"</span> <span class="na">content</span><span class="o">=</span><span class="s">"summary"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:title"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Thumbnail example"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:description"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Only for Nic Cage fans"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:image"</span> <span class="na">content</span><span class="o">=</span><span class="s">"https://www.placecage.com/c/460/300"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">"og:url"</span> <span class="na">content</span><span class="o">=</span><span class="s">"https://kaeruct.github.io/"</span><span class="p">&gt;</span>
+</pre>
+
+
+<p>When a website with the previous tags is shared on social media, you will get a nice preview card with thumbnail, title, and description.</p>
+<p>Important points:</p>
+<ul>
+<li>You <strong>NEED</strong> to include the <code>twitter:card</code> meta tag for Twitter to display the preview. Otherwise it won't work. If you don't care about Twitter you can remove it.</li>
+<li>Some apps/websites will not include your preview thumbnail if it's not served via HTTPS. So make sure the image URLs always start with <code>https://</code>!</li>
+<li>The <code>og:url</code> value should point to the canonical URL of the page, not to the root of your website.</li>
+</ul>
+<p>Below you can see some examples:</p>
+<h3>Twitter</h3>
+<p><img alt="Twitter" src="galleries/screenshots/og/twitter.png"></p>
+<h3>Slack</h3>
+<p><img alt="Slack" src="galleries/screenshots/og/slack.png"></p>
+<h3>Telegram</h3>
+<p><img alt="Telegram" src="galleries/screenshots/og/telegram.png"></p>
+<h3>WhatsApp</h3>
+<p><img alt="WhatsApp" src="galleries/screenshots/og/whatsapp.png"></p>
+<h3>Discord</h3>
+<p><img alt="Discord" src="galleries/screenshots/og/discord.png"></p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/migrating-old-style-javascript-code-to-es6.html" class="u-url">Migrating old-style JavaScript code to ES6</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Andrés Villarreal</span></p>
             <p class="dateline"><a href="posts/migrating-old-style-javascript-code-to-es6.html" rel="bookmark"><time class="post-date published dt-published" datetime="2017-12-28T15:26:16-06:00" title="Dec 28, 2017 03:26 PM">Dec 28, 2017 03:26 PM</time></a></p>
@@ -200,7 +238,7 @@ To do so:</p>
             <li class="next">
                 <a href="index-2.html" rel="next">Older posts</a>
             </li>
-        </ul></nav><footer id="footer"><p>Contents © 2021 <a href="mailto:andres@villarreal.co.cr">Andrés Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
+        </ul></nav><footer id="footer"><p>Contents © 2022 <a href="mailto:andres@villarreal.co.cr">Andrés Villarreal</a> - Powered by <a href="http://getnikola.com">Nikola</a></p>
             
         </footer>
 </div>
