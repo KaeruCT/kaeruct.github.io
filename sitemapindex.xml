@@ -18,6 +18,10 @@
   <lastmod>2020-04-18T12:39:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://kaeruct.github.io/categories/css.xml</loc>
+  <lastmod>2022-01-15T10:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://kaeruct.github.io/categories/email.xml</loc>
   <lastmod>2020-04-18T12:39:00Z</lastmod>
  </sitemap>
@@ -39,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/html.xml</loc>
-  <lastmod>2020-04-18T12:39:00Z</lastmod>
+  <lastmod>2022-01-15T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/java.xml</loc>
@@ -47,7 +51,7 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/javascript.xml</loc>
-  <lastmod>2021-02-05T15:53:00Z</lastmod>
+  <lastmod>2022-01-15T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/linux.xml</loc>
@@ -79,11 +83,11 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tips.xml</loc>
-  <lastmod>2021-08-03T17:54:00Z</lastmod>
+  <lastmod>2022-01-15T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/tutorials.xml</loc>
-  <lastmod>2021-08-03T17:54:00Z</lastmod>
+  <lastmod>2022-01-15T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/categories/webpack.xml</loc>
@@ -95,46 +99,46 @@
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/glxy-android/rss.xml</loc>
-  <lastmod>2021-02-05T15:53:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/kaeruftpload/rss.xml</loc>
-  <lastmod>2021-02-05T15:53:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/learning-go/rss.xml</loc>
-  <lastmod>2021-02-05T15:53:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/learning-rails/rss.xml</loc>
-  <lastmod>2021-02-05T15:53:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/rainbow/rss.xml</loc>
-  <lastmod>2021-02-05T15:53:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/rss.xml</loc>
-  <lastmod>2021-02-05T15:53:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/screenshots/og/rss.xml</loc>
-  <lastmod>2021-02-05T15:50:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/screenshots/rss.xml</loc>
-  <lastmod>2021-02-05T15:50:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/galleries/screenshots/starry/rss.xml</loc>
-  <lastmod>2021-02-05T15:50:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/rss.xml</loc>
-  <lastmod>2021-08-03T17:54:00Z</lastmod>
+  <lastmod>2022-01-15T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://kaeruct.github.io/sitemap.xml</loc>
-  <lastmod>2021-08-03T17:54:00Z</lastmod>
+  <lastmod>2022-01-15T10:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>

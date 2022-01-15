@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Pejibaye Blog</title><link>http://kaeruct.github.io/</link><description>Fun and code</description><atom:link href="http://kaeruct.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 03 Aug 2021 17:54:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Publishing an App on F-Droid</title><link>http://kaeruct.github.io/posts/publishing-an-app-on-f-droid.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://f-droid.org/"&gt;&lt;img alt="F-Droid" src="http://kaeruct.github.io/fdroid.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Pejibaye Blog</title><link>http://kaeruct.github.io/</link><description>Fun and code</description><atom:link type="application/rss+xml" href="http://kaeruct.github.io/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sat, 15 Jan 2022 10:08:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Free Static Web Hosts for Frontend Developers</title><link>http://kaeruct.github.io/posts/free-static-web-hosts-for-frontend-developers.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;img alt="F-Droid" src="http://kaeruct.github.io/static-website-code.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Nowadays it's very easy to publish on the web for free.&lt;/p&gt;
+&lt;p&gt;There are countless blogging platforms and website creators. But these platforms usually end up controlling your content. Sometimes you cannot even export your own data!&lt;/p&gt;
+&lt;p&gt;The other extreme is to set up your own server by yourself. Buy a VPS (virtual private server) or a shared hosting somewhere, install a web server, and upload your files. This is a lot of work already! Specially if all you want is to publish a static website.&lt;/p&gt;
+&lt;p&gt;You already know HTML and CSS, and maybe a bit of JavaScript. You just want a place where you can drop your files and see it on the web!&lt;/p&gt;
+&lt;p&gt;Here is a list of services that allow you to do that, in no specific order:&lt;/p&gt;
+&lt;h2&gt;Netlify&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.netlify.com/"&gt;Netlify&lt;/a&gt; allows you to drag &amp;amp; drop a zip with your files. You can also connect it to your project from Github, Gitlab or Bitbucket. I use Netlify for a lot of my projects, such as &lt;a href="https://desk.glitchy.website"&gt;desk.glitchy.website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Vercel&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://vercel.com/new"&gt;Vercel&lt;/a&gt; is very similar to Netlify. They are also the company behing Next.js, so they have many integrations with it. I use Vercel for my &lt;a href="https://andres.villarreal.co.cr"&gt;personal website&lt;/a&gt; and for &lt;a href="https://glitchy.website"&gt;glitchy.website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Surge&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://surge.sh/"&gt;Surge&lt;/a&gt; allows you to easily publish your static website from the command line.&lt;/p&gt;
+&lt;h2&gt;Github Pages&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt; allows you to directly from your GitHub repository. Just edit, push, and your changes are live. This blog itself is hosted on Github Pages.&lt;/p&gt;
+&lt;h2&gt;GitLab Pages&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.gitlab.com/ee/user/project/pages/"&gt;GitLab Pages&lt;/a&gt; allows you to publish static websites directly from a repository in GitLab.&lt;/p&gt;
+&lt;h2&gt;Closing Words&lt;/h2&gt;
+&lt;p&gt;With these services, you can host your own static website for free. If having your own domain is important, then you will have to buy one, but that's the only thing you need, as many of these services allow you to use your own custom domain as well.&lt;/p&gt;
+&lt;p&gt;I recommend you familiarize yourself with the options and not to put all your eggs in one basket. The beauty of static website is that something happens to the provider, you can just copy your files to another one, and you're done! Keep it simple.&lt;/p&gt;&lt;/div&gt;</description><category>css</category><category>html</category><category>javascript</category><category>tips</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/free-static-web-hosts-for-frontend-developers.html</guid><pubDate>Sat, 15 Jan 2022 09:30:31 GMT</pubDate></item><item><title>Publishing an App on F-Droid</title><link>http://kaeruct.github.io/posts/publishing-an-app-on-f-droid.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://f-droid.org/"&gt;&lt;img alt="F-Droid" src="http://kaeruct.github.io/fdroid.svg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I made &lt;a href="https://f-droid.org/packages/com.kaeruct.raumballer/"&gt;some&lt;/a&gt; &lt;a href="https://f-droid.org/packages/com.kaeruct.gotosleep/"&gt;small&lt;/a&gt; &lt;a href="https://f-droid.org/packages/com.kaeruct.glxy/"&gt;apps&lt;/a&gt; for Android and I wanted to distribute them. I also care a lot about software freedom, so F-Droid is the best place for me to publish my apps.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Disclaimer!
@@ -611,41 +629,4 @@ from the Youtube player from triggering on Firefox. I ran across this problem
 when making &lt;a href="http://kaeru.neritic.net/projects/short-experiments/walk"&gt;this&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Finally, here's &lt;a href="http://kaeruct.github.io/examples/yt-js-api"&gt;a full example&lt;/a&gt; that will wait for the video to
 load and automatically play it:&lt;/p&gt;
-&lt;script src="https://gist.github.com/KaeruCT/dcfae82a15af514ea95e.js"&gt;&lt;/script&gt;&lt;/div&gt;</description><category>javascript</category><category>tutorials</category><category>youtube</category><guid>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</guid><pubDate>Fri, 23 May 2014 18:29:55 GMT</pubDate></item><item><title>Learning a Programming Language</title><link>http://kaeruct.github.io/posts/learning-a-programming-language.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;I've heard that if you're a good programmer, you should be able to pick up a
-new language in a few days. And I've done this myself, I learned the basics of
-Go a few months ago. Built some command line programs and a web app with it,
-all in a few days.&lt;/p&gt;
-&lt;p&gt;Yet, what does it take to &lt;strong&gt;really&lt;/strong&gt; learn a new language? To master it? Sure,
-there are some concepts that translate well from language to language, but some
-languages have their own thing going on. It usually takes a little longer to
-even learn the basics of those languages.&lt;/p&gt;
-&lt;p&gt;To go beyond the basic concepts, you have to invest a lot of time into the
-language. You have to learn how to program idiomatically in it. I wouldn't go
-as far as saying that you have to spend 10,000 hours practicing a language, but
-I do think you have to spend at least a thousand hours to know it really well.&lt;/p&gt;
-&lt;p&gt;On top of that, most languages have a whole ecosystem of associated tools that
-you have to leverage in order to be productive. For example, JavaScript has
-&lt;a href="http://gruntjs.com/"&gt;Grunt&lt;/a&gt; (&lt;a href="http://gulpjs.com/"&gt;Gulp&lt;/a&gt; seems to follow),
-&lt;a href="http://bower.io/"&gt;Bower&lt;/a&gt;, and &lt;a href="http://www.npmjs.org/"&gt;NPM&lt;/a&gt; (and
-&lt;a href="http://yeoman.io/"&gt;Yeoman&lt;/a&gt; most recently). You can't really say you have
-mastered JavaScript if you don't know how to use these tools.&lt;/p&gt;
-&lt;p&gt;So after learning the language and learning all these tools, you must be a
-master in this language, right? Well, you're wrong. You see, most languages
-(even the unpopular ones) have something else associated with it: a community.
-Sometimes the community is really visible (for example, the &lt;a href="http://www.python.org/community/"&gt;Python
-community&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;If you want to truly master a language, you should be part of its community.
-The community influences the language in many ways. Usually, the community
-influences the tools, new language features, libraries, frameworks, and so on.
-So if you have invested yourself into a language, you should also become part
-of the community.&lt;/p&gt;
-&lt;p&gt;Now you have accomplished all of the above: you have spent quite a few hours
-programming in the language, you have a broad knowledge of all its tools, and
-you're part of the community. Is that enough? No! You have to keep up to date,
-learning (or proposing) new features, tools, learning new libraries and
-frameworks. You could even build some of those yourself!&lt;/p&gt;
-&lt;p&gt;Finally, note that you don't have to do all this. If you really like a
-language, go ahead. I believe it is worth the effort. Yet, I don't consider
-myself a master of any language. There's just way too much to learn and to do.
-I prefer having enough knowledge in a few languages and getting things done in
-them, than to be a &lt;em&gt;PHP Guru&lt;/em&gt; or &lt;em&gt;JavaScript Wizard&lt;/em&gt;. I advise you do the same.&lt;/p&gt;&lt;/div&gt;</description><category>ramblings</category><guid>http://kaeruct.github.io/posts/learning-a-programming-language.html</guid><pubDate>Fri, 14 Feb 2014 03:14:19 GMT</pubDate></item></channel></rss>
+&lt;script src="https://gist.github.com/KaeruCT/dcfae82a15af514ea95e.js"&gt;&lt;/script&gt;&lt;/div&gt;</description><category>javascript</category><category>tutorials</category><category>youtube</category><guid>http://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html</guid><pubDate>Fri, 23 May 2014 18:29:55 GMT</pubDate></item></channel></rss>
