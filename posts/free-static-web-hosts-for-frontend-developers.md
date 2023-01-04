@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-![F-Droid](/static-website-code.jpg)
+![Code](/static-website-code.jpg)
 
 Nowadays it's very easy to publish on the web for free.
 
