@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Pejibaye Blog (Posts about tips)</title><link>http://kaeruct.github.io/</link><description></description><atom:link rel="self" href="http://kaeruct.github.io/categories/tips.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 04 Jan 2023 16:46:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How to use Let's Encrypt certificates with Keycloak</title><link>http://kaeruct.github.io/posts/how-to-use-lets-encrypt-certificates-with-keycloak.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;img alt="Let's Encrypt + Keycloak" src="http://kaeruct.github.io/letsencrypt_keycloak.png"&gt;&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pejibaye Blog (Posts about tips)</title><link>http://kaeruct.github.io/</link><description></description><atom:link href="http://kaeruct.github.io/categories/tips.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 14 Mar 2023 10:14:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How to use Let's Encrypt certificates with Keycloak</title><link>http://kaeruct.github.io/posts/how-to-use-lets-encrypt-certificates-with-keycloak.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;p&gt;&lt;img alt="Let's Encrypt + Keycloak" src="http://kaeruct.github.io/letsencrypt_keycloak.png"&gt;&lt;/p&gt;
 &lt;p&gt;Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more. &lt;/p&gt;
 &lt;p&gt;Here is a guide to enable HTTPS access to your Keycloak server using a free Let's Encrypt SSL certificate. The beauty of Let's Encrypt is its ease of use and the fact that it's free!&lt;/p&gt;
 &lt;p&gt;This guide assumes you have already installed Keycloak at &lt;code&gt;/opt/keycloak/&lt;/code&gt; using the &lt;a href="https://www.keycloak.org/getting-started/getting-started-zip"&gt;official guide for bare metal installs&lt;/a&gt;, and now you want to enable HTTPS access. You need to have version &lt;strong&gt;20&lt;/strong&gt; or higher.&lt;/p&gt;
@@ -7,51 +7,45 @@
 &lt;h3&gt;1. Install certbot&lt;/h3&gt;
 &lt;p&gt;First you will need to install &lt;code&gt;certbot&lt;/code&gt;. This depends on the Linux distro you are using.&lt;/p&gt;
 &lt;p&gt;For example, for apt-based distros such as Debian or Ubuntu, you can just run the following:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;apt install certbot
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;certbot
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;2. Create HTTPS certificates&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Set up certificates:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ certbot certonly --standalone --preferred-challenges http -d &amp;lt;DOMAIN&amp;gt;
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;certbot&lt;span class="w"&gt; &lt;/span&gt;certonly&lt;span class="w"&gt; &lt;/span&gt;--standalone&lt;span class="w"&gt; &lt;/span&gt;--preferred-challenges&lt;span class="w"&gt; &lt;/span&gt;http&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;DOMAIN&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;3. Configure Keycloak to use Let's Encrypt certificates&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Change configuration:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;vi /opt/keycloak/conf/keycloak.conf
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;vi&lt;span class="w"&gt; &lt;/span&gt;/opt/keycloak/conf/keycloak.conf
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Add or update the following lines in that file:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;https-certificate-file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/etc/letsencrypt/live/&amp;lt;DOMAIN&amp;gt;/cert.pem&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="na"&gt;https-certificate-file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/etc/letsencrypt/live/&amp;lt;DOMAIN&amp;gt;/cert.pem&lt;/span&gt;
 &lt;span class="na"&gt;https-certificate-key-file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/etc/letsencrypt/live/&amp;lt;DOMAIN&amp;gt;/privkey.pem&lt;/span&gt;
 &lt;span class="na"&gt;hostname&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;lt;DOMAIN&amp;gt;&lt;/span&gt;
 
 &lt;span class="na"&gt;https-port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;443&lt;/span&gt;
 &lt;span class="na"&gt;http-port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;80&lt;/span&gt;
-&lt;/pre&gt;
-
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Update keycloak config:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ /opt/keycloak/bin/kc.sh build
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;/opt/keycloak/bin/kc.sh&lt;span class="w"&gt; &lt;/span&gt;build
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;You're done! Now you can run the following command and Keycloak should now be accessible from the browser via HTTPS:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ /opt/keycloak/bin/kc.sh start
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;/opt/keycloak/bin/kc.sh&lt;span class="w"&gt; &lt;/span&gt;start
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;4. Optional: Set up Keycloak as a systemd service&lt;/h3&gt;
 &lt;p&gt;The official guide purposely leaves this open-ended because there are many ways in which you might want to handle the lifecycle of the Keycloak server. However, I think a good approach is to just use &lt;a href="https://systemd.io/"&gt;systemd&lt;/a&gt;.&lt;/p&gt;
@@ -59,37 +53,33 @@
 &lt;ul&gt;
 &lt;li&gt;Create user and group:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ useradd -g keycloak keycloak
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;useradd&lt;span class="w"&gt; &lt;/span&gt;-g&lt;span class="w"&gt; &lt;/span&gt;keycloak&lt;span class="w"&gt; &lt;/span&gt;keycloak
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Give access to certificates:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ chmod &lt;span class="m"&gt;0755&lt;/span&gt; /etc/letsencrypt/&lt;span class="o"&gt;{&lt;/span&gt;live,archive&lt;span class="o"&gt;}&lt;/span&gt;
-$ chgrp keycloak /etc/letsencrypt/&lt;span class="o"&gt;{&lt;/span&gt;live,archive&lt;span class="o"&gt;}&lt;/span&gt;
-$ chgrp -h keycloak /etc/letsencrypt/live/&amp;lt;DOMAIN&amp;gt;/privkey.pem
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0755&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/etc/letsencrypt/&lt;span class="o"&gt;{&lt;/span&gt;live,archive&lt;span class="o"&gt;}&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;chgrp&lt;span class="w"&gt; &lt;/span&gt;keycloak&lt;span class="w"&gt; &lt;/span&gt;/etc/letsencrypt/&lt;span class="o"&gt;{&lt;/span&gt;live,archive&lt;span class="o"&gt;}&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;chgrp&lt;span class="w"&gt; &lt;/span&gt;-h&lt;span class="w"&gt; &lt;/span&gt;keycloak&lt;span class="w"&gt; &lt;/span&gt;/etc/letsencrypt/live/&amp;lt;DOMAIN&amp;gt;/privkey.pem
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Give access to Keycloak directory:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ chown -R keycloak:keycloak /opt/keycloak/
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;keycloak:keycloak&lt;span class="w"&gt; &lt;/span&gt;/opt/keycloak/
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Create systemd service:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ vi /etc/systemd/system/keycloak.service
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;vi&lt;span class="w"&gt; &lt;/span&gt;/etc/systemd/system/keycloak.service
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Write the following contents into the file. You might need to add your chosen database service to the &lt;code&gt;After&lt;/code&gt; line, for example &lt;code&gt;postgresql.service&lt;/code&gt; or &lt;code&gt;mysql.service&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
 &lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Keycloak Application Server&lt;/span&gt;
 &lt;span class="na"&gt;After&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;syslog.target network.target&lt;/span&gt;
 
@@ -107,42 +97,37 @@ $ chgrp -h keycloak /etc/letsencrypt/live/&amp;lt;DOMAIN&amp;gt;/privkey.pem
 
 &lt;span class="k"&gt;[Install]&lt;/span&gt;
 &lt;span class="na"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;multi-user.target&lt;/span&gt;
-&lt;/pre&gt;
-
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Reload systemd config and start service:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ systemctl daemon-reload
-$ systemctl start keycloak.service
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;daemon-reload
+$&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;start&lt;span class="w"&gt; &lt;/span&gt;keycloak.service
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;4.2. Automatic Keycloak server restart when certificates are updated&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Make certbot restart Keycloak after updating certificates:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /etc/letsencrypt/renewal-hooks/deploy
-$ vi restart-keycloak.sh
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/etc/letsencrypt/renewal-hooks/deploy
+$&lt;span class="w"&gt; &lt;/span&gt;vi&lt;span class="w"&gt; &lt;/span&gt;restart-keycloak.sh
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Write these contents:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/sh&lt;/span&gt;
-systemctl restart keycloak
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="ch"&gt;#!/bin/sh&lt;/span&gt;
+systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;keycloak
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Make the script executable:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ chmod +x restart-keycloak.sh
-&lt;/pre&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;$&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;restart-keycloak.sh
+&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;You're done! Now Keycloak is set up as a systemd service and will start when your machine boots up.&lt;/p&gt;&lt;/div&gt;</description><category>java</category><category>keycloak</category><category>letsencrypt</category><category>linux</category><category>tips</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/how-to-use-lets-encrypt-certificates-with-keycloak.html</guid><pubDate>Wed, 04 Jan 2023 16:28:41 GMT</pubDate></item><item><title>Free Static Web Hosts for Frontend Developers</title><link>http://kaeruct.github.io/posts/free-static-web-hosts-for-frontend-developers.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;img alt="Code" src="http://kaeruct.github.io/static-website-code.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;You're done! Now Keycloak is set up as a systemd service and will start when your machine boots up.&lt;/p&gt;</description><category>java</category><category>keycloak</category><category>letsencrypt</category><category>linux</category><category>tips</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/how-to-use-lets-encrypt-certificates-with-keycloak.html</guid><pubDate>Wed, 04 Jan 2023 16:28:41 GMT</pubDate></item><item><title>Free Static Web Hosts for Frontend Developers</title><link>http://kaeruct.github.io/posts/free-static-web-hosts-for-frontend-developers.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;p&gt;&lt;img alt="Code" src="http://kaeruct.github.io/static-website-code.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Nowadays it's very easy to publish on the web for free.&lt;/p&gt;
 &lt;p&gt;There are countless blogging platforms and website creators. But these platforms usually end up controlling your content. Sometimes you cannot even export your own data!&lt;/p&gt;
 &lt;p&gt;The other extreme is to set up your own server by yourself. Buy a VPS (virtual private server) or a shared hosting somewhere, install a web server, and upload your files. This is a lot of work already! Specially if all you want is to publish a static website.&lt;/p&gt;
@@ -160,7 +145,7 @@ systemctl restart keycloak
 &lt;p&gt;&lt;a href="https://docs.gitlab.com/ee/user/project/pages/"&gt;GitLab Pages&lt;/a&gt; allows you to publish static websites directly from a repository in GitLab.&lt;/p&gt;
 &lt;h2&gt;Closing Words&lt;/h2&gt;
 &lt;p&gt;With these services, you can host your own static website for free. If having your own domain is important, then you will have to buy one, but that's the only thing you need, as many of these services allow you to use your own custom domain as well.&lt;/p&gt;
-&lt;p&gt;I recommend you familiarize yourself with the options and not to put all your eggs in one basket. The beauty of static website is that something happens to the provider, you can just copy your files to another one, and you're done! Keep it simple.&lt;/p&gt;&lt;/div&gt;</description><category>css</category><category>html</category><category>javascript</category><category>tips</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/free-static-web-hosts-for-frontend-developers.html</guid><pubDate>Sat, 15 Jan 2022 09:30:31 GMT</pubDate></item><item><title>Publishing an App on F-Droid</title><link>http://kaeruct.github.io/posts/publishing-an-app-on-f-droid.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://f-droid.org/"&gt;&lt;img alt="F-Droid" src="http://kaeruct.github.io/fdroid.svg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I recommend you familiarize yourself with the options and not to put all your eggs in one basket. The beauty of static website is that something happens to the provider, you can just copy your files to another one, and you're done! Keep it simple.&lt;/p&gt;</description><category>css</category><category>html</category><category>javascript</category><category>tips</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/free-static-web-hosts-for-frontend-developers.html</guid><pubDate>Sat, 15 Jan 2022 09:30:31 GMT</pubDate></item><item><title>Publishing an App on F-Droid</title><link>http://kaeruct.github.io/posts/publishing-an-app-on-f-droid.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;p&gt;&lt;a href="https://f-droid.org/"&gt;&lt;img alt="F-Droid" src="http://kaeruct.github.io/fdroid.svg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I made &lt;a href="https://f-droid.org/packages/com.kaeruct.raumballer/"&gt;some&lt;/a&gt; &lt;a href="https://f-droid.org/packages/com.kaeruct.gotosleep/"&gt;small&lt;/a&gt; &lt;a href="https://f-droid.org/packages/com.kaeruct.glxy/"&gt;apps&lt;/a&gt; for Android and I wanted to distribute them. I also care a lot about software freedom, so F-Droid is the best place for me to publish my apps.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Disclaimer!
@@ -204,7 +189,7 @@ You are not able to sell your app on F-Droid. If you want to make money with it,
 &lt;p&gt;Each of the apps I submitted were approved around 2 or 3 weeks, but this may vary depending on the complexity of your app. The contributors are very friendly and always give you helpful feedback to get your app on F-Droid as soon as possible.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.kaeruct.raumballer.yml"&gt;Here is one of my app's metadata file on the F-Droid data repo&lt;/a&gt; and &lt;a href="https://github.com/KaeruCT/RaumBaller"&gt;the source code on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Closing words&lt;/h3&gt;
-&lt;p&gt;F-Droid is a very valuable resource for people who care about software freedom and privacy. It is also run by volunteers. Please &lt;a href="https://f-droid.org/en/donate/"&gt;donate&lt;/a&gt; if you are able to!&lt;/p&gt;&lt;/div&gt;</description><category>android</category><category>f-droid</category><category>tips</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/publishing-an-app-on-f-droid.html</guid><pubDate>Tue, 03 Aug 2021 15:29:13 GMT</pubDate></item><item><title>My top tips for junior developers</title><link>http://kaeruct.github.io/posts/my-top-tips-for-junior-developers.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;div&gt;&lt;p&gt;Last year, I was tasked with mentoring an intern. It wasn't my first time mentoring, but it was my first time being fully in charge of a new employee. In the end, the intern was hired as a full-time employee, and I thought it would be helpful to compile all the advice I've been giving them, for future reference.&lt;/p&gt;
+&lt;p&gt;F-Droid is a very valuable resource for people who care about software freedom and privacy. It is also run by volunteers. Please &lt;a href="https://f-droid.org/en/donate/"&gt;donate&lt;/a&gt; if you are able to!&lt;/p&gt;</description><category>android</category><category>f-droid</category><category>tips</category><category>tutorials</category><guid>http://kaeruct.github.io/posts/publishing-an-app-on-f-droid.html</guid><pubDate>Tue, 03 Aug 2021 15:29:13 GMT</pubDate></item><item><title>My top tips for junior developers</title><link>http://kaeruct.github.io/posts/my-top-tips-for-junior-developers.html</link><dc:creator>Andrés Villarreal</dc:creator><description>&lt;p&gt;Last year, I was tasked with mentoring an intern. It wasn't my first time mentoring, but it was my first time being fully in charge of a new employee. In the end, the intern was hired as a full-time employee, and I thought it would be helpful to compile all the advice I've been giving them, for future reference.&lt;/p&gt;
 &lt;p&gt;The following tips come from my experience and my way of working, as well as my own personal opinions.&lt;/p&gt;
 &lt;h2&gt;Tip 1: Learn how to search effectively&lt;/h2&gt;
 &lt;p&gt;Knowing what to search and how to search is an essential skill.
@@ -212,23 +197,20 @@ Usually, I don't remember or know most of the things my colleagues ask me. Yet, 
 &lt;h3&gt;How to search&lt;/h3&gt;
 &lt;p&gt;As with most things in life, Google will probably have an answer for you. Make sure to type it in a way that makes sense for Google. For example, if you have an error, copy-paste it word-for-word and put it inside double (") quotes. This might take you to Github issues, Stack Overflow answers, or blogs like this one!&lt;/p&gt;
 &lt;p&gt;If you don't find anything, try different variations of your search. You can try removing specifics (line numbers are often useless, and also data values). For example, if you get an error like this:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
-    at validateNumber (internal/validators.js:130:11)
-    at validateTimerDuration (internal/timers.js:146:3)
-    at ClientRequest.setTimeout (_http_client.js:735:11)
-    ...
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;TypeError&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ERR_INVALID_ARG_TYPE&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;The&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;"msecs"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;must&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;number&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Received&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;validateNumber&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;internal&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;validators&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;js&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;130&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;validateTimerDuration&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;internal&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;timers&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;js&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;146&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ClientRequest&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setTimeout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_http_client&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;js&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;735&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You could be searching the following instead:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;TypeError&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ERR_INVALID_ARG_TYPE&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;The&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;"msecs"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;must&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;number&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Received&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;If that's still too long, you can try only&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;The "msecs" argument must be of type number
-&lt;/pre&gt;
-
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;The "msecs" argument must be of type number
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;If you still can't find anything useful, take advantage of your company's resources. Try the same search on your company's internal systems. Try everything: Slack, bug tracker (e.g.: JIRA), wiki, emails, Google Docs. If you still don't find anything, try reaching out to your more senior colleagues. They will surely know how to help or at least point you in the right direction.&lt;/p&gt;
 &lt;h3&gt;How to navigate codebases&lt;/h3&gt;
@@ -298,4 +280,4 @@ Let's say I could not find it in the code. Then I would come up with a different
 &lt;p&gt;You can keep your notes on paper or digitally. Make sure to try both and see what works best for you.&lt;/p&gt;
 &lt;h2&gt;Tip 5: Maintain a healthy work-life balance&lt;/h2&gt;
 &lt;p&gt;When you're starting out you always want to keep learning more and more while also delivering your work. This means you will probably work many hours a day if you're very passionate. This is fine if you are enjoying yourself, but you should be careful and aware of &lt;a href="https://en.wikipedia.org/wiki/Occupational_burnout"&gt;burn out&lt;/a&gt;. A good way to avoid this is to have a routine you follow every work day, and make sure you have enough breaks throughout the day. In the end it all comes down to a matter of discipline and knowing yourself.&lt;/p&gt;
-&lt;p&gt;Remember life is about living, not about working! It's a good idea to have other things outside going on in your life aside from work. There's no right or wrong here because it depends on you, but make sure you manage your stress in a healthy way.&lt;/p&gt;&lt;/div&gt;</description><category>career</category><category>mentoring</category><category>tips</category><guid>http://kaeruct.github.io/posts/my-top-tips-for-junior-developers.html</guid><pubDate>Sat, 18 Apr 2020 11:06:53 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Remember life is about living, not about working! It's a good idea to have other things outside going on in your life aside from work. There's no right or wrong here because it depends on you, but make sure you manage your stress in a healthy way.&lt;/p&gt;</description><category>career</category><category>mentoring</category><category>tips</category><guid>http://kaeruct.github.io/posts/my-top-tips-for-junior-developers.html</guid><pubDate>Sat, 18 Apr 2020 11:06:53 GMT</pubDate></item></channel></rss>

@@ -22,6 +22,9 @@
         <a class="sidebar-nav-item" href="archive.html">Archive</a>
         <a class="sidebar-nav-item" href="categories/index.html">Tags</a>
         <a class="sidebar-nav-item" href="rss.xml">RSS feed</a>
+        <a class="sidebar-nav-item" href="https://berlinstartups.tech">berlinstartups.tech</a>
+        <a class="sidebar-nav-item" href="https://glitchy.website">glitchy.website</a>
+        <a class="sidebar-nav-item" href="https://desk.glitchy.website">Try Andy's Desk</a>
     
     
     </nav>
@@ -51,8 +54,7 @@
             <p class="dateline"><a href="posts/how-to-use-lets-encrypt-certificates-with-keycloak.html" rel="bookmark"><time class="post-date published dt-published" datetime="2023-01-04T22:28:41+06:00" title="Jan 4, 2023 10:28 PM">Jan 4, 2023 10:28 PM</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <div>
-<p><img alt="Let's Encrypt + Keycloak" src="letsencrypt_keycloak.png"></p>
+    <p><img alt="Let's Encrypt + Keycloak" src="letsencrypt_keycloak.png"></p>
 <p>Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more. </p>
 <p>Here is a guide to enable HTTPS access to your Keycloak server using a free Let's Encrypt SSL certificate. The beauty of Let's Encrypt is its ease of use and the fact that it's free!</p>
 <p>This guide assumes you have already installed Keycloak at <code>/opt/keycloak/</code> using the <a href="https://www.keycloak.org/getting-started/getting-started-zip">official guide for bare metal installs</a>, and now you want to enable HTTPS access. You need to have version <strong>20</strong> or higher.</p>
@@ -60,51 +62,45 @@
 <h3>1. Install certbot</h3>
 <p>First you will need to install <code>certbot</code>. This depends on the Linux distro you are using.</p>
 <p>For example, for apt-based distros such as Debian or Ubuntu, you can just run the following:</p>
-<pre class="code literal-block"><span></span>apt install certbot
-</pre>
-
+<div class="code"><pre class="code literal-block">apt<span class="w"> </span>install<span class="w"> </span>certbot
+</pre></div>
 
 <h3>2. Create HTTPS certificates</h3>
 <ul>
 <li>Set up certificates:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ certbot certonly --standalone --preferred-challenges http -d &lt;DOMAIN&gt;
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>certbot<span class="w"> </span>certonly<span class="w"> </span>--standalone<span class="w"> </span>--preferred-challenges<span class="w"> </span>http<span class="w"> </span>-d<span class="w"> </span>&lt;DOMAIN&gt;
+</pre></div>
 
 <h3>3. Configure Keycloak to use Let's Encrypt certificates</h3>
 <ul>
 <li>Change configuration:</li>
 </ul>
-<pre class="code literal-block"><span></span>vi /opt/keycloak/conf/keycloak.conf
-</pre>
-
+<div class="code"><pre class="code literal-block">vi<span class="w"> </span>/opt/keycloak/conf/keycloak.conf
+</pre></div>
 
 <ul>
 <li>Add or update the following lines in that file:</li>
 </ul>
-<pre class="code literal-block"><span></span><span class="na">https-certificate-file</span><span class="o">=</span><span class="s">/etc/letsencrypt/live/&lt;DOMAIN&gt;/cert.pem</span>
+<div class="code"><pre class="code literal-block"><span class="na">https-certificate-file</span><span class="o">=</span><span class="s">/etc/letsencrypt/live/&lt;DOMAIN&gt;/cert.pem</span>
 <span class="na">https-certificate-key-file</span><span class="o">=</span><span class="s">/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem</span>
 <span class="na">hostname</span><span class="o">=</span><span class="s">&lt;DOMAIN&gt;</span>
 
 <span class="na">https-port</span><span class="o">=</span><span class="s">443</span>
 <span class="na">http-port</span><span class="o">=</span><span class="s">80</span>
-</pre>
-
+</pre></div>
 
 <ul>
 <li>Update keycloak config:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ /opt/keycloak/bin/kc.sh build
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>/opt/keycloak/bin/kc.sh<span class="w"> </span>build
+</pre></div>
 
 <ul>
 <li>You're done! Now you can run the following command and Keycloak should now be accessible from the browser via HTTPS:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ /opt/keycloak/bin/kc.sh start
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>/opt/keycloak/bin/kc.sh<span class="w"> </span>start
+</pre></div>
 
 <h3>4. Optional: Set up Keycloak as a systemd service</h3>
 <p>The official guide purposely leaves this open-ended because there are many ways in which you might want to handle the lifecycle of the Keycloak server. However, I think a good approach is to just use <a href="https://systemd.io/">systemd</a>.</p>
@@ -112,37 +108,33 @@
 <ul>
 <li>Create user and group:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ useradd -g keycloak keycloak
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>useradd<span class="w"> </span>-g<span class="w"> </span>keycloak<span class="w"> </span>keycloak
+</pre></div>
 
 <ul>
 <li>Give access to certificates:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ chmod <span class="m">0755</span> /etc/letsencrypt/<span class="o">{</span>live,archive<span class="o">}</span>
-$ chgrp keycloak /etc/letsencrypt/<span class="o">{</span>live,archive<span class="o">}</span>
-$ chgrp -h keycloak /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>chmod<span class="w"> </span><span class="m">0755</span><span class="w"> </span>/etc/letsencrypt/<span class="o">{</span>live,archive<span class="o">}</span>
+$<span class="w"> </span>chgrp<span class="w"> </span>keycloak<span class="w"> </span>/etc/letsencrypt/<span class="o">{</span>live,archive<span class="o">}</span>
+$<span class="w"> </span>chgrp<span class="w"> </span>-h<span class="w"> </span>keycloak<span class="w"> </span>/etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem
+</pre></div>
 
 <ul>
 <li>Give access to Keycloak directory:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ chown -R keycloak:keycloak /opt/keycloak/
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>keycloak:keycloak<span class="w"> </span>/opt/keycloak/
+</pre></div>
 
 <ul>
 <li>Create systemd service:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ vi /etc/systemd/system/keycloak.service
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>vi<span class="w"> </span>/etc/systemd/system/keycloak.service
+</pre></div>
 
 <ul>
 <li>Write the following contents into the file. You might need to add your chosen database service to the <code>After</code> line, for example <code>postgresql.service</code> or <code>mysql.service</code>.</li>
 </ul>
-<pre class="code literal-block"><span></span><span class="k">[Unit]</span>
+<div class="code"><pre class="code literal-block"><span class="k">[Unit]</span>
 <span class="na">Description</span><span class="o">=</span><span class="s">Keycloak Application Server</span>
 <span class="na">After</span><span class="o">=</span><span class="s">syslog.target network.target</span>
 
@@ -160,43 +152,37 @@ $ chgrp -h keycloak /etc/letsencrypt/live/&lt;DOMAIN&gt;/privkey.pem
 
 <span class="k">[Install]</span>
 <span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
-</pre>
-
+</pre></div>
 
 <ul>
 <li>Reload systemd config and start service:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ systemctl daemon-reload
-$ systemctl start keycloak.service
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+$<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>keycloak.service
+</pre></div>
 
 <h4>4.2. Automatic Keycloak server restart when certificates are updated</h4>
 <ul>
 <li>Make certbot restart Keycloak after updating certificates:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ <span class="nb">cd</span> /etc/letsencrypt/renewal-hooks/deploy
-$ vi restart-keycloak.sh
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/etc/letsencrypt/renewal-hooks/deploy
+$<span class="w"> </span>vi<span class="w"> </span>restart-keycloak.sh
+</pre></div>
 
 <ul>
 <li>Write these contents:</li>
 </ul>
-<pre class="code literal-block"><span></span><span class="ch">#!/bin/sh</span>
-systemctl restart keycloak
-</pre>
-
+<div class="code"><pre class="code literal-block"><span class="ch">#!/bin/sh</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span>keycloak
+</pre></div>
 
 <ul>
 <li>Make the script executable:</li>
 </ul>
-<pre class="code literal-block"><span></span>$ chmod +x restart-keycloak.sh
-</pre>
-
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>restart-keycloak.sh
+</pre></div>
 
 <p>You're done! Now Keycloak is set up as a systemd service and will start when your machine boots up.</p>
-</div>
     </div>
     </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/free-static-web-hosts-for-frontend-developers.html" class="u-url">Free Static Web Hosts for Frontend Developers</a></h1>
         <div class="metadata">
@@ -204,8 +190,7 @@ systemctl restart keycloak
             <p class="dateline"><a href="posts/free-static-web-hosts-for-frontend-developers.html" rel="bookmark"><time class="post-date published dt-published" datetime="2022-01-15T15:30:31+06:00" title="Jan 15, 2022 03:30 PM">Jan 15, 2022 03:30 PM</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <div>
-<p><img alt="Code" src="static-website-code.jpg"></p>
+    <p><img alt="Code" src="static-website-code.jpg"></p>
 <p>Nowadays it's very easy to publish on the web for free.</p>
 <p>There are countless blogging platforms and website creators. But these platforms usually end up controlling your content. Sometimes you cannot even export your own data!</p>
 <p>The other extreme is to set up your own server by yourself. Buy a VPS (virtual private server) or a shared hosting somewhere, install a web server, and upload your files. This is a lot of work already! Specially if all you want is to publish a static website.</p>
@@ -224,7 +209,6 @@ systemctl restart keycloak
 <h2>Closing Words</h2>
 <p>With these services, you can host your own static website for free. If having your own domain is important, then you will have to buy one, but that's the only thing you need, as many of these services allow you to use your own custom domain as well.</p>
 <p>I recommend you familiarize yourself with the options and not to put all your eggs in one basket. The beauty of static website is that something happens to the provider, you can just copy your files to another one, and you're done! Keep it simple.</p>
-</div>
     </div>
     </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/publishing-an-app-on-f-droid.html" class="u-url">Publishing an App on F-Droid</a></h1>
         <div class="metadata">
@@ -232,8 +216,7 @@ systemctl restart keycloak
             <p class="dateline"><a href="posts/publishing-an-app-on-f-droid.html" rel="bookmark"><time class="post-date published dt-published" datetime="2021-08-03T21:29:13+06:00" title="Aug 3, 2021 09:29 PM">Aug 3, 2021 09:29 PM</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <div>
-<p><a href="https://f-droid.org/"><img alt="F-Droid" src="fdroid.svg"></a></p>
+    <p><a href="https://f-droid.org/"><img alt="F-Droid" src="fdroid.svg"></a></p>
 <p>I made <a href="https://f-droid.org/packages/com.kaeruct.raumballer/">some</a> <a href="https://f-droid.org/packages/com.kaeruct.gotosleep/">small</a> <a href="https://f-droid.org/packages/com.kaeruct.glxy/">apps</a> for Android and I wanted to distribute them. I also care a lot about software freedom, so F-Droid is the best place for me to publish my apps.</p>
 <blockquote>
 <p>Disclaimer!
@@ -280,7 +263,6 @@ You are not able to sell your app on F-Droid. If you want to make money with it,
 <p><a href="https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.kaeruct.raumballer.yml">Here is one of my app's metadata file on the F-Droid data repo</a> and <a href="https://github.com/KaeruCT/RaumBaller">the source code on GitHub</a>.</p>
 <h3>Closing words</h3>
 <p>F-Droid is a very valuable resource for people who care about software freedom and privacy. It is also run by volunteers. Please <a href="https://f-droid.org/en/donate/">donate</a> if you are able to!</p>
-</div>
     </div>
     </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/my-top-tips-for-junior-developers.html" class="u-url">My top tips for junior developers</a></h1>
         <div class="metadata">
@@ -288,8 +270,7 @@ You are not able to sell your app on F-Droid. If you want to make money with it,
             <p class="dateline"><a href="posts/my-top-tips-for-junior-developers.html" rel="bookmark"><time class="post-date published dt-published" datetime="2020-04-18T13:06:53+02:00" title="Apr 18, 2020 01:06 PM">Apr 18, 2020 01:06 PM</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <div>
-<p>Last year, I was tasked with mentoring an intern. It wasn't my first time mentoring, but it was my first time being fully in charge of a new employee. In the end, the intern was hired as a full-time employee, and I thought it would be helpful to compile all the advice I've been giving them, for future reference.</p>
+    <p>Last year, I was tasked with mentoring an intern. It wasn't my first time mentoring, but it was my first time being fully in charge of a new employee. In the end, the intern was hired as a full-time employee, and I thought it would be helpful to compile all the advice I've been giving them, for future reference.</p>
 <p>The following tips come from my experience and my way of working, as well as my own personal opinions.</p>
 <h2>Tip 1: Learn how to search effectively</h2>
 <p>Knowing what to search and how to search is an essential skill.
@@ -297,23 +278,20 @@ Usually, I don't remember or know most of the things my colleagues ask me. Yet, 
 <h3>How to search</h3>
 <p>As with most things in life, Google will probably have an answer for you. Make sure to type it in a way that makes sense for Google. For example, if you have an error, copy-paste it word-for-word and put it inside double (") quotes. This might take you to Github issues, Stack Overflow answers, or blogs like this one!</p>
 <p>If you don't find anything, try different variations of your search. You can try removing specifics (line numbers are often useless, and also data values). For example, if you get an error like this:</p>
-<pre class="code literal-block"><span></span>TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
-    at validateNumber (internal/validators.js:130:11)
-    at validateTimerDuration (internal/timers.js:146:3)
-    at ClientRequest.setTimeout (_http_client.js:735:11)
-    ...
-</pre>
-
+<div class="code"><pre class="code literal-block"><span class="n">TypeError</span><span class="w"> </span><span class="o">[</span><span class="n">ERR_INVALID_ARG_TYPE</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="ss">"msecs"</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">number</span><span class="p">.</span><span class="w"> </span><span class="n">Received</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">string</span>
+<span class="w">    </span><span class="k">at</span><span class="w"> </span><span class="n">validateNumber</span><span class="w"> </span><span class="p">(</span><span class="n">internal</span><span class="o">/</span><span class="n">validators</span><span class="p">.</span><span class="nl">js</span><span class="p">:</span><span class="mi">130</span><span class="err">:</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">    </span><span class="k">at</span><span class="w"> </span><span class="n">validateTimerDuration</span><span class="w"> </span><span class="p">(</span><span class="n">internal</span><span class="o">/</span><span class="n">timers</span><span class="p">.</span><span class="nl">js</span><span class="p">:</span><span class="mi">146</span><span class="err">:</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">    </span><span class="k">at</span><span class="w"> </span><span class="n">ClientRequest</span><span class="p">.</span><span class="n">setTimeout</span><span class="w"> </span><span class="p">(</span><span class="n">_http_client</span><span class="p">.</span><span class="nl">js</span><span class="p">:</span><span class="mi">735</span><span class="err">:</span><span class="mi">11</span><span class="p">)</span>
+<span class="w">    </span><span class="p">...</span>
+</pre></div>
 
 <p>You could be searching the following instead:</p>
-<pre class="code literal-block"><span></span>TypeError [ERR_INVALID_ARG_TYPE]: The "msecs" argument must be of type number. Received type string
-</pre>
-
+<div class="code"><pre class="code literal-block"><span class="n">TypeError</span><span class="w"> </span><span class="o">[</span><span class="n">ERR_INVALID_ARG_TYPE</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="ss">"msecs"</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">number</span><span class="p">.</span><span class="w"> </span><span class="n">Received</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">string</span>
+</pre></div>
 
 <p>If that's still too long, you can try only</p>
-<pre class="code literal-block"><span></span>The "msecs" argument must be of type number
-</pre>
-
+<div class="code"><pre class="code literal-block">The "msecs" argument must be of type number
+</pre></div>
 
 <p>If you still can't find anything useful, take advantage of your company's resources. Try the same search on your company's internal systems. Try everything: Slack, bug tracker (e.g.: JIRA), wiki, emails, Google Docs. If you still don't find anything, try reaching out to your more senior colleagues. They will surely know how to help or at least point you in the right direction.</p>
 <h3>How to navigate codebases</h3>
@@ -384,7 +362,6 @@ Let's say I could not find it in the code. Then I would come up with a different
 <h2>Tip 5: Maintain a healthy work-life balance</h2>
 <p>When you're starting out you always want to keep learning more and more while also delivering your work. This means you will probably work many hours a day if you're very passionate. This is fine if you are enjoying yourself, but you should be careful and aware of <a href="https://en.wikipedia.org/wiki/Occupational_burnout">burn out</a>. A good way to avoid this is to have a routine you follow every work day, and make sure you have enough breaks throughout the day. In the end it all comes down to a matter of discipline and knowing yourself.</p>
 <p>Remember life is about living, not about working! It's a good idea to have other things outside going on in your life aside from work. There's no right or wrong here because it depends on you, but make sure you manage your stress in a healthy way.</p>
-</div>
     </div>
     </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/starry-sky-in-html5-canvas-pt2.html" class="u-url">Starry Sky in HTML5 Canvas - Part 2</a></h1>
         <div class="metadata">
@@ -392,8 +369,7 @@ Let's say I could not find it in the code. Then I would come up with a different
             <p class="dateline"><a href="posts/starry-sky-in-html5-canvas-pt2.html" rel="bookmark"><time class="post-date published dt-published" datetime="2019-04-13T16:31:13-06:00" title="Apr 13, 2019 04:31 PM">Apr 13, 2019 04:31 PM</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <div>
-<blockquote>
+    <blockquote>
 <p>This is part of a series! Please make sure you have read <a href="posts/starry-sky-in-html5-canvas-pt1.html">Part 1</a> first!</p>
 <p><strong>IMPORTANT</strong> -- you can try out the result of this tutorial by visiting this <a href="https://codesandbox.io/s/z68y1012yl?fontsize=14">CodeSandbox</a>.
 However, I encourage you to read the blog post and try to follow along to understand how and why it works.</p>
@@ -403,104 +379,98 @@ The way animation is done on HTML5 canvas is by drawing something else every fra
 <p>For our case, we can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame() function</code></a> to call our <code>render()</code> function.</p>
 <p>First, we will add a <code>counter</code> variable. We will increment this every time we draw.
 This is useful because we will have a number that will change with every render.</p>
-<pre class="code literal-block"><span></span><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</pre>
-
+<div class="code"><pre class="code literal-block"><span class="kd">let</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</pre></div>
 
 <p>Then, we will update our <code>render()</code> function so it uses <code>requestAnimationFrame()</code>. We will also make it increment the counter.</p>
-<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
-  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
-  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">;</span>
-    <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="s2">"rgb(255, 255, 255)"</span><span class="p">);</span>
-  <span class="p">});</span>
-  <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+<div class="code"><pre class="code literal-block"><span class="kd">function</span><span class="w"> </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">,</span><span class="w"> </span><span class="s2">"rgb(255, 255, 255)"</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
 <span class="p">}</span>
-</pre>
-
+</pre></div>
 
 <p>For now, this will look exactly the same as before, because we always render the same thing. But let's begin to change that now.</p>
 <p>We'll make a small change to make the stars look like they're flickering.</p>
 <p>First, let's add a function to generate an opacity value. This value will go from 0 to 1 and will determine the opacity of our star.</p>
 <p>The use of <code>Math.sin()</code> in the function below is just to make sure we get a value that changes smoothly.</p>
-<pre class="code literal-block"><span></span><span class="kr">const</span> <span class="nx">minStarOpacity</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">maxStarOpacity</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">;</span>
+<div class="code"><pre class="code literal-block"><span class="kd">const</span><span class="w"> </span><span class="nx">minStarOpacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">maxStarOpacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.7</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">opacityIncrement</span> <span class="o">=</span>
-    <span class="p">(</span><span class="nx">maxStarOpacity</span> <span class="o">-</span> <span class="nx">minStarOpacity</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">factor</span><span class="p">));</span>
-  <span class="kr">const</span> <span class="nx">opacity</span> <span class="o">=</span> <span class="nx">minStarOpacity</span> <span class="o">+</span> <span class="nx">opacityIncrement</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">opacity</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">opacityIncrement</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">maxStarOpacity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">minStarOpacity</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">factor</span><span class="p">));</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">opacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">minStarOpacity</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">opacityIncrement</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">opacity</span><span class="p">;</span>
 <span class="p">}</span>
-</pre>
-
+</pre></div>
 
 <p>Then, we will use this function when rendering our stars.
 Also notice how we change the color from <code>rgb(255, 255, 255)</code> to <code>rgba(255, 255, 255, opacity)</code>.</p>
-<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
-  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
-  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// factor will be a different number for every star</span>
-    <span class="kr">const</span> <span class="nx">factor</span> <span class="o">=</span> <span class="nx">counter</span> <span class="o">*</span> <span class="nx">i</span><span class="p">;</span> 
-    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">opacity</span> <span class="o">=</span> <span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">);</span>
-    <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="sb">`rgba(255, 255, 255, </span><span class="si">${</span><span class="nx">opacity</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-  <span class="p">});</span>
-  <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+<div class="code"><pre class="code literal-block"><span class="kd">function</span><span class="w"> </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// factor will be a different number for every star</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">opacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span><span class="w"> </span><span class="sb">`rgba(255, 255, 255, </span><span class="si">${</span><span class="nx">opacity</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
 <span class="p">}</span>
-</pre>
-
+</pre></div>
 
 <p><img alt="Animated Starry Sky" src="galleries/screenshots/starry/flicker.gif"></p>
 <p>Now the sky is looking really nice and animated. But it's still missing a nice big <code>moon</code>. Let's add it next.</p>
 <p>We will create a function to render our moon, and call it from <code>render()</code>.</p>
-<pre class="code literal-block"><span></span><span class="kr">const</span> <span class="nx">moon</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">color</span><span class="o">:</span> <span class="s2">"#fea"</span><span class="p">,</span>
-  <span class="nx">x</span><span class="o">:</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
-  <span class="nx">y</span><span class="o">:</span> <span class="nx">width</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
-  <span class="nx">r</span><span class="o">:</span> <span class="mi">40</span>
+<div class="code"><pre class="code literal-block"><span class="kd">const</span><span class="w"> </span><span class="nx">moon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">"#fea"</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">r</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span>
 <span class="p">};</span>
 
-<span class="kd">function</span> <span class="nx">renderMoon</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">blur</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
-  <span class="c1">// render a smaller circle above the moon to give it that well-known moon-shape</span>
-  <span class="nx">fillCircle</span><span class="p">(</span>
-    <span class="nx">ctx</span><span class="p">,</span>
-    <span class="nx">moon</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="nx">moon</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span>
-    <span class="nx">backgroundColor</span>
-  <span class="p">);</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">renderMoon</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">blur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">moon</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">moon</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span><span class="w"> </span><span class="nx">moon</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// render a smaller circle above the moon to give it that well-known moon-shape</span>
+<span class="w">  </span><span class="nx">fillCircle</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">ctx</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">moon</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">moon</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">moon</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">backgroundColor</span>
+<span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
-</pre>
-
+</pre></div>
 
 <p>And our updated <code>render()</code> function:</p>
-<pre class="code literal-block"><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">backgroundColor</span><span class="p">;</span>
-  <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
-  <span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">factor</span> <span class="o">=</span> <span class="nx">counter</span> <span class="o">*</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">opacity</span> <span class="o">=</span> <span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">);</span>
-    <span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="sb">`rgba(255, 255, 255, </span><span class="si">${</span><span class="nx">opacity</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-  <span class="p">});</span>
+<div class="code"><pre class="code literal-block"><span class="kd">function</span><span class="w"> </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">stars</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">star</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counter</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">opacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getOpacity</span><span class="p">(</span><span class="nx">factor</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">fillCircle</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">star</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span><span class="w"> </span><span class="sb">`rgba(255, 255, 255, </span><span class="si">${</span><span class="nx">opacity</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
 
-  <span class="nx">renderMoon</span><span class="p">(</span><span class="nx">ctx</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">renderMoon</span><span class="p">(</span><span class="nx">ctx</span><span class="p">);</span>
 
-  <span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
-  <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">counter</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
 <span class="p">}</span>
-</pre>
-
+</pre></div>
 
 <p>That leaves us with the finished product:
 <img alt="Animated Starry Sky with Moon" src="galleries/screenshots/starry/moon.gif"></p>
@@ -515,7 +485,6 @@ Some ideas you may want to try to learn more and improve your skills:</p>
 <li>Add multiple moons.</li>
 </ul>
 <p>Don't hesitate to contact me at <a href="http://twitter.com/KaeruCT">@KaeruCT</a> if you have any questions, suggestions, or improvements for this tutorial!</p>
-</div>
     </div>
     </article>
 </div>

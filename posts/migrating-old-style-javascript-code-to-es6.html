@@ -33,6 +33,9 @@ We wanted to migrate to take advantage of the new features such as arrow functio
         <a class="sidebar-nav-item" href="../archive.html">Archive</a>
         <a class="sidebar-nav-item" href="../categories/index.html">Tags</a>
         <a class="sidebar-nav-item" href="../rss.xml">RSS feed</a>
+        <a class="sidebar-nav-item" href="https://berlinstartups.tech">berlinstartups.tech</a>
+        <a class="sidebar-nav-item" href="https://glitchy.website">glitchy.website</a>
+        <a class="sidebar-nav-item" href="https://desk.glitchy.website">Try Andy's Desk</a>
     
     
     </nav>
@@ -63,8 +66,7 @@ We wanted to migrate to take advantage of the new features such as arrow functio
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Recently (at work) I had to migrate a medium-sized JavaScript codebase (20KLOC) to <a href="https://github.com/lukehoban/es6features">ES6</a>.</p>
+    <p>Recently (at work) I had to migrate a medium-sized JavaScript codebase (20KLOC) to <a href="https://github.com/lukehoban/es6features">ES6</a>.</p>
 <p>We wanted to migrate to take advantage of the new features such as arrow functions, destructuring, and classes (there are a bunch more!).
 Additionally, I was tasked with introducing <a href="https://eslint.org/">eslint</a> and <a href="https://prettier.io/">prettier</a> to improve the quality of our code a bit more.</p>
 <blockquote>
@@ -90,7 +92,6 @@ The tests broke in a few places because of things like variables being shadowed 
 <p>However, with the help of the <a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a> eslint rule, I was able to find all those cases quickly and get them fixed. ESLint was also very helpful in making sure I was not breaking any code with the refactoring I had to do.</p>
 <p>The lines of code initially went down because of the ES6 syntax sugar, but they went back up with the introduction of prettier and its opinionated formatting -- especially regarding line length.</p>
 <p>In the end, the migration was not as terrible as I initially thought it would be, and now it's a bit more enjoyable to work on that codebase.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/es6.html" rel="tag">es6</a></li>

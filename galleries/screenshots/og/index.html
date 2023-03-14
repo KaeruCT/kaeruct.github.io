@@ -29,6 +29,9 @@
         <a class="sidebar-nav-item" href="../../../archive.html">Archive</a>
         <a class="sidebar-nav-item" href="../../../categories/index.html">Tags</a>
         <a class="sidebar-nav-item" href="../../../rss.xml">RSS feed</a>
+        <a class="sidebar-nav-item" href="https://berlinstartups.tech">berlinstartups.tech</a>
+        <a class="sidebar-nav-item" href="https://glitchy.website">glitchy.website</a>
+        <a class="sidebar-nav-item" href="https://desk.glitchy.website">Try Andy's Desk</a>
     
     
     </nav>
@@ -61,24 +64,24 @@
 <noscript>
 <ul class="thumbnails">
 <li>
-<a href="discord.png" class="thumbnail image-reference" title="Discord">
-            <img src="discord.thumbnail.png" alt="Discord"></a>
-        </li>
-<li>
 <a href="twitter.png" class="thumbnail image-reference" title="Twitter">
-            <img src="twitter.thumbnail.png" alt="Twitter"></a>
+            <img src="twitter.thumbnail.png" alt="Twitter" loading="lazy"></a>
         </li>
 <li>
 <a href="slack.png" class="thumbnail image-reference" title="Slack">
-            <img src="slack.thumbnail.png" alt="Slack"></a>
+            <img src="slack.thumbnail.png" alt="Slack" loading="lazy"></a>
         </li>
 <li>
 <a href="telegram.png" class="thumbnail image-reference" title="Telegram">
-            <img src="telegram.thumbnail.png" alt="Telegram"></a>
+            <img src="telegram.thumbnail.png" alt="Telegram" loading="lazy"></a>
         </li>
 <li>
 <a href="whatsapp.png" class="thumbnail image-reference" title="Whatsapp">
-            <img src="whatsapp.thumbnail.png" alt="Whatsapp"></a>
+            <img src="whatsapp.thumbnail.png" alt="Whatsapp" loading="lazy"></a>
+        </li>
+<li>
+<a href="discord.png" class="thumbnail image-reference" title="Discord">
+            <img src="discord.thumbnail.png" alt="Discord" loading="lazy"></a>
 </li>
 </ul>
 </noscript>
@@ -104,10 +107,10 @@
     g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script><script src="../../../assets/js/justified-layout.min.js"></script><script src="../../../assets/js/gallery.min.js"></script><script>
-var jsonContent = [{"height": 114, "size": {"h": 114, "w": 425}, "title": "Discord", "url": "discord.png", "url_thumb": "discord.thumbnail.png", "width": 425}, {"height": 254, "size": {"h": 254, "w": 720}, "title": "Twitter", "url": "twitter.png", "url_thumb": "twitter.thumbnail.png", "width": 720}, {"height": 171, "size": {"h": 171, "w": 180}, "title": "Slack", "url": "slack.png", "url_thumb": "slack.thumbnail.png", "width": 180}, {"height": 161, "size": {"h": 161, "w": 428}, "title": "Telegram", "url": "telegram.png", "url_thumb": "telegram.thumbnail.png", "width": 428}, {"height": 213, "size": {"h": 213, "w": 449}, "title": "Whatsapp", "url": "whatsapp.png", "url_thumb": "whatsapp.thumbnail.png", "width": 449}];
+var jsonContent = [{"height": 64, "size": {"h": 64, "w": 180}, "title": "Twitter", "url": "twitter.png", "url_thumb": "twitter.thumbnail.png", "width": 180}, {"height": 171, "size": {"h": 171, "w": 180}, "title": "Slack", "url": "slack.png", "url_thumb": "slack.thumbnail.png", "width": 180}, {"height": 68, "size": {"h": 68, "w": 180}, "title": "Telegram", "url": "telegram.png", "url_thumb": "telegram.thumbnail.png", "width": 180}, {"height": 85, "size": {"h": 85, "w": 180}, "title": "Whatsapp", "url": "whatsapp.png", "url_thumb": "whatsapp.thumbnail.png", "width": 180}, {"height": 114, "size": {"h": 114, "w": 425}, "title": "Discord", "url": "discord.png", "url_thumb": "discord.thumbnail.png", "width": 425}];
 var thumbnailSize = 180;
 renderGallery(jsonContent, thumbnailSize);
-window.addEventListener('resize', renderGallery);
+window.addEventListener('resize', function(){renderGallery(jsonContent, thumbnailSize)});
 </script>
 </body>
 </html>
