@@ -133,6 +133,9 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archive"),
         ("/categories/index.html", "Tags"),
         ("/rss.xml", "RSS feed"),
+        ("https://berlinstartups.tech", "berlinstartups.tech"),
+        ("https://glitchy.website", "glitchy.website"),
+        ("https://desk.glitchy.website", "Try Andy's Desk"),
     ),
 }
 
