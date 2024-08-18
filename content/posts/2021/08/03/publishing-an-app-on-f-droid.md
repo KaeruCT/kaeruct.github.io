@@ -8,11 +8,10 @@ tags:
  - f-droid
  - tips
  - tutorials
-image: "/images/f-droid.svg"
+image: "/images/fdroid.svg"
 aliases:
   - /posts/publishing-an-app-on-f-droid.html
 ---
-
 
 I made [some](https://f-droid.org/packages/com.kaeruct.raumballer/) [small](https://f-droid.org/packages/com.kaeruct.gotosleep/) [apps](https://f-droid.org/packages/com.kaeruct.glxy/) for Android and I wanted to distribute them. I also care a lot about software freedom, so F-Droid is the best place for me to publish my apps.
 
