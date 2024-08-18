@@ -37,11 +37,15 @@ body .gist .pl-sr .pl-cce {
      color: #56b5c2;
      font-weight: 400;
 }
+body .gist .pl-s1 {
+     color: #d19965 !important;
+}
 body .gist .pl-ef,
 body .gist .pl-en,
 body .gist .pl-enf,
 body .gist .pl-eoai,
 body .gist .pl-kos,
+body .gist .pl-s1,
 body .gist .pl-mh .pl-pdh,
 body .gist .pl-mr {
      color: #61afef;
