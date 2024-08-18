@@ -1,6 +1,6 @@
 # kaeruct.github.io
 
-Blog built on Hugo.h
+Blog built on [Hugo](https://gohugo.io/).
 
 ## Run hugo
 
@@ -8,8 +8,12 @@ Blog built on Hugo.h
 $ hugo server
 ```
 
-## Create new posts
+## Create new post
 
 ```
 $ ./new.sh post-title
 ```
+
+## Deploy
+
+Will happen automatically when pushing to main, thanks to [this setup](https://gohugo.io/hosting-and-deployment/hosting-on-github/).
