@@ -1,0 +1,1 @@
+hugo new --kind post posts/$(date "+%F" | sed 's/-/\//g')/$1.md

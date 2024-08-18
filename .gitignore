@@ -1,0 +1,9 @@
+# Local Netlify folder
+.netlify
+
+# Package Files
+node_modules/
+.DS_Store
+
+/public/
+/resources/_gen/

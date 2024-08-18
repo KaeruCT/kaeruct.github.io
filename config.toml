@@ -1,0 +1,74 @@
+baseURL = "https://kaeruct.github.io"
+languageCode = "en-us"
+title = "Pejibaye Blog"
+theme = "hugo-ficurinia"
+copyright = "kaeruct.github.io"
+
+paginate = 5  # number of articles per page in the index
+summaryLength = 70  # number of words for article summaries
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+
+[markup]
+    [markup.highlight]
+        style = 'onedark'
+        tabWidth = 4
+
+[params]
+    description = "Fun and code"  # this will be added as metadata
+
+    posts = "posts/:filename"  # content directory where to find home page posts; default searches in "posts" and "post"
+    showPostsLink = true  # show or hide the link to the simple post list
+    extraContentDirs = []  # other content directories to render similarly to the home page
+
+    fontFamily = "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif"  # changes the font, default "JetBrains Mono"
+    titleFontFamily = "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif"  # font used for titles and headings
+
+    # shows a specified single page as a home page, instead of the traditional articles list
+    # requires setting `homeSinglePage`
+    # goes well with extraContentDirs
+    showSinglePageAsHome = false
+    homeSinglePage = "/home"
+
+    logo = "/logo.png"
+    favicon = "/favicon.png"  # 32x32
+    faviconIco = "/favicon.ico"  # 32x32
+    appletouch = "/apple-touch-icon.png"  # 180x180
+    icon512 = "/icon512.png"  # 512x512 png image
+
+    enableFooterColumns = true
+    enableRelatedArticles = true
+    randomRelated = true
+
+[menu]
+    # these links will be added to the main navigation menu, sorted by weight
+    # other elements in this menu are added automatically from the "pages" folder
+    # the folder it will look into can be customized with the pages variable
+    # in params above
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 0
+    [[menu.icons]]
+        identifier = "github"
+        name = "GitHub"
+        url = "https://github.com/KaeruCT"
+        weight = 1
+    [[menu.icons]]
+        identifier = "gitlab"
+        name = "GitLab"
+        url = "https://gitlab.com/KaeruCT"
+        weight = 2
+    [[menu.icons]]
+        identifier = "linkedin"
+        name = "LinkedIn"
+        url = "https://www.linkedin.com/in/andr%C3%A9s-villarreal-cordero"
+        weight = 3
+    [[menu.icons]]
+        identifier = "soundcloud"
+        name = "SoundCloud"
+        url = "https://soundcloud.com/try_andy/tracks"
+        weight = 4

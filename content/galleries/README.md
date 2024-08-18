@@ -1,0 +1,1 @@
+The files in this directory exist only not to break some links from old pages/git repos I cannot be bothered to update.
