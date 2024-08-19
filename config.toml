@@ -24,8 +24,8 @@ summaryLength = 70  # number of words for article summaries
     extraContentDirs = []  # other content directories to render similarly to the home page
 
     contentWidth = "640px"
-    fontFamily = "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif"  # changes the font, default "JetBrains Mono"
-    titleFontFamily = "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif"  # font used for titles and headings
+    fontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif' # changes the font, default "JetBrains Mono"
+    titleFontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif' # font used for titles and headings
 
     # shows a specified single page as a home page, instead of the traditional articles list
     # requires setting `homeSinglePage`
