@@ -30,11 +30,13 @@
 .notlist a { margin-right: 8px; }
 footer:nth-child(2) > p:nth-child(4) { display: none; }
 h1 { font-size: 26px; }
-html { background-image: url(/bg.png); }
 hr { display: none; }
 article img { margin: unset; }
-body { background: rgba(0, 0, 0, 0.4); }
 #main-nav li { border-right: 0 !important; }
 #main-nav li a { padding: 0 !important; padding-right: 10px !important; font-weight: bold; }
+@media (prefers-color-scheme: dark) {
+  html { background-image: url(/bg.png); }
+  body { background: rgba(0, 0, 0, 0.4); }
+}
 </style>
 <link rel="stylesheet" type="text/css" href="/gist-theme.css" />
