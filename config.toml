@@ -17,7 +17,7 @@ summaryLength = 70  # number of words for article summaries
 
 [params]
     author = "Andrés Villarreal"
-    description = "Fun and code"  # this will be added as metadata
+    description = "Musings of a codeslinger"  # this will be added as metadata
 
     posts = "posts/:filename"  # content directory where to find home page posts; default searches in "posts" and "post"
     showPostsLink = true  # show or hide the link to the simple post list
@@ -59,17 +59,22 @@ summaryLength = 70  # number of words for article summaries
         url = "https://github.com/KaeruCT"
         weight = 1
     [[menu.icons]]
+        identifier = "mastodon"
+        name = "Mastodon"
+        url = "https://troet.cafe/@kaeruct"
+        weight = 2
+    [[menu.icons]]
         identifier = "gitlab"
         name = "GitLab"
         url = "https://gitlab.com/KaeruCT"
-        weight = 2
+        weight = 3
     [[menu.icons]]
         identifier = "linkedin"
         name = "LinkedIn"
         url = "https://www.linkedin.com/in/andr%C3%A9s-villarreal-cordero"
-        weight = 3
+        weight = 4
     [[menu.icons]]
         identifier = "soundcloud"
         name = "SoundCloud"
         url = "https://soundcloud.com/try_andy/tracks"
-        weight = 4
+        weight = 5
