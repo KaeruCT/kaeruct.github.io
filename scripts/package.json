@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "playwright": "^1.46.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

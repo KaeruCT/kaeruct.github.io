@@ -7,7 +7,6 @@ showDate: false
 aliases:
   - /stories/about.html
 ---
-
 Hello, my name is Andrés!
 
 I'm a software developer, passionate about the web, frontend technologies, and the open source ecosystem.

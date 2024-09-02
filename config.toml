@@ -53,6 +53,12 @@ summaryLength = 70  # number of words for article summaries
         name = "About"
         url = "/about/"
         weight = 0
+    # TODO: enable when ready to show
+    #[[menu.main]]
+    #   identifier = "gallery"
+    #   name = "Gallery"
+    #   url = "/gallery/"
+    #   weight = 0
     [[menu.icons]]
         identifier = "github"
         name = "GitHub"
