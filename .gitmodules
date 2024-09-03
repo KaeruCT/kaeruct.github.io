@@ -1,3 +1,6 @@
 [submodule "themes/hugo-ficurinia"]
 	path = themes/hugo-ficurinia
 	url = https://gitlab.com/gabmus/hugo-ficurinia.git 
+[submodule "static/projects/short-experiments"]
+	path = static/projects/short-experiments
+	url = git@github.com:KaeruCT/short-experiments.git
