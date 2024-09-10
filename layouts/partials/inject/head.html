@@ -34,12 +34,37 @@ header { margin-bottom: 0; }
 h1 { font-size: 26px; }
 hr { display: none; }
 article img { margin: unset; }
-#content { padding-top: 0; }
+#content { padding-top: 0; line-height: 1.5em; }
 #main-nav li { border-right: 0 !important; }
 #main-nav li a { padding: 0 !important; padding-right: 10px !important; font-weight: bold; }
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+:root {
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#titleContainer img {
+  margin-right: 5px !important;
+}
+a {
+  border-bottom-width: 1px !important;
+}
+blockquote {
+  background-color: rgba(0,0,0,0.05) !important;
+}
+::selection {
+  color: #e0e0e0;
+}
 @media (prefers-color-scheme: dark) {
   html { background-image: url(/bg.png); }
   body { background: rgba(0, 0, 0, 0.4); }
+  blockquote {
+    background-color: rgba(255,255,255,0.05) !important;
+  }
 }
 </style>
 <link rel="stylesheet" type="text/css" href="/gist-theme.css" />
