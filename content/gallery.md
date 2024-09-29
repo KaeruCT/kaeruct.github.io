@@ -11,12 +11,12 @@ draft: false
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
+  --line-height: 0;
 }
 
 .video-grid a {
   display: block;
   border-bottom: 0;
-  /* overflow: hidden; */
 }
 
 .video-grid video {

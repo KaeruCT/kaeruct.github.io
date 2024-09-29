@@ -1,85 +1,124 @@
 baseURL = "https://kaeruct.github.io"
 languageCode = "en-us"
 title = "Pejibaye Blog"
-theme = "hugo-ficurinia"
+theme = "terminal"
 copyright = "kaeruct.github.io"
 
 paginate = 5  # number of articles per page in the index
 summaryLength = 70  # number of words for article summaries
 
 [markup.goldmark.renderer]
-    unsafe = true
+  unsafe = true
 
 [markup]
-    [markup.highlight]
-        style = "onedark"
-        tabWidth = 4
+  [markup.highlight]
+    style = "onedark"
+    tabWidth = 4
+
+[taxonomies]
+  tag = "tags"
 
 [params]
-    author = "Andrés Villarreal"
-    description = "Musings of a codeslinger"  # this will be added as metadata
+  author = "Andrés Villarreal"
+  description = "Musings of a codeslinger"  # this will be added as metadata
+  centerTheme = true
+  
 
-    posts = "posts/:filename"  # content directory where to find home page posts; default searches in "posts" and "post"
-    showPostsLink = true  # show or hide the link to the simple post list
-    extraContentDirs = []  # other content directories to render similarly to the home page
+  posts = "posts/:filename"  # content directory where to find home page posts; default searches in "posts" and "post"
+  showPostsLink = true  # show or hide the link to the simple post list
+  extraContentDirs = []  # other content directories to render similarly to the home page
 
-    contentWidth = "640px"
-    fontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif' # changes the font, default "JetBrains Mono"
-    titleFontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif' # font used for titles and headings
+  contentWidth = "640px"
+  fontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif'  # changes the font, default "JetBrains Mono"
+  titleFontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif'  # font used for titles and headings
 
-    # shows a specified single page as a home page, instead of the traditional articles list
-    # requires setting `homeSinglePage`
-    # goes well with extraContentDirs
-    showSinglePageAsHome = false
-    homeSinglePage = "/home"
+  # shows a specified single page as a home page, instead of the traditional articles list
+  # requires setting `homeSinglePage`
+  # goes well with extraContentDirs
+  showSinglePageAsHome = false
+  homeSinglePage = "/home"
 
-    logo = "/logo.png"
-    favicon = "/favicon.png"  # 32x32
-    faviconIco = "/favicon.ico"  # 32x32
-    appletouch = "/apple-touch-icon.png"  # 180x180
-    icon512 = "/icon512.png"  # 512x512 png image
+  logo = "/logo.png"
+  favicon = "/favicon.png"  # 32x32
+  faviconIco = "/favicon.ico"  # 32x32
+  appletouch = "/apple-touch-icon.png"  # 180x180
+  icon512 = "/icon512.png"  # 512x512 png image
 
-    enableFooterColumns = true
-    enableRelatedArticles = true
-    randomRelated = true
+  enableFooterColumns = true
+  enableRelatedArticles = true
+  randomRelated = true
+
+  wpm = 200
+  maxTags = 10
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Terminal"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "0"
+        name = "Home"
+        url = "/"
+      [[languages.en.menu.main]]
+        identifier = "1"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "2"
+        name = "Gallery"
+        url = "/gallery"
+      [[languages.en.menu.main]]
+        identifier = "3"
+        name = "Tags"
+        url = "/tags"
+    [languages.en.params]
+      subtitle = "A simple, retro theme for Hugo"
+      owner = ""
+      keywords = ""
+      copyright = ""
+      menuMore = "Show more"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      minuteReadingTime = "min read"
+      words = "words"
+
+    [languages.en.params.logo]
+      logoText = "Pejibaye Blog"
+      logoHomeLink = "/"
 
 [menu]
-    # these links will be added to the main navigation menu, sorted by weight
-    # other elements in this menu are added automatically from the "pages" folder
-    # the folder it will look into can be customized with the pages variable
-    # in params above
-    [[menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about/"
-        weight = 0
-    [[menu.main]]
-       identifier = "gallery"
-       name = "Gallery"
-       url = "/gallery/"
-       weight = 0
-    [[menu.icons]]
-        identifier = "github"
-        name = "GitHub"
-        url = "https://github.com/KaeruCT"
-        weight = 1
-    [[menu.icons]]
-        identifier = "mastodon"
-        name = "Mastodon"
-        url = "https://troet.cafe/@kaeruct"
-        weight = 2
-    [[menu.icons]]
-        identifier = "gitlab"
-        name = "GitLab"
-        url = "https://gitlab.com/KaeruCT"
-        weight = 3
-    [[menu.icons]]
-        identifier = "linkedin"
-        name = "LinkedIn"
-        url = "https://www.linkedin.com/in/andr%C3%A9s-villarreal-cordero"
-        weight = 4
-    [[menu.icons]]
-        identifier = "soundcloud"
-        name = "SoundCloud"
-        url = "https://soundcloud.com/try_andy/tracks"
-        weight = 5
+  # these links will be added to the main navigation menu, sorted by weight
+  # other elements in this menu are added automatically from the "pages" folder
+  # the folder it will look into can be customized with the pages variable in params above
+
+  [[menu.icons]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/KaeruCT"
+    weight = 1
+  [[menu.icons]]
+    identifier = "mastodon"
+    name = "Mastodon"
+    url = "https://troet.cafe/@kaeruct"
+    weight = 2
+  [[menu.icons]]
+    identifier = "gitlab"
+    name = "GitLab"
+    url = "https://gitlab.com/KaeruCT"
+    weight = 3
+  [[menu.icons]]
+    identifier = "linkedin"
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/andr%C3%A9s-villarreal-cordero"
+    weight = 4
+  [[menu.icons]]
+    identifier = "soundcloud"
+    name = "SoundCloud"
+    url = "https://soundcloud.com/try_andy/tracks"
+    weight = 5

@@ -4,3 +4,30 @@
 [submodule "static/projects/short-experiments"]
 	path = static/projects/short-experiments
 	url = git@github.com:KaeruCT/short-experiments.git
+[submodule "themes/ink-free"]
+	path = themes/ink-free
+	url = https://github.com/chollinger93/ink-free
+[submodule "themes/risotto"]
+	path = themes/risotto
+	url = git@github.com:joeroe/risotto.git
+[submodule "themes/hugo-theme-m10c"]
+	path = themes/hugo-theme-m10c
+	url = https://github.com/vaga/hugo-theme-m10c.git
+[submodule "themes/smol"]
+	path = themes/smol
+	url = git@github.com:colorchestra/smol.git
+[submodule "themes/hugo-texify3"]
+	path = themes/hugo-texify3
+	url = https://github.com/michaelneuper/hugo-texify3.git
+[submodule "themes/hugo-theme-gruvbox"]
+	path = themes/hugo-theme-gruvbox
+	url = git@github.com:schnerring/hugo-theme-gruvbox.git
+[submodule "themes/hugo-bearblog"]
+	path = themes/hugo-bearblog
+	url = https://github.com/janraasch/hugo-bearblog.git
+[submodule "themes/hugo-kiera"]
+	path = themes/hugo-kiera
+	url = git@github.com:funkydan2/hugo-kiera.git
+[submodule "themes/terminal"]
+	path = themes/terminal
+	url = https://github.com/panr/hugo-theme-terminal.git

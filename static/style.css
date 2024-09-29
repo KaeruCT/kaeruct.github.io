@@ -1,0 +1,29 @@
+
+
+:root {
+  --background: #111111;
+  --foreground: #eceae5;
+  --accent: #27a949;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+:root {
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  color: var(--foreground);
+  background: var(--accent);
+}
+
+html { background-image: url(/bg.png); }
+body {
+  background: rgba(0, 0, 0, 0.4);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif
+}
