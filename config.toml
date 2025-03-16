@@ -37,7 +37,7 @@ summaryLength = 70  # number of words for article summaries
     favicon = "/favicon.png"  # 32x32
     faviconIco = "/favicon.ico"  # 32x32
     appletouch = "/apple-touch-icon.png"  # 180x180
-    icon512 = "/icon512.png"  # 512x512 png image
+    icon512 = "/android-chrome-512x512.png"  # 512x512 png image
 
     enableFooterColumns = true
     enableRelatedArticles = true
