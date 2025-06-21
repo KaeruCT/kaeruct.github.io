@@ -2,7 +2,7 @@ baseURL = "https://kaeruct.github.io"
 languageCode = "en-us"
 title = "Pejibaye Blog"
 theme = "hugo-ficurinia"
-copyright = "2025 Andrés Villarreal • Code: <a href=\"https://github.com/kaeruct/kaeruct.github.io/blob/main/LICENSE\">MIT</a> • Content: <a href=\"https://github.com/kaeruct/kaeruct.github.io/blob/main/LICENSE-content\">CC BY 4.0</a>"
+copyright = "Andrés Villarreal • Code: <a href=\"https://github.com/kaeruct/kaeruct.github.io/blob/main/LICENSE\">MIT</a> • Content: <a href=\"https://github.com/kaeruct/kaeruct.github.io/blob/main/LICENSE-content\">CC BY 4.0</a>"
 
 paginate = 5  # number of articles per page in the index
 summaryLength = 70  # number of words for article summaries
