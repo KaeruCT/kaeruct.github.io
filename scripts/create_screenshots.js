@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Andrés Villarreal
+ * Licensed under MIT License - see LICENSE file for details
+ */
+
 import { chromium } from "playwright";
 import { existsSync, mkdirSync } from "fs";
 
@@ -9,7 +14,7 @@ const count = 16 * 3;
 const delay = 62.5;
 
 // Create screenshots directory if it doesn"t exist
-if (!existsSync(outputDir)){
+if (!existsSync(outputDir)) {
   mkdirSync(outputDir);
 }
 

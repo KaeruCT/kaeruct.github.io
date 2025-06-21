@@ -1,4 +1,6 @@
 #!/bin/sh
+# Copyright (c) 2025 Andrés Villarreal  
+# Licensed under MIT License - see LICENSE file for details
 
 FILES="3d beings checker cityscape dance dots earthbound fireworks grid lel lines p2 rainbow-sprinkler2 random-blocks starfield tap tunnel turtle tyc vs"
 

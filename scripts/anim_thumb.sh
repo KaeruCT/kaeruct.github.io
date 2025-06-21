@@ -1,4 +1,6 @@
 #!/bin/sh
+# Copyright (c) 2025 Andrés Villarreal
+# Licensed under MIT License - see LICENSE file for details
 
 if [ "$#" -ne 2 ]; then
   echo "Usage: $0 <url> <output_file>"

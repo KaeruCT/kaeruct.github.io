@@ -1,0 +1,20 @@
+NOTICE
+
+This repository contains content under two different licenses:
+
+1. CODE LICENSE (MIT)
+   - All code files including: JavaScript, TypeScript, HTML, CSS, TOML configuration files, 
+     shell scripts, build tooling, and Hugo templates
+   - Located in: scripts/, layouts/, themes/, config.toml, new.sh, and other code files
+   - Licensed under MIT License (see LICENSE file)
+
+2. CONTENT LICENSE (Creative Commons Attribution 4.0 International)
+   - All creative content including: blog posts, articles, images, illustrations, 
+     and other authored materials
+   - Located in: content/, static/images/, and other content directories
+   - Licensed under CC BY 4.0 (see LICENSE-content file)
+
+For questions about licensing or attribution requirements, please contact:
+Andrés Villarreal via GitHub issues or email.
+
+Copyright (c) 2025 Andrés Villarreal

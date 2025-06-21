@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "license": "MIT",
   "dependencies": {
     "playwright": "^1.46.1"
   },
