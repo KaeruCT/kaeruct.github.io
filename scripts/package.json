@@ -2,7 +2,7 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "playwright": "^1.46.1"
+    "playwright": "^1.55.1"
   },
   "engines": {
     "node": ">=20"
