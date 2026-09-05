@@ -1,6 +1,6 @@
 ---
 title: "Conquering Entropy"
-date: 2026-09-05T22:44:19+02:00
+date: 2026-06-06T09:44:19+02:00
 draft: false
 license: "CC BY 4.0"
 author: "Andrés Villarreal"

@@ -1,6 +1,6 @@
 ---
 title: "Conquering Entropy: Golden Path"
-date: 2026-09-05T22:54:06+02:00
+date: 2026-06-07T09:54:06+02:00
 draft: true
 license: "CC BY 4.0"
 author: "Andrés Villarreal"
