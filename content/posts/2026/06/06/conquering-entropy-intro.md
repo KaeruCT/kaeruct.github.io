@@ -23,7 +23,7 @@ Other negative consequences I have noticed:
 
 I see a lot of anxiety and worry over what the profession is becoming. This one's tricky and I'm afraid I don't have any useful actions to help with this. Personally I have chosen to take advantage of the current tools and focus on maintaining a system that I can be proud of. But in a few years we might not even need humans for this.
 
-More now than ever, it's essential to be able to [trust](../../07/conquering-entropy-cultivating-trust) each other and the code we deliver.
+More now than ever, it's essential to be able to [trust](../07/conquering-entropy-cultivating-trust.md) each other and the code we deliver.
 
 ## AI Contributions Are Staying
 

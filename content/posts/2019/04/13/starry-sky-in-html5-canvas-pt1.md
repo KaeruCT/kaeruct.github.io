@@ -207,4 +207,4 @@ function render() {
 
 Much better! Now the stars are all different sizes!
 
-This is all for part 1. You can continue reading [Part 2](./starry-sky-in-html5-canvas-pt2.html), where we will add a moon and make our stars flicker!
+This is all for part 1. You can continue reading [Part 2](./starry-sky-in-html5-canvas-pt2.md), where we will add a moon and make our stars flicker!

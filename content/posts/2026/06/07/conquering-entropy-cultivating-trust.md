@@ -9,7 +9,7 @@ tags:
   - ai
 ---
 
->Part of "[Conquering Entropy](../../06/conquering-entropy-intro)"
+>Part of "[Conquering Entropy](../06/conquering-entropy-intro.md)"
 
 Most of the issues I have with AI-generated code are related to trust. Do I trust the person who wrote this ticket? Do I trust that the engineer who opened this PR understood the ticket and guided the coding agent to implement it properly? Do I trust the coding agent's implementation? Do I trust our test suite to catch regressions before they hit production? Do I trust our CI/CD to properly build, test, and deploy our change? Do I trust our observability setup to alert us when the ai-generated code breaks production? Do I trust the AI SRE (Site Reliability Engineer) to properly diagnose the issue and help us mitigate it? Do I trust GitHub [not to have an incident](https://mrshu.github.io/github-statuses/) when we need it the most?
 

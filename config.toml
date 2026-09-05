@@ -10,6 +10,11 @@ summaryLength = 70  # number of words for article summaries
 [markup.goldmark.renderer]
     unsafe = true
 
+# Resolves relative *.md link destinations to page permalinks, so the same link
+# works in an editor's markdown preview and in the built site.
+[markup.goldmark.renderHooks.link]
+    enableDefault = true
+
 [markup]
     [markup.highlight]
         style = "onedark"

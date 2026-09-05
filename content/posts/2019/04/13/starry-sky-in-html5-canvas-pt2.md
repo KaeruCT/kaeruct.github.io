@@ -13,7 +13,7 @@ aliases:
   - /posts/starry-sky-in-html5-canvas-pt2.html
 ---
 
->This is part of a series! Please make sure you have read [Part 1](./starry-sky-in-html5-canvas-pt1.html) first!
+>This is part of a series! Please make sure you have read [Part 1](./starry-sky-in-html5-canvas-pt1.md) first!
 
 >**IMPORTANT** -- you can try out the result of this tutorial by visiting this [CodeSandbox](https://codesandbox.io/s/z68y1012yl?fontsize=14).
 >However, I encourage you to read the blog post and try to follow along to understand how and why it works.
