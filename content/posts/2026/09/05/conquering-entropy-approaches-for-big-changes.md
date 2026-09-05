@@ -6,7 +6,6 @@ license: "CC BY 4.0"
 author: "Andrés Villarreal"
 tags:
   - conquering-entropy
-  - ramblings
   - pair-programming
   - ai
 ---

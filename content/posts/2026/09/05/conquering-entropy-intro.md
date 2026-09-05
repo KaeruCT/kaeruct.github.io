@@ -6,7 +6,6 @@ license: "CC BY 4.0"
 author: "Andrés Villarreal"
 tags:
   - conquering-entropy
-  - ramblings
   - ai
 ---
 
@@ -32,4 +31,4 @@ Within a company, it's not often feasible to ban AI contributions, as the busine
 
 I used to think that if AI usage kept incurring higher and higher costs, it would collapse and everyone would go back to writing code by hand. But I don't think this will happen anymore. There's many "good enough" open models that can be self-hosted right now, and they're only going to get better. [Some companies are already experimenting with this](https://archive.is/kmOqm) to reduce their dependency on the big AI providers.
 
-In conclusion, AI usage will not stop. I like it (societal and economical consequences aside). It's allowed me to have a greater impact that I could have had before by doing a lot of the grunt work that is necessary but I never had the time for. Also allowed me to get so much more done on my side projects in which code quality is not the focus. It's also fun to tinker with. I have tried many different setups and enjoy discussing these with my colleagues.
+So it looks like AI usage will not stop. I like it (societal and economical consequences aside). It's allowed me to have a greater impact that I could have had before by doing a lot of the grunt work that is necessary but I never had the time for. Also allowed me to get so much more done on my side projects in which code quality is not the focus. It's also fun to tinker with. I have tried many different setups and enjoy discussing these with my colleagues.
