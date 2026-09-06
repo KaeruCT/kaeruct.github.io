@@ -1,6 +1,6 @@
 ---
 title: "Conquering Entropy: Optimizing Documentation for Agents"
-date: 2026-06-07T09:53:59+02:00
+date: 2026-09-06T08:50:59+02:00
 draft: true
 license: "CC BY 4.0"
 author: "Andrés Villarreal"
