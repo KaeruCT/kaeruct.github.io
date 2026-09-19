@@ -8,6 +8,7 @@ tags:
   - conquering-entropy
   - pair-programming
   - ai
+  - observability
   - ci
 ---
 
@@ -33,14 +34,20 @@ For big, risky changes I recommend pair or mob programming. Two or more people s
 
 A popular way to do this is to use [Matt Pocock's grill-me skill](https://www.aihero.dev/skills-grill-me). I highly recommend it. The process encourages a shared understanding of the implementation. The team can then skip the review phase because they developed the solution together and are familiar with the code. Of course, some [trust](../06/conquering-entropy-cultivating-trust.md) is also required here.
 
-The biggest downside of this method is that it requires multiple engineers' uninterrupted time, which might be tricky in some situations. But the benefit often outweighs the cost. The requirements are clear, there will be fewer bugs shipped and less rework, because of all the time spent planning and scoping. In my opinion, this is the most efficient way to get big, urgent changes in.
+The biggest downside of this method is that it requires multiple engineers' uninterrupted time, which might be tricky in some situations. But the benefit often outweighs the cost. The requirements are clear. There will be fewer bugs shipped and less rework, because of all the time spent planning and scoping. In my opinion, this is the most efficient way to get big, urgent changes in.
 
 Because this method favors front-loading all the planning and scoping before writing code, it can be considered the opposite of the "ship small changes fast" approach. Therefore, it's essential that the team deliberately picks which approach they will use for each task.
 
 Another benefit of pair programming is psychological. It's good for team building (I swear I'm not a manager!). I feel that with the use of coding agents and related tools, we engineers have become a bit more isolated. There's a stronger focus on delivering a lot of tasks. Most touchpoints with teammates are about getting a review approved, or pushing back against their agent's generated artifacts (tickets / code / documentation).
+
+## Observability is Essential
+
+In my first programming job, we only knew if the system had a defect because an end-user reported a bug. When I think about how far we have come, it really feels like that was the stone age. You need to know what's going on in your system! Ensure there's some sort of observability set up: Logs, metrics, traces, user telemetry, etc. Use whatever vendor you want, ideally something that's already in place. LLMs are great at consuming raw observability data and helping you debug issues, so take advantage of them!
 
 ## Choose the Right Deployment Strategy
 
 Reducing risk is another approach which works well for both big and small changes. There are several approaches to reduce risk when releasing changes. For me, it's important to use the tools you have available already in your system. You don't have to start all fancy with Kubernetes blue/green, canary, or shadow deployments (although these can be very useful for specific situations).
 
 Make sure your system supports a way to quickly roll back a specific change, or to turn off a feature at runtime (for example by using [feature flags](https://martinfowler.com/articles/feature-toggles.html)). If paired with proper observability, this is often good enough for most use cases.
+
+There are some techniques currently forming around a related concept: using agents to automate releases and observability, then "babysitting" the rollouts and determining whether the system is degraded. If so, the change is automatically rolled back and a human is involved. I think this has great potential, particularly for full-on "software factory" systems. When I find the opportunity to apply this technique, I will do a follow-up post with my findings.
