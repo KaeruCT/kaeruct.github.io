@@ -1,0 +1,13 @@
+{{- $desc := "" -}}
+{{- with .Params.description -}}
+    {{- $desc = . -}}
+{{- else -}}
+    {{- $desc = .Summary -}}
+{{- end -}}
+{{- /* Goldmark's typographer writes entities like &ldquo;, which get escaped again
+       inside a content attribute and show up literally in social cards. */ -}}
+{{- $desc = trim (replaceRE `\s+` " " (htmlUnescape (plainify $desc))) " " | truncate 160 -}}
+{{- if not $desc -}}
+    {{- $desc = .Site.Params.description -}}
+{{- end -}}
+{{- return $desc -}}
