@@ -24,6 +24,10 @@ summaryLength = 70  # number of words for article summaries
     author = "Andrés Villarreal"
     description = "Musings of a codeslinger"  # this will be added as metadata
 
+    # default social card image, used when a page has no `image` in its front matter
+    # 1200x630 works best; falls back to icon512 when unset
+    ogImage = "/images/og-default.png"
+
     posts = "posts/:filename"  # content directory where to find home page posts; default searches in "posts" and "post"
     showPostsLink = true  # show or hide the link to the simple post list
     extraContentDirs = []  # other content directories to render similarly to the home page

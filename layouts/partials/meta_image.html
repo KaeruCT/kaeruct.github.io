@@ -1,0 +1,10 @@
+{{- /* Social card image: page `image` front matter, else site `ogImage`, else the app icon. */ -}}
+{{- $image := .Site.Params.ogImage | default .Site.Params.icon512 | default "/img/icon.svg" -}}
+{{- with .Params.image -}}
+    {{- if or (hasPrefix . "http://") (hasPrefix . "https://") (hasPrefix . "/") -}}
+        {{- $image = . -}}
+    {{- else -}}
+        {{- $image = print $.Permalink . -}}
+    {{- end -}}
+{{- end -}}
+{{- return absURL $image -}}
